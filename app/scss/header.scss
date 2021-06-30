@@ -1,0 +1,11 @@
+.header {
+	position: relative;
+	background-color: $header;
+	z-index: 100;
+	&__body{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptive(height, 60, 45, 3);
+	}
+}
