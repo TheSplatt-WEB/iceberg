@@ -1,0 +1,64 @@
+.social{
+	display: flex;
+	flex-direction: column;
+	&__row{
+		& + &{
+			margin-top: 10px;
+		}
+	}
+	&__link{
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $text;
+		transition: background-color .3s;
+		path{
+			transition: fill .3s;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+			}
+			&:focus{
+				background-color: $hover;
+			}
+		}
+	}
+}
+.btn__top{
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 65px;
+	left: 40px;
+	z-index: 15;
+	transition: background-color .3s;
+	svg{
+		transform: rotate(180deg);
+	}
+	path{
+		transition: fill .3s;
+	}
+	@media (min-width: $md2 + px){
+		&:hover{
+			background-color: $hover;
+			path{
+				fill: #fff;
+			}
+		}
+		&:focus{
+			background-color: $hover;
+			path{
+				fill: #fff;
+			}
+		}
+	}
+}

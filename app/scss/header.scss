@@ -1,11 +1,136 @@
 .header {
-	position: relative;
 	background-color: $header;
 	z-index: 100;
+	font-size: 14px;
+	font-weight: 500;
+	&__container{
+		@include adaptive(padding-left, 40, 20, 1);
+		@include adaptive(padding-right, 60, 20, 1);
+	}
 	&__body{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		@include adaptive(height, 60, 45, 3);
+		@include adaptive(height, 130, 110, 1);
+	}
+	&__logo{
+		transition: transform .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				transform: scale(1.02);
+			}
+			&:focus{
+				transform: scale(1.02);
+			}
+		}
+	}
+	&__visually-impaired{
+		background-color: $el;
+		border-radius: 50%;
+		height: 50px;
+		min-width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all .3s;
+		margin-left: auto;
+		path{
+			transition: all .3s;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				path{
+					fill: #fff;
+				}
+			}
+			&:focus{
+				background-color: $hover;
+				path{
+					fill: #fff;
+				}
+			}
+		}
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	&__phone,
+	&__btn{
+		background-color: $el;
+		height: 50px;
+		border-radius: 30px;
+		line-height: 50px;
+		padding-left: 30px;
+		padding-right: 30px;
+		transition: all .3s;
+		margin-left: 20px;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+		@media (max-width: $md2 + px){
+			display: none;
+		}
+	}
+	&__btn{
+		@media (max-width: $md2 + px){
+			@include adaptive(top, 180, 160, 1);
+			transition: all .5s;
+		}
+	}
+}
+.menu{
+	&__btn{
+		height: 50px;
+		min-width: 50px;
+		border-radius: 50%;
+		background-color: $hover;
+		transition: all .3s;
+		position: relative;
+		margin-left: 52px;
+		&::before,
+		&::after{
+			content:'';
+			position: absolute;
+			left: 17px;
+			width: 16px;
+			height: 1px;
+			background-color: #fff;
+			transition: all .3s;
+		}
+		&::before{
+			top: 20px;
+		}
+		&::after{
+			bottom: 20px;
+		}
+		&.open{
+			&::before{
+				transform: rotate(45deg);
+				top: 25px;
+			}
+			&::after{
+				transform: rotate(-45deg);
+				bottom: 24px;
+			}
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $text;
+			}
+			&:focus{
+				background-color: $text;
+			}
+		}
+		@media (max-width: $md2 + px){
+			margin-left: 20px;
+		}
 	}
 }

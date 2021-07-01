@@ -23,6 +23,13 @@ body{
 	font-weight: 400;
 	color: $text;
 	background-color: $bg;
+	transition: transform .3s;
+	&.open{
+		transform: translate(-250px, 0);
+	}
+}
+main{
+	height: 400px;
 }
 h1, h2, h3, h4, h5, h6, p{
 	font-weight: inherit;
@@ -39,6 +46,7 @@ input, button, textarea{
 	font-size: inherit;
 	background-color: transparent;
 	line-height: inherit;
+	color: inherit;
 	
 }
 button{
@@ -66,9 +74,7 @@ ul, li{
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
-	@media (max-width: $md4 + px){
-		overflow-x: hidden;
-	}
+	overflow-x: hidden;
 }
 .content{
 	flex: 1 0 auto;
@@ -78,44 +84,10 @@ ul, li{
 }
 
 //Дежурные классы///////////////////////////////////////////////////////////////////////////////////////////////
-._container {
+.container {
 	max-width: $maxWidthContainer;
 	width: 100%;
 	margin: 0 auto;
 	padding-left: 15px;
 	padding-right: 15px;
 }
-// .header__container{
-// 	max-width: $maxWidthContainer;
-// 	width: 100%;
-// 	margin: 0 auto;
-// 	@include adaptive(padding-left, 15, 5, 3);
-// 	@include adaptive(padding-right, 15, 5, 3);
-// }
-
-//Конструкция вместо object-fit: cover; для IE. Используется с JS функцией
-// .ibg{
-// 	background-position: center;
-// 	background-size: cover;
-// 	background-repeat: no-repeat;
-// 	position: relative;
-// }
-// .ibg img{
-// 	width: 0;
-// 	height: 0;
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	opacity: 0;
-// 	visibility: hidden;
-// }
-
-//Повторяющиеся элементы на сайте///////////////////////////////////////////////////////////////////////////////////////////////
-// .descr{
-// 	@include adaptive(font-size, 18, 14, 3);
-// 	line-height: 1.2;
-// }
-// .title{
-// 	@include adaptive(font-size, 36, 22, 3);
-// 	color: $title;
-// }

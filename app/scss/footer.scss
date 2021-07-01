@@ -1,0 +1,330 @@
+.footer{
+	background-color: #33386f;
+	position: relative;
+	&__body{
+		display: flex;
+	}
+	&__image{
+		width: 100%;
+		margin-bottom: 65px;
+		margin-left: 40px;
+		background-image: url(../img/bottom_img.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 40% center;
+		@media (max-width: $md2 + px){
+			background-position: right center;
+		}
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+
+	}
+	&__header{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		background-color: transparent;
+		.header__logo{
+			path{
+				fill: #fff;
+			}
+		}
+		.header__descr{
+			margin-left: 79px;
+			margin-right: auto;
+			color: #fff;
+			font-weight: 400;
+			margin-right: 10px;
+			@media (max-width: $md3 + px){
+				display: none;
+			}
+		}
+		.header__visually-impaired{
+			background-color: #fff;
+		}
+		.header__phone,
+		.header__btn{
+			background-color: #fff;
+			@media (max-width: $md2 + px){
+				display: none;
+			}
+		}
+		.menu__btn{
+			@media (min-width: $md2 + px){
+				&:hover{
+					&::before,
+					&::after{
+						background-color: $text;
+					}
+					background-color: $el;
+				}
+				&:focus{
+					&::before,
+					&::after{
+						background-color: $text;
+					}
+					background-color: $el;
+				}
+			}
+		}
+	}
+	&__contacts{
+		background-color: #3b4180;
+		color: #fff;
+		@include adaptive(padding-top, 303, 140, 1);
+		@include adaptive(padding-bottom, 303, 140, 1);
+		line-height: 120%;
+		@include adaptive(max-width, 550, 310, 1);
+		width: 100%;
+		@include adaptive(padding-left, 55, 44, 1);
+		&::after{
+			content:'';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			@include adaptive(left, 540, 300, 1);
+			width: 230px;
+			z-index: 1;
+			background-image: url(../img/footer_wave.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			filter: drop-shadow(20px 4px 10px rgba(0,0,0,.25));
+		}
+		@media (max-width: $md3 + px){
+			background-color: transparent;
+			text-align: center;
+			margin: 0 auto;
+			padding-bottom: 732px;
+			padding-left: 0;
+			&::after{
+				display: none;
+			}
+		}
+	}
+	&__phone{
+		font-weight: 600;
+		margin-bottom: 15px;
+		display: block;
+		transition: color .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				color: $hover;
+			}
+			&:focus{
+				color: $hover;
+			}
+		}
+	}
+	&__mail{
+		font-weight: 600;
+		margin-bottom: 30px;
+		display: block;
+		transition: color .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				color: $hover;
+			}
+			&:focus{
+				color: $hover;
+			}
+		}
+	}
+	&__city{
+		font-weight: 600;
+		margin-bottom: 7px;
+	}
+	&__adress{
+		font-weight: 300;
+		font-size: 14px;
+		margin-bottom: 10px;
+		max-width: 270px;
+		width: 100%;
+		transition: color .3s;
+		&::after{
+			content: url(../img/icon_link.svg);
+			display: inline-block;
+			width: 12px;
+			transform: translate(5px,2px);
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				color: $hover;
+			}
+			&:focus{
+				color: $hover;
+			}
+		}
+	}
+	&__btn{
+		background-color: #fff;
+		height: 50px;
+		border-radius: 30px;
+		max-width: 243px;
+		width: 100%;
+		line-height: 50px;
+		text-align: center;
+		color: $text;
+		font-weight: 500;
+		@include adaptive(font-size, 14, 16, 1);
+		margin-top: 32px;
+		transition: all .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+	}
+	&__bottom{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		color: #fff;
+		font-size: 12px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		@include adaptive(padding-left, 40, 20, 1);
+		@include adaptive(padding-right, 40, 20, 1);
+		padding-bottom: 25px;
+		@media (max-width: $md2 + px){
+			flex-direction: column;
+		}
+		@media (max-width: $md3 + px){
+			height: 672px;
+			background-image: url(../img/bottom_img-mobile.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: right 60%;
+		}
+	}
+	&__info{
+		display: flex;
+		max-width: 562px;
+		width: 100%;
+		justify-content: space-between;
+		@media (max-width: $md2 + px){
+			order: 1;
+			max-width: 100%;
+		}
+	}
+	&__copy{
+		opacity: .6;
+	}
+	&__development{
+		path{
+			transition: fill .3s;
+		}
+		g{
+			transition: opacity .3s;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				path{
+					fill: $hover;
+				}
+				g{
+					opacity: 1;
+				}
+			}
+			&:focus{
+				path{
+					fill: $hover;
+				}
+				g{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__navigations{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		width: 100%;
+		@media (max-width: $md2 + px){
+			margin-bottom: 30px;
+		}
+		@media (max-width: $md3 + px){
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+	}
+	&__social{
+		margin-bottom: 24px;
+		.social__link{
+			background-color: #fff;
+			path{
+				fill: $text;
+			}
+			@media (min-width: $md2 + px){
+				&:hover{
+					path{
+						fill: #fff;
+					}
+				}
+				&:focus{
+					path{
+						fill: #fff;
+					}
+				}
+			}
+		}
+		@media (max-width: $md3 + px){
+			flex-direction: row;
+			.social__row + .social__row{
+				margin-top: 0;
+				margin-left: 10px;
+			}
+		}
+	}
+	&__navigation{
+		display: flex;
+		@media (max-width: $md3 + px){
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+}
+.navigation{
+	@media (max-width: $md3 + px){
+		margin-left: -30px;
+		margin-bottom: 30px;
+	}
+	&__row{
+		margin-left: 42px;
+		@media (max-width: $md3 + px){
+			margin-left: 30px;
+			margin-bottom: 20px;
+			&:nth-child(2){
+				order: 1;
+			}
+		}
+	}
+	&__link{
+		transition: all .3s;
+		display: block;
+		white-space: nowrap;
+		opacity: .6;
+		@media (min-width: $md2 + px){
+			&:hover{
+				color: $hover;
+				opacity: 1;
+			}
+			&:focus{
+				color: $hover;
+				opacity: 1;
+			}
+		}
+	}
+}

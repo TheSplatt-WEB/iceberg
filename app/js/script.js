@@ -15,5 +15,18 @@ testWebP(function (support) {
 	}
 });
 $(function () {
-
+	$('.menu__btn').on('click', function () {
+		$('.menu__btn').toggleClass('open');
+	});
+	$(document).on('click', function (e) {
+		if (!$('.menu__btn').is(e.target) && $('.menu__btn').has(e.target).length === 0) {
+			$('.menu__btn').removeClass('open');
+		}
+	});
+	$('.btn__top').on('click', function () {
+		$("body,html").animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	});
 });
