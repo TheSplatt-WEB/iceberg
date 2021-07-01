@@ -29,4 +29,33 @@ $(function () {
 		}, 800);
 		return false;
 	});
+	$('.diagnostics__slider').slick({
+		infinite: false,
+		slidesToShow: 3,
+		slidesToScrol: 1,
+		centerMode: false,
+		arrows: false,
+		dots: false,
+		autoplay: false,
+		responsive: [{
+			breakpoint: 767.98,
+			settings: {
+				slidesToShow: 2,
+				infinite: true,
+				dots: true,
+				autoplay: true,
+			}
+		}, {
+			breakpoint: 479.98,
+			settings: {
+				slidesToShow: 1,
+				infinite: true,
+				dots: true,
+				autoplay: true,
+			}
+		}]
+	});
+	new SimpleBar($('.tomography__gallery')[0], {
+		autoHide: false,
+	});
 });

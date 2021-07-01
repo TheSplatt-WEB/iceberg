@@ -1,0 +1,90 @@
+.tomography {
+	background-color: $el;
+	@media (max-width: $md3 + px){
+		border-radius: 15px;
+	}
+	&__body{
+		display: flex;
+		@include adaptive(padding-top, 50, 43, 1);
+		justify-content: space-between;
+		@media (max-width: $md2 + px){
+			flex-direction: column;
+		}
+	}
+	&__text{
+		max-width: 560px;
+		width: 100%;
+		margin-right: 10px;
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+			margin-bottom: 43px;
+		}
+		@media (max-width: $md3 + px){
+			text-align: center;
+		}
+	}
+	&__title{
+		@include adaptive(margin-bottom, 56, 39, 1);
+		@include adaptive(font-size, 48, 22, 1);
+		@media (max-width: $md3 + px){
+			font-weight: 500;
+		}
+	}
+	&__descr{
+		line-height: 140%;
+		& + &{
+			@include adaptive(margin-top, 30, 20, 1);
+		}
+		span{
+			font-weight: 600;
+		}
+	}
+	&__gallery{
+		@include adaptive(min-width, 793, 280, 1);
+		@include adaptive(max-width, 793, 280, 1);
+		@include adaptive(height, 495, 240, 3);
+		border-radius: 10px;
+		overflow: hidden;
+		overflow-x: auto;
+		margin-bottom: 30px;
+		@media (max-width: $md2 + px){
+			margin: 0 auto;
+		}
+		@media (max-width: $md3 + px){
+			margin-bottom: 53px;
+		}
+	}
+	&__list{
+		display: flex;
+		counter-reset: counter;
+	}
+	&__row{
+		@include adaptive(min-width, 793, 280, 1);
+		@include adaptive(max-width, 793, 280, 1);
+		@include adaptive(height, 495, 240, 1);
+		counter-increment: counter;
+		position: relative;
+		&::before{
+			content:'0' counter(counter);
+			position: absolute;
+			left: 22px;
+			top: 17px;
+			font-weight: 700;
+			font-size: 32px;
+			@media (max-width: $md3 + px){
+				display: none;
+			}
+		}
+	}
+	&__img{
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	&__plug{
+		background-color: #fff;
+		&::before{
+			content: url(../img/section_wave.svg);
+		}
+	}
+}

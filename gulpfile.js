@@ -78,9 +78,10 @@ function scripts() {
 //Собираем все css файлы подключаемых плагинов, конкатинируем их в 1 минифицированный файл css и закидываем его в папку dist/css с именем libs.min.css///////////////////////////////////////////////////////////////////////////////////////////////////////
 function stylesLibs() {
 	return src([
-		'node_modules/normalize.css/normalize.css',
+		// 'node_modules/normalize.css/normalize.css',
 		// 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
-		// 'node_modules/slick-carousel/slick/slick.css',
+		'node_modules/slick-carousel/slick/slick.css',
+		'node_modules/simplebar/dist/simplebar.css',
 		// 'node_modules/animate.css/animate.css',
 		// 'node_modules/aos/dist/aos.css',
 	])
@@ -100,7 +101,8 @@ function scriptsLibs() {
 	return src([
 		'node_modules/jquery/dist/jquery.js',
 		// 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
-		// 'node_modules/slick-carousel/slick/slick.js',
+		'node_modules/slick-carousel/slick/slick.js',
+		'node_modules/simplebar/dist/simplebar.js',
 		// 'node_modules/stickyfilljs/dist/stickyfill.js',
 		// 'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
 		// 'node_modules/wow.js/dist/wow.js',

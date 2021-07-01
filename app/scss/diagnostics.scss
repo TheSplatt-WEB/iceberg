@@ -1,0 +1,163 @@
+.diagnostics{
+	&__body{
+		@media (max-width: $md4 + px){
+			text-align: center;
+		}
+	}
+	&__title{
+		@include adaptive(margin-bottom, 72, 41, 1);
+		@media (max-width: $md3 + px){
+			text-align: center;
+		}
+	}
+	&__slider{
+		@include adaptive(margin-bottom, 65, 5, 1);
+		margin-left: -20px;
+		@media (max-width: $md3 + px){
+			margin-bottom: 60px;
+		}
+		@media (max-width: $md4 + px){
+			margin-left: 0;
+		}
+	}
+	.slick-track{
+		@media (max-width: $md3 + px){
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+	.slick-dots{
+		width: calc(100% - 20px);
+		display: flex;
+		margin-top: 30px;
+		margin-left: 20px;
+		@media (max-width: $md4 + px){
+			margin-left: 0;
+			width: 100%;
+		}
+		li{
+			width: 100%;
+			& + li{
+				margin-left: 12px;
+			}
+		}
+		button{
+			font-size: 0;
+			height: 4px;
+			width: 100%;
+			border-radius: 10px;
+			background-color: #333570;
+			opacity: .3;
+		}
+	}
+	.slick-active{
+		button{
+			opacity: 1;
+		}
+	}
+	&__slide{
+		padding-left: 20px;
+		@media (max-width: $md4 + px){
+			padding-left: 0;
+		}
+	}
+	&__slide--2{
+		margin-top: 60px;
+		@media (max-width: $md3 + px){
+			margin-top: 0;
+		}
+	}
+	&__slide--3{
+		margin-top: 140px;
+		@media (max-width: $md3 + px){
+			margin-top: 0;
+		}
+	}
+	&__item{
+		max-width: 375px;
+		width: 100%;
+		@media (max-width: $md4 + px){
+			max-width: 100%;
+		}
+	}
+	&__img{
+		width: 80%;
+		margin-bottom: 30px;
+		position: relative;
+		img{
+			width: 100%;
+		}
+		&::before{
+			content:url(../img/arrow_down.svg);
+			position: absolute;
+			bottom: 0px;
+			right: -50px;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #f8f8f8;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@media (max-width: $md1 + px){
+				right: -30px;
+			}
+		}
+	}
+	&__pregnant{
+		display: flex;
+		position: absolute;
+		top: 15px;
+		right: -150px;
+		align-items: center;
+		@media (max-width: $md1 + px){
+			right: -30px;
+		}
+	}
+	&__name{
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 140%;
+		display: block;
+		margin-bottom: 10px;
+	}
+	&__descr{
+		max-width: 354px;
+		font-size: 16px;
+		line-height: 140%;
+		@media (max-width: $md4 + px){
+			max-width: 100%;
+		}
+	}
+	&__plug{
+		background-color: $el;
+		&::before{
+			content: url(../img/section_wave-white.svg);
+		}
+	}
+}
+.pregnant{
+	&__img{
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		background-color: #f8f8f8;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img{
+			width: 30px;
+			height: 30px;
+		}
+	}
+	&__text{
+		font-size: 12px;
+		line-height: 140%;
+		max-width: 106px;
+		width: 100%;
+		margin-left: 14px;
+		@media (max-width: $md1 + px){
+			display: none;
+		}
+	}
+}
