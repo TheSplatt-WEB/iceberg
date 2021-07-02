@@ -1,5 +1,5 @@
 .about{
-	@include adaptive(padding-top, 170, 43, 1);
+	@include adaptive(padding-top, 155, 0, 1);
 	@include adaptive(padding-bottom, 160, 77, 1);
 	&__title{
 		min-width: 50%;
@@ -26,29 +26,39 @@
 		@include adaptive(margin-right, 118, 15, 1);
 		@media (max-width: $md3 + px){
 			margin-right: auto;
-			margin-bottom: 37px;
+			margin-bottom: 38px;
 		}
 	}
 	&__img{
-		@include adaptive(margin-bottom, 16, 21, 1);
+		@include adaptive(margin-bottom, 16, 23, 1);
 		background-color: #f8f8f8;
 		border-radius: 15px;
 		overflow: hidden;
 		position: relative;
 		padding-bottom: 121%;
+		@media (max-width: $md4 + px){
+			padding-bottom: 117%;
+		}
 		img{
 			position: absolute;
-			top: 0;
+			bottom: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			@media (max-width: $md4 + px){
+				width: 90%;
+				right: 0;
+				height: 90%;
+				margin: 0 auto;
+			}
 		}
 	}
 	&__name{
 		@include adaptive(font-size, 20, 22, 1);
 		margin-bottom: 6px;
 		display: block;
+		line-height: 120%;
 	}
 	&__profession{
 		font-size: 18px;

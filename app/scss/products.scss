@@ -1,0 +1,233 @@
+.products{
+	@include adaptive(margin-bottom, 110, 47, 1);
+	&__body{
+		display: flex;
+		width: 100%;
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 500px;
+			height: 850px;
+			@include adaptive(width, 500, 294, 1);
+			@include adaptive(height, 850, 500, 1);
+			background-image: url(../img/hands_tooth.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			transform: translate(-25%, -75%);
+			z-index: -1;
+			@media (max-width: $md2 + px){
+				transform: translate(0, -75%);
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+	}
+	&__inner{
+		max-width: 993px;
+		width: 100%;
+		overflow: hidden;
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+		}
+	}
+	&__item{
+		@include adaptive(padding-left, 50, 15, 1);
+		@include adaptive(padding-right, 50, 15, 1);
+		@include adaptive(padding-top, 67, 43, 1);
+		@include adaptive(padding-bottom, 85, 43, 1);
+		@include adaptive(border-radius, 20, 15, 1);
+		background-color: $text;
+		color: #fff;
+		margin-bottom: 20px;
+		&:nth-child(even){
+			background-color: $hover;
+			color: $text;
+		}
+	}
+	&__title{
+		@include adaptive(font-size, 42, 22, 1);
+		font-weight: 500;
+		@include adaptive(margin-bottom, 32, 37, 1);
+		@media (max-width: $md3 + px){
+			text-align: center;
+		}
+	}
+	&__descr{
+		@include adaptive(margin-bottom, 30, 20, 1);
+		line-height: 140%;
+	}
+	&__subtitle{
+		font-weight: 700;
+	}
+	&__gallery{
+		@include adaptive(height, 274, 203, 1);
+		@include adaptive(margin-top, 70, 40, 1);
+		overflow-x: auto;
+		border-radius: 10px;
+		position: relative;
+		scrollbar-color: rgba($text, .7) $el;
+    	scrollbar-width: thin;
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 3px;
+			background-color: rgba($text, .7);
+	  }
+	  &::-webkit-scrollbar-thumb {
+		background-color: $el;
+		border-radius: 9px;
+		box-shadow: inset 1px 1px 10px #f3faf7;
+  }
+		@media (max-width: $md2 + px){
+			margin-bottom: 50px;
+		}
+	}
+	&__list{
+		display: flex;
+		padding-bottom: 15px;
+	}
+	&__row{
+		@include adaptive(max-width, 433, 316, 1);
+		@include adaptive(min-width, 433, 316, 1);
+		@include adaptive(height, 256, 185, 1);
+		overflow: hidden;
+		border-radius: 10px;
+		& + &{
+			margin-left: 27px;
+		}
+	}
+	&__img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&__buttons{
+		text-align: center;
+		display: none;
+		@media (max-width: $md2 + px){
+			display: block;
+		}
+	}
+	&__buttons-visiography{
+		.products__btn{
+			@media (min-width: $md2 + px){
+				&:hover{
+					background-color: $text;
+					color: #fff;
+				}
+				&:focus{
+					background-color: $text;
+					color: #fff;
+				}
+			}
+			&:nth-child(even){
+				background-color: $text;
+				color: #fff;
+				@media (min-width: $md2 + px){
+					&:hover{
+						background-color: #fff;
+						color: $text;
+					}
+					&:focus{
+						background-color: #fff;
+						color: $text;
+					}
+				}
+			}
+		}
+	}
+	&__btn{
+		max-width: 350px;
+		width: 100%;
+		height: 50px;
+		border-radius: 30px;
+		background-color: #fff;
+		font-size: 14px;
+		color: $text;
+		transition: all .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+		& + &{
+			margin-top: 14px;
+		}
+		&:nth-child(even){
+			background-color: $hover;
+			color: #fff;
+			@media (min-width: $md2 + px){
+				&:hover{
+					background-color: #fff;
+					color: $text;
+				}
+				&:focus{
+					background-color: #fff;
+					color: $text;
+				}
+			}
+		}
+	}
+	&__sibebox{
+		background-color: $el;
+		padding: 40px 30px 50px 30px;
+		@include adaptive(border-radius, 20, 15, 1);
+		max-width: 414px;
+		width: 100%;
+		max-height: 268px;
+		margin-left: 23px;
+		@media (max-width: $md2 + px){
+			display: none;
+		}
+	}
+}
+.sidebox{
+	&__text{
+		font-size: 22px;
+		line-height: 150%;
+		font-weight: 500;
+		margin-bottom: 30px;
+	}
+	&__buttons{
+		display: flex;
+		justify-content: space-between;
+		margin-left: -10px;
+	}
+	&__btn{
+		background-color: #fff;
+		height: 50px;
+		border-radius: 30px;
+		padding: 12px;
+		min-width: 154px;
+		font-size: 14px;
+		font-weight: 500;
+		margin-left: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+		&:nth-child(even){
+			background-color: $text;
+			color: #fff;
+		}
+	}
+}

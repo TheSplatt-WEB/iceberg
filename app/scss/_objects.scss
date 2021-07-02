@@ -29,18 +29,21 @@
 	}
 }
 .btn__top{
+	display: none;
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
-	background-color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-color: rgba(#fff, .9);
 	position: fixed;
-	bottom: 65px;
-	left: 40px;
+	box-shadow: 0 0 2px rgba($text, .2);
+	@include adaptive(bottom, 65, 10, 1);
+	@include adaptive(left, 40, 10, 1);
 	z-index: 15;
 	transition: background-color .3s;
+	@media (max-width: $md3 + px){
+		left: auto;
+		@include adaptive(right, 40, 10, 1);
+	}
 	svg{
 		transform: rotate(180deg);
 	}
@@ -86,11 +89,11 @@
 	 right: 0;
 	 left: 0;
  }
- .simplebar-track.simplebar-horizontal {
+.simplebar-track.simplebar-horizontal {
+	height: 3px;
+	bottom: 15px;
 	left: 25px;
 	right: 25px;
-	bottom: 15px;
-	height: 3px;
 	background-color: $text;
 	border-radius: 10px;
 	opacity: .7;

@@ -1,0 +1,88 @@
+.questions{
+	@include adaptive(margin-bottom, 151, 411, 1);
+	&__body{
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $md2 + px){
+			flex-direction: column;
+		}
+	}
+	&__title{
+		max-width: 235px;
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+			margin-bottom: 37px;
+			text-align: center;
+		}
+	}
+	&__list{
+		margin-left: 10px;
+		max-width: 995px;
+		width: 100%;
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+			margin-left: 0;
+		}
+	}
+	&__row{
+		background-color: $el;
+		@include adaptive(border-radius, 30, 15, 1);
+		@include adaptive(padding-left, 50, 20, 1);
+		@include adaptive(padding-right, 80, 15, 1);
+		padding-top: 50px;
+		@include adaptive(padding-bottom, 50, 45, 1);
+		margin-bottom: 20px;
+		&:first-child{
+			.questions__dropdown{
+				display: block;
+			}
+		}
+	}
+	&__link{
+		font-weight: 500;
+		@include adaptive(font-size, 32, 22, 1);
+		line-height: 125.5%;
+		position: relative;
+		width: 100%;
+		padding-right: 90px;
+		&::before{
+			content: url(../img/arrow_up.svg);
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: rgba($text, .1);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transform: rotate(180deg) translate(0, 50%);
+		}
+		&.open{
+			&::before{
+				transform: rotate(0deg) translate(0, -50%);
+			}
+		}
+	}
+	&__dropdown{
+		display: none;
+		margin-top: 35px;
+		@include adaptive(margin-bottom, 20, 0, 1);
+	}
+}
+.dropdown{
+	font-size: 18px;
+	*:last-child{
+		margin-bottom: 0;
+	}
+	&__title{
+		font-weight: 700;
+		margin-bottom: 25px;
+		line-height: 140%;
+	}
+	&__descr{
+		margin-bottom: 26px;
+		line-height: 140%;
+	}
+}

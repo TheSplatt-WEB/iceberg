@@ -1,0 +1,177 @@
+.block{
+	&__body{
+		background-color: #86c8d8;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: right center;
+		border-radius: 20px;
+		position: relative;
+		@media (max-width: $md3 + px){
+			border-radius: 15px;
+		}
+		&::before{
+			content:'';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 147.5px 169.5px 0 0;
+			border-color: #ffffff transparent transparent transparent;
+			@media (max-width: $md3 + px){
+				display: none;
+			}
+		}
+		&::after{
+			content: url(../img/triangle.svg);
+			position: absolute;
+			top: 0;
+			left: 1px;
+			@media (max-width: $md3 + px){
+				display: none;
+			}
+		}
+	}
+	&__inner{
+		padding: 59px 360px 52px 246px;
+		position: relative;
+		overflow: hidden;
+		@media (max-width: $md2 + px){
+			padding-right: 20px;
+			padding-bottom: 220px;
+		}
+		@media (max-width: $md3 + px){
+			padding: 51px 15px;
+			padding-bottom: 220px;
+			text-align: center;
+		}
+		&::before,
+		&::after{
+			content:'';
+			position: absolute;
+			width: 380px;
+			background-repeat: no-repeat;
+			@media (max-width: $md3 + px){
+				height: 210px;
+				width: 300px;
+			}
+		}
+	}
+	&__inner-kt{
+		&::before{
+			right: -100px;
+			bottom: -80px;
+			height: 100%;
+			background-image: url(../img/hands_1.svg);
+			background-size: contain;
+			background-position: right center;
+			transform: rotate(-45deg) scale(1.5);
+			@media (max-width: $md2 + px){
+				transform: rotate(-45deg) scale(1);
+				right: -70px;
+				bottom: -150px;
+			}
+			@media (max-width: $md3 + px){
+				transform: rotate(0deg);
+				bottom: -20px;
+				right: 0;
+				left: 0;
+				margin: 0 auto;
+				background-position: center center;
+			}
+			@media (max-width: $md4 + px){
+				background-size: cover;
+				width: 100%;
+				background-position: center top;
+			}
+		}
+	}
+	&__inner-consultation{
+		&::before{
+			background-image: url(../img/hands_2-dark.svg);
+			background-position: right top;
+			background-size: 90%;
+			right: 90px;
+			bottom: -115px;
+			height: 287px;
+			transform: rotate(50deg);
+			@media (max-width: $md2 + px){
+				transform: rotate(-10deg);
+				right: -100px;
+				bottom: -50px;
+				height: 220px;
+			}
+		}
+		&::after{
+			background-image: url(../img/hands_2-light.svg);
+			background-position: right bottom;
+			background-size: 90%;
+			right: -45px;
+			top: -150px;
+			height: 287px;
+			transform: rotate(70deg);
+			@media (max-width: $md2 + px){
+				transform: rotate(10deg);
+				right: auto;
+				left: -180px;
+				top: auto;
+				bottom: 30px;
+				height: 220px;
+			}
+		}
+	}
+	&__title{
+		@include adaptive(font-size, 32, 24, 1);
+		font-weight: 700;
+		@include adaptive(margin-bottom, 15, 35, 1);
+		@media (max-width: $md3 + px){
+			font-weight: 600;
+		}
+	}
+	&__descr{
+		font-size: 16px;
+		line-height: 130%;
+		margin-bottom: 30px;
+		span{
+			font-weight: 700;
+		}
+	}
+	&__btn{
+		height: 50px;
+		@include adaptive(padding-left, 40, 33, 1);
+		@include adaptive(padding-right, 40, 33, 1);
+		display: flex;
+		font-size: 14px;
+		align-items: center;
+		justify-content: center;
+		background-color: #fff;
+		border-radius: 100px;
+		transition: all .3s;
+		white-space: nowrap;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+		@media (max-width: $md3 + px){
+			margin-right: auto;
+			margin-left: auto;
+			white-space: pre-wrap;
+		}
+		@media (max-width: $md4 + px){
+			width: 100%;
+		}
+	}
+}
+.block-kt{
+	@include adaptive(margin-bottom, 161, 87, 1);
+}
+.block-consultation{
+	@include adaptive(margin-bottom, 193, 67, 1);
+}

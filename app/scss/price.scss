@@ -1,0 +1,99 @@
+.price{
+	@include adaptive(margin-bottom, 162, 30, 1);
+	&__title{
+		@include adaptive(margin-bottom, 68, 29, 1);
+		@media (max-width: $md2 + px){
+			text-align: center;
+		}
+	}
+	&__inner{
+		display: flex;
+		margin-left: -22px;
+		@media (max-width: $md2 + px){
+			flex-wrap: wrap;
+		}
+	}
+	&__item{
+		margin-left: 22px;
+		max-width: calc(33.333% - 22px);
+		width: 100%;
+		background-color: $el;
+		@include adaptive(border-radius, 20, 15, 1);
+		@include adaptive(padding, 30, 20, 1);
+		@include adaptive(padding-top, 95, 40, 1);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		background-repeat: no-repeat;
+		background-position: right top;
+		@media (max-width: $md2 + px){
+			margin-bottom: 13px;
+		}
+		&:nth-child(1){
+			background-image: url(../img/price_1.svg);
+			background-position: right 10%;
+			background-size: 25%;
+			@media (max-width: $md2 + px){
+				max-width: 100%;
+			}
+		}
+		&:nth-child(2){
+			background-image: url(../img/price_2.svg);
+			background-size: 40%;
+			@media (max-width: $md2 + px){
+				max-width: calc(50% - 22px);
+			}
+			@media (max-width: $md3 + px){
+				max-width: 100%;
+				@include adaptive(padding-top, 91, 75, 1);
+			}
+		}
+		&:nth-child(3){
+			background-image: url(../img/price_3.svg);
+			background-size: 50%;
+			@media (max-width: $md2 + px){
+				max-width: calc(50% - 22px);
+			}
+			@media (max-width: $md3 + px){
+				max-width: 100%;
+				@include adaptive(padding-top, 91, 75, 1);
+			}
+		}
+	}
+	&__name{
+		@include adaptive(margin-bottom, 57, 36, 1);
+		display: inline-block;
+		@include adaptive(font-size, 28, 22, 1);
+		font-weight: 500;
+		line-height: 120%;
+		max-width: 294px;
+		width: 100%;
+		letter-spacing: 0.075px;
+	}
+	&__descr{
+		@include adaptive(border-radius, 20, 15, 1);
+		background-color: $text;
+		color: #fff;
+		padding: 22px;
+		line-height: 19px;
+		font-weight: 500;
+		min-height: 83px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		span{
+			max-width: 290px;
+			@media (max-width: $md3 + px){
+				max-width: 100%;
+			}
+		}
+	}
+	&__price{
+		background-color: #fff;
+		color: $text;
+		@include adaptive(font-size, 36, 30, 1);
+		padding: 22px 10px;
+		line-height: 120%;
+	}
+}

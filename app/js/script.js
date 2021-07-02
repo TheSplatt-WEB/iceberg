@@ -23,6 +23,13 @@ $(function () {
 			$('.menu__btn').removeClass('open');
 		}
 	});
+	$(window).on('scroll', function () {
+		if ($(this).scrollTop() > 500) {
+			$('.btn__top').fadeIn();
+		} else {
+			$('.btn__top').fadeOut();
+		}
+	});
 	$('.btn__top').on('click', function () {
 		$("body,html").animate({
 			scrollTop: 0
@@ -57,5 +64,14 @@ $(function () {
 	});
 	new SimpleBar($('.tomography__gallery')[0], {
 		autoHide: false,
+	});
+	$(document).on('click', '.questions__link', function (event) {
+		event.preventDefault();
+		if ($('.questions__list').hasClass('one')) {
+			$('.questions__dropdown').not($(this).next()).slideUp();
+			$('.questions__link').not($(this)).removeClass('open');
+		}
+		$(this).next('.questions__dropdown').slideToggle();
+		$(this).toggleClass('open');
 	});
 });
