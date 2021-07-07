@@ -100,7 +100,7 @@ function stylesLibs() {
 //Собираем все js файлы подключаемых плагинов, конкатинируем их в 1 минифицированный файл js и закидываем его в папку dist/js с именем libs.min.js///////////////////////////////////////////////////////////////////////////////////////////////////////
 function scriptsLibs() {
 	return src([
-		'node_modules/jquery/dist/jquery.js',
+		// 'node_modules/jquery/dist/jquery.js',
 		// 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 		// 'node_modules/slick-carousel/slick/slick.js',
 		'node_modules/swiper/swiper-bundle.js',

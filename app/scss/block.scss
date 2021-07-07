@@ -6,7 +6,7 @@
 		background-position: right center;
 		border-radius: 20px;
 		position: relative;
-		animation: fadeUpBig .5s ease-in-out;
+		animation: fadeUpBig 1s ease-in-out;
 		@media (max-width: $md3 + px){
 			border-radius: 15px;
 		}

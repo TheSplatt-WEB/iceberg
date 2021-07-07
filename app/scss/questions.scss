@@ -71,9 +71,13 @@
 		}
 	}
 	&__dropdown{
-		display: none;
-		margin-top: 35px;
-		@include adaptive(margin-bottom, 20, 0, 1);
+		height: 0px;
+		overflow: hidden;
+		transition: all .6s;
+		&.open{
+			margin-top: 35px;
+			@include adaptive(margin-bottom, 20, 0, 1);
+		}
 	}
 }
 .dropdown{

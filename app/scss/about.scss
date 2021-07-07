@@ -6,7 +6,7 @@
 		max-width: 50%;
 		margin-left: auto;
 		margin-bottom: -120px;
-		animation: fadeDownBig .5s ease-in-out;
+		animation: fadeDownBig 1s ease-in-out;
 		@media (max-width: $md3 + px){
 			margin-bottom: 40px;
 			max-width: 100%;

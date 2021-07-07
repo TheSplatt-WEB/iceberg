@@ -9,7 +9,7 @@
 		@include adaptive(margin-bottom, 100, 40, 1);
 		@include adaptive(padding-top, 14, 43, 1);
 		justify-content: space-between;
-		animation: fadeUpBig .5s ease-in-out;
+		animation: fadeUpBig 1s ease-in-out;
 		@media (max-width: $md2 + px){
 			flex-direction: column;
 		}
