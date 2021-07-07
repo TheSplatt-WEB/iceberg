@@ -33,14 +33,7 @@
 			}
 		}
 		.header__descr{
-			margin-left: 79px;
-			margin-right: auto;
 			color: #fff;
-			font-weight: 400;
-			margin-right: 10px;
-			@media (max-width: $md3 + px){
-				display: none;
-			}
 		}
 		.header__visually-impaired{
 			background-color: #fff;
@@ -48,9 +41,6 @@
 		.header__phone,
 		.header__btn{
 			background-color: #fff;
-			@media (max-width: $md2 + px){
-				display: none;
-			}
 		}
 		.menu__btn{
 			@media (min-width: $md2 + px){

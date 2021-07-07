@@ -38,6 +38,7 @@
 		"simplebar": "^5.3.4",
 		"slick-carousel": "^1.8.1",
 		"stickyfilljs": "^2.1.0",
+		"swiper": "^6.7.5",
 		"wow.js": "^1.2.2"
 	},
 	"dependencies": {

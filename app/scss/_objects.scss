@@ -28,22 +28,18 @@
 		}
 	}
 }
-.btn__top{
-	display: none;
+.btn__top,
+.footer__top-btn{
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
 	background-color: rgba(#fff, .9);
-	position: fixed;
+	position: absolute;
 	box-shadow: 0 0 2px rgba($text, .2);
-	@include adaptive(bottom, 65, 10, 1);
-	@include adaptive(left, 40, 10, 1);
+	bottom: 65px;
+	left: 40px;
 	z-index: 15;
 	transition: background-color .3s;
-	@media (max-width: $md3 + px){
-		left: auto;
-		@include adaptive(right, 40, 10, 1);
-	}
 	svg{
 		transform: rotate(180deg);
 	}
@@ -63,6 +59,20 @@
 				fill: #fff;
 			}
 		}
+	}
+}
+.footer__top-btn{
+	@media (max-width: $md3 + px){
+		display: none;
+	}}
+.btn__top{
+	background-color: $el;
+	position: fixed;
+	transition: all .5s;
+	bottom: 40px;
+	&.btn-hidden{
+		transform: translate(0, 100px);
+		opacity: 0;
 	}
 }
 .title{
@@ -102,3 +112,49 @@
 	top: 0;
 	height: 3px;
 }
+.progress-bar {
+	display: block;
+	width: calc(100% - 52px);
+	height: 3px;
+	position: absolute;
+	bottom: 15px;
+	left: 26px;
+	right: 26px;
+	z-index: 2;
+	background: rgba($text, 0.7);
+	&__progress {
+	  position: absolute;
+	  height: 3px;
+	  width: auto;
+	  clear: both;
+	  opacity: 0;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  &:after {
+		 position: absolute;
+		 top: 0;
+		 left: 0;
+		 background: $el;
+		 height: 100%;
+		 width: 0;
+		 content: "";
+	  }
+	}
+	&.active {
+		.progress-bar__progress {
+		 opacity: 1;
+	  }
+	}
+	&.animate {
+		.progress-bar__progress {
+		 &:after {
+			transition: width linear;
+			transition-delay: unset;
+			width: 100%;
+			transition-duration: 4.7s;
+		 }
+	  }
+	}
+ }
+// 

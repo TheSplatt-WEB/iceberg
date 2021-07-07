@@ -8,19 +8,102 @@
 		}
 	}
 	&__image{
-		max-width: 50%;
-		width: 100%;
+		min-width: 715px;
+		min-height: 622px;
 		background-image: url(../img/top_img.svg);
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: top center;
-		@media (max-width: $md3 + px){
-			max-width: 100%;
-			height: 344px;
+		position: relative;
+		opacity: 0;
+		animation: fadeIn 1s ease-in-out .5s forwards;
+		@media (max-width: $md1 + px){
+			min-width: 500px;
+			min-height: 435px;
+			width: 500px;
+			height: 435px;
+			margin: 0 auto;
+		}
+		@media (max-width: $md2 + px){
+			min-width: 357px;
+			width: 357px;
+			min-height: 311px;
+			height: 311px;
+		}
+		@media (max-width: $md4 + px){
+			min-width: 286px;
+			width: 286px;
+			min-height: 257px;
+			height: 257px;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			right: 155px;
+			top: -37px;
+			transform: rotate(-115deg);
+			width: 308px;
+			height: 365px;
+			background-image: url(../img/hand_left.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			transform-origin: 90% 70%;
+			animation: handRotateRight 3s ease-in-out infinite;
+			@media (max-width: $md1 + px){
+				width: 215px;
+				height: 255px;
+				right: 113px;
+				top: -30px;
+			}
+			@media (max-width: $md2 + px){
+				width: 154px;
+				height: 182px;
+				right: 93px;
+			}
+			@media (max-width: $md4 + px){
+				width: 123px;
+				height: 146px;
+				right: 70px;
+				top: -20px;
+			}
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 117px;
+			left: 37px;
+			transform: rotate(45deg);
+			width: 308px;
+			height: 365px;
+			background-image: url(../img/hand_right.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			transform-origin: 20% 80%;
+			animation: handRotateLeft 3s ease-in-out infinite;
+			@media (max-width: $md1 + px){
+				width: 215px;
+				height: 255px;
+				left: 20px;
+				bottom: 85px;
+			}
+			@media (max-width: $md2 + px){
+				width: 154px;
+				height: 182px;
+				left: 5px;
+				bottom: 70px;
+			}
+			@media (max-width: $md4 + px){
+				width: 123px;
+				height: 146px;
+				bottom: 62px;
+			}
 		}
 	}
 	&__info{
 		@include adaptive(padding-top, 160, 20, 1);
+		animation: fadeUp .5s ease-in-out forwards;
 		@media (max-width: $md3 + px){
 			margin-right: auto;
 			margin-left: auto;
@@ -74,10 +157,10 @@
 		@include adaptive(margin-bottom, 175, 100, 3);
 		@media (min-width: $md2 + px){
 			&:hover{
-				background-color: $hover;
+				background-color: $text;
 			}
 			&:focus{
-				background-color: $hover;
+				background-color: $text;
 			}
 		}
 		@media (max-width: $md3 + px){

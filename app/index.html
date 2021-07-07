@@ -16,8 +16,8 @@
 				<section class="top">
 					<div class="top__container container">
 						<div class="top__body">
-							<div class="top__image"></div>
-							<div class="top__info">
+							<div class="top__image wow"></div>
+							<div class="top__info wow">
 								<h1 class="top__title">Диагностика</h1>
 								<p class="top__descr">Проводим обследование на высокоточном оборудовании с расшифровкой результатов ведущим врачом-радиологом в клинике. </p>
 								<a class="top__btn" href="#" title="Оставить заявку">Записаться на прием</a>
@@ -43,43 +43,67 @@
 				</section>
 				<section class="diagnostics">
 					<div class="diagnostics__container container">
-						<div class="diagnostics__body">
+						<div class="diagnostics__body wow" data-wow-offset="500">
 							<h2 class="diagnostics__title title">Виды диагностики</h2>
-							<div class="diagnostics__slider">
-								<div class="diagnostics__slide diagnostics__slide--1">
-									<article class="diagnostics__item">
-										<div class="diagnostics__img">
-											<img src="img/diagnostics_1.svg" alt="tomography icon">
-										</div>
-										<span class="diagnostics__name">Компьютерная томография</span>
-										<p class="diagnostics__descr">При решении сложных и масштабных задач – самым точным и надежным методом является исследование КТ.</p>
-									</article>
-								</div>
-								<div class="diagnostics__slide diagnostics__slide--2">
-									<article class="diagnostics__item">
-										<div class="diagnostics__img">
-											<img src="img/diagnostics_2.svg" alt="visiography icon">
-										</div>
-										<span class="diagnostics__name">Визиография</span>
-										<p class="diagnostics__descr">(или цифровая рентгенограмма зуба) является самым распространенным методом вспомогательной диагностики.</p>
-									</article>
-								</div>
-								<div class="diagnostics__slide diagnostics__slide--3">
-									<article class="diagnostics__item">
-										<div class="diagnostics__img">
-											<img src="img/diagnostics_3.svg" alt="diagnocam icon">
-											<div class="diagnostics__pregnant pregnant">
-												<div class="pregnant__img">
-													<img src="img/icon_pregnant.svg" alt="icon pregnant">
-												</div>
-												<div class="pregnant__text">безопасно
-													для беременных</div>
+							<div class="diagnostics__slider swiper-container">
+								<div class="diagnostics__wrapper swiper-wrapper">
+									<div class="diagnostics__slide diagnostics__slide--1 swiper-slide">
+										<article class="diagnostics__item">
+											<div class="diagnostics__img">
+												<img src="img/diagnostics_1.svg" alt="tomography icon">
+												<a class="diagnostics__link" href="#tomography" title="Перейти">
+													<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M3.73052 0.649999C3.73052 0.291014 4.02153 -7.0319e-07 4.38052 -7.65957e-07C4.7395 -8.28724e-07 5.03052 0.291014 5.03052 0.649999L5.03052 14.35C5.03052 14.709 4.7395 15 4.38052 15C4.02153 15 3.73052 14.709 3.73052 14.35L3.73052 0.649999Z" fill="#3C3D75" />
+														<path d="M0.190138 11.3788C-0.0637023 11.125 -0.0637025 10.7134 0.190138 10.4596C0.443979 10.2057 0.855536 10.2057 1.10938 10.4596L4.82456 14.1748C5.0784 14.4286 5.0784 14.8402 4.82456 15.094C4.57072 15.3478 4.15917 15.3478 3.90532 15.094L0.190138 11.3788Z" fill="#3C3D75" />
+														<path d="M8.53782 11.3788C8.79166 11.125 8.79166 10.7134 8.53782 10.4596C8.28398 10.2057 7.87242 10.2057 7.61858 10.4596L3.94456 14.1336C3.69072 14.3874 3.69072 14.799 3.94456 15.0528C4.1984 15.3067 4.60996 15.3067 4.8638 15.0528L8.53782 11.3788Z" fill="#3C3D75" />
+													</svg>
+												</a>
 											</div>
-										</div>
-										<span class="diagnostics__name">Diagnocam</span>
-										<p class="diagnostics__descr">Diagnocam – прибор, который может диагностировать кариес и трещины зуба на ранних этапах.</p>
-									</article>
+											<span class="diagnostics__name">Компьютерная томография</span>
+											<p class="diagnostics__descr">При решении сложных и масштабных задач – самым точным и надежным методом является исследование КТ.</p>
+										</article>
+									</div>
+									<div class="diagnostics__slide diagnostics__slide--2 swiper-slide">
+										<article class="diagnostics__item">
+											<div class="diagnostics__img">
+												<img src="img/diagnostics_2.svg" alt="visiography icon">
+												<a class="diagnostics__link" href="#visiography" title="Перейти">
+													<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M3.73052 0.649999C3.73052 0.291014 4.02153 -7.0319e-07 4.38052 -7.65957e-07C4.7395 -8.28724e-07 5.03052 0.291014 5.03052 0.649999L5.03052 14.35C5.03052 14.709 4.7395 15 4.38052 15C4.02153 15 3.73052 14.709 3.73052 14.35L3.73052 0.649999Z" fill="#3C3D75" />
+														<path d="M0.190138 11.3788C-0.0637023 11.125 -0.0637025 10.7134 0.190138 10.4596C0.443979 10.2057 0.855536 10.2057 1.10938 10.4596L4.82456 14.1748C5.0784 14.4286 5.0784 14.8402 4.82456 15.094C4.57072 15.3478 4.15917 15.3478 3.90532 15.094L0.190138 11.3788Z" fill="#3C3D75" />
+														<path d="M8.53782 11.3788C8.79166 11.125 8.79166 10.7134 8.53782 10.4596C8.28398 10.2057 7.87242 10.2057 7.61858 10.4596L3.94456 14.1336C3.69072 14.3874 3.69072 14.799 3.94456 15.0528C4.1984 15.3067 4.60996 15.3067 4.8638 15.0528L8.53782 11.3788Z" fill="#3C3D75" />
+													</svg>
+												</a>
+											</div>
+											<span class="diagnostics__name">Визиография</span>
+											<p class="diagnostics__descr">(или цифровая рентгенограмма зуба) является самым распространенным методом вспомогательной диагностики.</p>
+										</article>
+									</div>
+									<div class="diagnostics__slide diagnostics__slide--3 swiper-slide">
+										<article class="diagnostics__item">
+											<div class="diagnostics__img">
+												<img src="img/diagnostics_3.svg" alt="diagnocam icon">
+												<a class="diagnostics__link" href="#diagnocam" title="Перейти">
+													<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M3.73052 0.649999C3.73052 0.291014 4.02153 -7.0319e-07 4.38052 -7.65957e-07C4.7395 -8.28724e-07 5.03052 0.291014 5.03052 0.649999L5.03052 14.35C5.03052 14.709 4.7395 15 4.38052 15C4.02153 15 3.73052 14.709 3.73052 14.35L3.73052 0.649999Z" fill="#3C3D75" />
+														<path d="M0.190138 11.3788C-0.0637023 11.125 -0.0637025 10.7134 0.190138 10.4596C0.443979 10.2057 0.855536 10.2057 1.10938 10.4596L4.82456 14.1748C5.0784 14.4286 5.0784 14.8402 4.82456 15.094C4.57072 15.3478 4.15917 15.3478 3.90532 15.094L0.190138 11.3788Z" fill="#3C3D75" />
+														<path d="M8.53782 11.3788C8.79166 11.125 8.79166 10.7134 8.53782 10.4596C8.28398 10.2057 7.87242 10.2057 7.61858 10.4596L3.94456 14.1336C3.69072 14.3874 3.69072 14.799 3.94456 15.0528C4.1984 15.3067 4.60996 15.3067 4.8638 15.0528L8.53782 11.3788Z" fill="#3C3D75" />
+													</svg>
+												</a>
+												<div class="diagnostics__pregnant pregnant">
+													<div class="pregnant__img">
+														<img src="img/icon_pregnant.svg" alt="icon pregnant">
+													</div>
+													<div class="pregnant__text">безопасно
+														для беременных</div>
+												</div>
+											</div>
+											<span class="diagnostics__name">Diagnocam</span>
+											<p class="diagnostics__descr">Diagnocam – прибор, который может диагностировать кариес и трещины зуба на ранних этапах.</p>
+										</article>
+									</div>
 								</div>
+								<div class="swiper-pagination"></div>
 							</div>
 						</div>
 					</div>
@@ -87,22 +111,38 @@
 				</section>
 				<section class="tomography">
 					<div class="tomography__container container">
-						<div class="tomography__body">
+						<div class="tomography__body wow" data-wow-offset="500">
 							<div class="tomography__text">
 								<h2 class="tomography__title title">Компьютерная томография </h2>
 								<p class="tomography__descr">В нашей клинике используется конусно-лучевой томограф Planmeca Viso™. При его использовании можно планировать челюстно-лицевые операции, обнаруживать дополнительные микроканалы при сложном эндодонтическом лечении. На выходе получаются качественные 3Д снимки при <span>минимальной лучевой нагрузке</span>.</p>
 								<p class="tomography__descr">К нам на диагностику направляют пациентов доктора других клиник, так как мы одни из немногих обеспечиваем расчет проводимых исследований на высочайшем уровне.
 								</p>
 							</div>
-							<div class="tomography__gallery">
-								<ul class="tomography__list">
-									<li class="tomography__row">
-										<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
-									</li>
-									<li class="tomography__row">
-										<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
-									</li>
-								</ul>
+							<div class="tomography__modal">
+								<div class="tomography__wrapper">
+									<div class="tomography__gallery swiper-container">
+										<ul class="tomography__list swiper-wrapper">
+											<li class="tomography__row swiper-slide">
+												<a class="tomography__image" href="#">
+													<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
+												</a>
+												<div class="swiper-pagination"></div>
+											</li>
+											<li class="tomography__row swiper-slide">
+												<a class="tomography__image" href="#">
+													<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
+												</a>
+												<div class="swiper-pagination"></div>
+											</li>
+										</ul>
+										<div class="progress-bar">
+											<div class="progress-bar__progress"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+									<button class="tomography__close" type="button" title="Закрыть"></button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -110,8 +150,8 @@
 				</section>
 				<section class="about">
 					<div class="about__container container">
-						<h2 class="about__title title">Мы профессионалы</h2>
-						<div class="about__body">
+						<h2 class="about__title title wow" data-wow-offset="300">Мы профессионалы</h2>
+						<div class="about__body wow" data-wow-offset="500">
 							<div class="about__profile">
 								<div class="about__img">
 									<img src="img/photo.jpg" alt="photo of a doctor">
@@ -138,11 +178,13 @@
 				<section class="questions">
 					<div class="questions__container container">
 						<div class="questions__body">
-							<h2 class="questions__title title">Вопросы
-								и ответы</h2>
-							<ul class="questions__list one">
-								<li class="questions__row">
-									<a class="questions__link open" href="#" title="Подробнее">В каких случаях нужна КТ?</a>
+							<div class="questions__sidebox">
+								<h2 class="questions__title title">Вопросы
+									и ответы</h2>
+							</div>
+							<ul class="questions__list">
+								<li class="questions__row wow" data-wow-offset="100">
+									<a class="questions__link" href="#" title="Подробнее">В каких случаях нужна КТ?</a>
 									<div class="questions__dropdown dropdown">
 										<h5 class="dropdown__title">При планировании хирургических операций (например, имплантации)</h5>
 										<p class="dropdown__descr">Ни одно хирургическое вмешательство не проводится без компьютерной томографии, только наличие объемного видения, понимание всех особенностей строения зубочелюстной системы, делает возможным получение предсказуемого и надежного результата.</p>
@@ -154,31 +196,18 @@
 										<p class="dropdown__descr">Врач-ортодонт при исправлении прикуса всегда опирается на качественную диагностику.</p>
 									</div>
 								</li>
-								<li class="questions__row">
+								<li class="questions__row wow" data-wow-offset="100">
 									<a class="questions__link" href="#" title="Подробнее">Возможны ли ошибки в диагнозах при наличии КТ? </a>
 									<div class="questions__dropdown dropdown">
-										<h5 class="dropdown__title">При планировании хирургических операций (например, имплантации)</h5>
-										<p class="dropdown__descr">Ни одно хирургическое вмешательство не проводится без компьютерной томографии, только наличие объемного видения, понимание всех особенностей строения зубочелюстной системы, делает возможным получение предсказуемого и надежного результата.</p>
-										<h5 class="dropdown__title">При травмах и повреждениях</h5>
-										<p class="dropdown__descr">Позволяет отследить малейшие сколы, углы смещения, нарушения тканей и выбрать оптимальную стратегию чтобы спасти ваши зубы.</p>
-										<h5 class="dropdown__title">При аномалиях развития и паталогиях</h5>
-										<p class="dropdown__descr">Не существует труднодоступных участков тканей при КТ исследовании. Кисты зубов и опухоли, патологические состояния височнонижнечелюстного сустава - точность диагностики стремится к 100%</p>
-										<h5 class="dropdown__title">Планирование ортодонтического лечения</h5>
-										<p class="dropdown__descr">Врач-ортодонт при исправлении прикуса всегда опирается на качественную диагностику.</p>
+										<p class="dropdown__descr">Только профессионал высокого уровня с большим практическим багажом способен дать качественную расшифровку данных и поставить диагноз. И именно на этом этапе возможны сбои, когда опыта врача не достаточно.</p>
+										<p class="dropdown__descr">Наши специалисты, лучшие в своей области. Поэтому, мы можем гарантировать качественный анализ проведенной компьютерной томограммы.</p>
 									</div>
 								</li>
-								<li class="questions__row">
+								<li class="questions__row wow" data-wow-offset="100">
 									<a class="questions__link" href="#" title="Подробнее">Вредно ли для здоровья проведение КТ?
 									</a>
 									<div class="questions__dropdown dropdown">
-										<h5 class="dropdown__title">При планировании хирургических операций (например, имплантации)</h5>
-										<p class="dropdown__descr">Ни одно хирургическое вмешательство не проводится без компьютерной томографии, только наличие объемного видения, понимание всех особенностей строения зубочелюстной системы, делает возможным получение предсказуемого и надежного результата.</p>
-										<h5 class="dropdown__title">При травмах и повреждениях</h5>
-										<p class="dropdown__descr">Позволяет отследить малейшие сколы, углы смещения, нарушения тканей и выбрать оптимальную стратегию чтобы спасти ваши зубы.</p>
-										<h5 class="dropdown__title">При аномалиях развития и паталогиях</h5>
-										<p class="dropdown__descr">Не существует труднодоступных участков тканей при КТ исследовании. Кисты зубов и опухоли, патологические состояния височнонижнечелюстного сустава - точность диагностики стремится к 100%</p>
-										<h5 class="dropdown__title">Планирование ортодонтического лечения</h5>
-										<p class="dropdown__descr">Врач-ортодонт при исправлении прикуса всегда опирается на качественную диагностику.</p>
+										<p class="dropdown__descr">Многие опасаются вреда от рентгена и компьютерной томограммы, но не знают, что в повседневной жизни, мы получаем гораздо больший объем облучения. Для сравнения, при прицельном рентген - снимке доза излучения – 3 мкЗв, когда при флюорографии вы получаете 80 мкЗв, а при 3-х часовом перелете – 10 мкЗв.</p>
 									</div>
 								</li>
 							</ul>
@@ -188,46 +217,72 @@
 				<section class="products">
 					<div class="products__container container">
 						<div class="products__body">
+							<div class="products__bg-img">
+								<img src="img/tooth_2.png" alt="tooth image">
+							</div>
 							<div class="products__inner">
-								<div class="products__item">
+								<div class="products__item" id="visiography">
 									<h2 class="products__title title">Визиография</h2>
-									<p class="products__descr">Рентген а именно прицельная визиография - то есть снимок на чувствительный датчик с моментальным получением изображения на экране применяется при диагностике некоторых травм, кариеса и заболеваний десен, а также при лечении корневых каналов и контроля проведенного лечения.</p>
+									<p class="products__descr">Рентген, а именно прицельная визиография - то есть снимок на чувствительный датчик с моментальным получением изображения на экране применяется при диагностике некоторых травм, кариеса и заболеваний десен, а также при лечении корневых каналов и контроля проведенного лечения.</p>
 									<span class="products__subtitle">Преимущества</span>
-									<p class="products__descr">Достаточно высокая информативность, низкая стоимость, безопасность, простота и оперативность выполнения. Пациенту не нужно вставать с кресла, доктор проведедет диагностику пока вы смотрите фильм или малыш наслаждается мультфильмом.</p>
-									<div class="products__gallery">
-										<ul class="products__list">
-											<li class="products__row">
-												<img class="products__img" src="img/visiography_1.jpg" alt="visiography image">
-											</li>
-											<li class="products__row">
-												<img class="products__img" src="img/visiography_2.jpg" alt="visiography image">
-											</li>
-											<li class="products__row">
-												<img class="products__img" src="img/visiography_3.jpg" alt="visiography image">
-											</li>
-										</ul>
+									<p class="products__descr">Достаточно высокая информативность, низкая стоимость, безопасность, простота и оперативность выполнения. Пациенту не нужно вставать с кресла, доктор проведет диагностику пока вы смотрите фильм или малыш наслаждается мультфильмом.</p>
+									<div class="products__modal visiography__modal">
+										<div class="products__wrapper">
+											<div class="products__gallery visiography__gallery swiper-container">
+												<ul class="products__list swiper-wrapper">
+													<li class="products__row swiper-slide">
+														<a class="products__image" href="#">
+															<img class="products__img" src="img/visiography_1.jpg" alt="visiography image">
+														</a>
+													</li>
+													<li class="products__row swiper-slide">
+														<a class="products__image" href="#">
+															<img class="products__img" src="img/visiography_2.jpg" alt="visiography image">
+														</a>
+													</li>
+													<li class="products__row swiper-slide">
+														<a class="products__image" href="#">
+															<img class="products__img" src="img/visiography_3.jpg" alt="visiography image">
+														</a>
+													</li>
+												</ul>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+												<div class="swiper-scrollbar"></div>
+											</div>
+											<button class="products__close" type="button" title="Закрыть"></button>
+										</div>
 									</div>
 									<div class="products__buttons">
 										<button class="products__btn" type="button" title="Оставить заявку">Онлайн-консультация</button>
 										<button class="products__btn" type="button" title="Оставить заявку">Записаться на прием</button>
 									</div>
 								</div>
-								<div class="products__item">
+								<div class="products__item" id="diagnocam">
 									<h2 class="products__title title">Диагностика Diagnocam</h2>
-									<p class="products__descr">Diagnocam – прибор, который может диагностировать кариес и трещины зуба на ранних этапах.В полость рта помещается специальный датчик, на котором находится цифровая камера и одновременно происходит излучение света. Результат диагностики моментально выводится на монитор. И доктор вместе с пациентом (родителями пациента) могут своими глазами увидеть скрытые поражения или их отсутствие.</p>
+									<p class="products__descr">Diagnocam – прибор, который может диагностировать кариес и трещины зуба на ранних этапах. В полость рта помещается специальный датчик, на котором находится цифровая камера и одновременно происходит излучение света. Результат диагностики моментально выводится на монитор. И доктор вместе с пациентом (родителями пациента) могут своими глазами увидеть скрытые поражения или их отсутствие.</p>
 									<p class="products__descr">Благодаря полной безопасности технологии Diagnocam, метод широко используется для диагностики кариеса у беременных женщин и малышей, чтобы исключить даже минимальные дозировки рентгеновского излучения.</p>
-									<div class="products__gallery">
-										<ul class="products__list">
-											<li class="products__row">
-												<img class="products__img" src="img/diagnostics_1.jpg" alt="diagnostics image">
-											</li>
-											<li class="products__row">
-												<img class="products__img" src="img/diagnostics_2.jpg" alt="diagnostics image">
-											</li>
-											<li class="products__row">
-												<img class="products__img" src="img/visiography_4.jpg" alt="diagnostics image">
-											</li>
-										</ul>
+									<div class="products__modal diagnocam__modal">
+										<div class="products__wrapper">
+											<div class="products__gallery diagnocam__gallery swiper-container">
+												<ul class="products__list swiper-wrapper">
+													<li class="products__row swiper-slide">
+														<a class="products__image" href="#">
+															<img class="products__img" src="img/diagnostics_1.jpg" alt="visiography image">
+														</a>
+													</li>
+													<li class="products__row swiper-slide">
+														<a class="products__image" href="#">
+															<img class="products__img" src="img/diagnostics_2.jpg" alt="visiography image">
+														</a>
+													</li>
+												</ul>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+												<div class="swiper-scrollbar"></div>
+											</div>
+											<button class="products__close" type="button" title="Закрыть"></button>
+										</div>
 									</div>
 									<div class="products__buttons products__buttons-visiography">
 										<button class="products__btn" type="button" title="Оставить заявку">Онлайн-консультация</button>
@@ -250,15 +305,15 @@
 						<div class="price__body">
 							<h2 class="price__title title">Цены</h2>
 							<div class="price__inner">
-								<div class="price__item">
+								<div class="price__item wow" data-wow-offset="400">
 									<span class="price__name">Компьютерная томография</span>
 									<p class="price__descr price__price">5500 - 6800 ₽</p>
 								</div>
-								<div class="price__item">
+								<div class="price__item wow" data-wow-offset="400">
 									<span class="price__name">Визиография</span>
 									<p class="price__descr"><span>Входит в стоимость консультации или лечения*</span></p>
 								</div>
-								<div class="price__item">
+								<div class="price__item wow" data-wow-offset="400">
 									<span class="price__name">Diagnocam</span>
 									<p class="price__descr"><span>Входит в стоимость консультации или лечения*</span></p>
 								</div>
@@ -273,6 +328,13 @@
 				"section_class":"block-consultation",
 				"inner_class":"block__inner-consultation"
 				})
+				<button class="btn__top btn-hidden" type="button" title="Наверх">
+					<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M3.73052 0.649999C3.73052 0.291014 4.02153 -7.0319e-07 4.38052 -7.65957e-07C4.7395 -8.28724e-07 5.03052 0.291014 5.03052 0.649999L5.03052 14.35C5.03052 14.709 4.7395 15 4.38052 15C4.02153 15 3.73052 14.709 3.73052 14.35L3.73052 0.649999Z" fill="#3C3D75" />
+						<path d="M0.190138 11.3788C-0.0637023 11.125 -0.0637025 10.7134 0.190138 10.4596C0.443979 10.2057 0.855536 10.2057 1.10938 10.4596L4.82456 14.1748C5.0784 14.4286 5.0784 14.8402 4.82456 15.094C4.57072 15.3478 4.15917 15.3478 3.90532 15.094L0.190138 11.3788Z" fill="#3C3D75" />
+						<path d="M8.53782 11.3788C8.79166 11.125 8.79166 10.7134 8.53782 10.4596C8.28398 10.2057 7.87242 10.2057 7.61858 10.4596L3.94456 14.1336C3.69072 14.3874 3.69072 14.799 3.94456 15.0528C4.1984 15.3067 4.60996 15.3067 4.8638 15.0528L8.53782 11.3788Z" fill="#3C3D75" />
+					</svg>
+				</button>
 			</main>
 		</div>
 		@@include('_footer.html',{})

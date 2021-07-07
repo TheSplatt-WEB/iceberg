@@ -26,36 +26,31 @@
 		justify-content: flex-end;
 		background-repeat: no-repeat;
 		background-position: right top;
+		opacity: 0;
+		transform: translate(0, 30%);
+		animation: fadeUpBig .5s ease-in-out forwards;
 		@media (max-width: $md2 + px){
 			margin-bottom: 13px;
+			max-width: 100%;
 		}
 		&:nth-child(1){
 			background-image: url(../img/price_1.svg);
 			background-position: right 10%;
 			background-size: 25%;
-			@media (max-width: $md2 + px){
-				max-width: 100%;
-			}
 		}
 		&:nth-child(2){
 			background-image: url(../img/price_2.svg);
 			background-size: 40%;
-			@media (max-width: $md2 + px){
-				max-width: calc(50% - 22px);
-			}
+			animation: fadeUpBig .5s ease-in-out .2s forwards;
 			@media (max-width: $md3 + px){
-				max-width: 100%;
 				@include adaptive(padding-top, 91, 75, 1);
 			}
 		}
 		&:nth-child(3){
 			background-image: url(../img/price_3.svg);
 			background-size: 50%;
-			@media (max-width: $md2 + px){
-				max-width: calc(50% - 22px);
-			}
+			animation: fadeUpBig .5s ease-in-out .4s forwards;
 			@media (max-width: $md3 + px){
-				max-width: 100%;
 				@include adaptive(padding-top, 91, 75, 1);
 			}
 		}

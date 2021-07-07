@@ -9,6 +9,7 @@
 		@include adaptive(margin-bottom, 100, 40, 1);
 		@include adaptive(padding-top, 14, 43, 1);
 		justify-content: space-between;
+		animation: fadeUpBig .5s ease-in-out;
 		@media (max-width: $md2 + px){
 			flex-direction: column;
 		}
@@ -39,48 +40,176 @@
 			font-weight: 600;
 		}
 	}
-	&__gallery{
-		margin-top: 30px;
-		@include adaptive(min-width, 793, 280, 1);
-		@include adaptive(max-width, 793, 280, 1);
-		@include adaptive(height, 495, 240, 3);
-		border-radius: 10px;
-		overflow: hidden;
-		overflow-x: auto;
-		margin-bottom: 30px;
+	&__modal{
+		@include adaptive(max-width, 793, 300, 1);
+		width: 100%;
 		@media (max-width: $md2 + px){
+			max-width: 793px;
 			margin: 0 auto;
 		}
+		&.open{
+			@media (min-width: $md3 + px){
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 100;
+				max-width: 100%;
+				height: 100%;
+				background-color: rgba(6, 7, 50, 0.7);
+				backdrop-filter: blur(10px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.tomography__wrapper{
+					max-width: 1211px;
+					width: 100%;
+					position: relative;
+					@include adaptive(padding-left, 81, 0, 1);
+					@include adaptive(padding-right, 81, 50, 1);
+				}
+				.tomography__gallery{
+					margin: 0;
+				}
+				.progress-bar{
+					display: none;
+				}
+				.swiper-button-prev,
+				.swiper-button-next{
+					opacity: 1;
+				}
+				.tomography__close{
+					display: block;
+				}
+			}
+			
+		}
+	}
+	&__close{
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 10px;
+		@include adaptive(height, 50, 30, 1);
+		@include adaptive(width, 50, 30, 1);
+		border-radius: 50%;
+		background-color: $hover;
+		z-index: 1;
+		transition: background-color .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: #fff;
+				&::before,
+				&::after{
+					background-color: $text;
+				}
+			}
+			&:focus{
+				background-color: #fff;
+				&::before,
+				&::after{
+					background-color: $text;
+				}
+			}
+		}
+		&::before,
+		&::after{
+			content: '';
+			position: absolute;
+			height: 1px;
+			width: 15px;
+			right: 0;
+			left: 0;
+			top: 50%;
+			margin: 0 auto;
+			background-color: #fff;
+			transition: background-color .3s;
+		}
+		&::before{
+			transform: rotate(45deg);
+		}
+		&::after{
+			transform: rotate(-45deg);
+		}
+	}
+	&__gallery{
+		border-radius: 10px;
+		overflow: hidden;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		position: relative;
 		@media (max-width: $md3 + px){
 			margin-bottom: 53px;
 		}
-	}
-	&__list{
-		display: flex;
-		counter-reset: counter;
-	}
-	&__row{
-		@include adaptive(min-width, 793, 280, 1);
-		@include adaptive(max-width, 793, 280, 1);
-		@include adaptive(height, 495, 240, 1);
-		counter-increment: counter;
-		position: relative;
-		&::before{
-			content:'0' counter(counter);
-			position: absolute;
-			left: 22px;
-			top: 17px;
-			font-weight: 700;
-			font-size: 32px;
-			@media (max-width: $md3 + px){
-				display: none;
+		@media (min-width: $md2 + px){
+			&:hover{
+				.swiper-button-prev,
+				.swiper-button-next{
+					opacity: 1;
+				}
+			}
+			&:focus{
+				.swiper-button-prev,
+				.swiper-button-next{
+					opacity: 1;
+				}
 			}
 		}
 	}
+	&__row{
+		position: relative;
+	}
+	.swiper-pagination{
+		position: absolute;
+		left: 22px;
+		top: 17px;
+		font-size: 32px;
+		font-weight: 700;
+		font-family: "Rubik", sans-serif;
+		z-index: 10;
+		width: auto;
+		height: 30px;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	&__image{
+		border-radius: 10px;
+		overflow: hidden;
+		position: relative;
+		height: auto;
+		width: 100%;
+		padding-bottom: 59.159%;
+	}
 	&__img{
+		position: absolute;
+		top: 0;
+		left: 0;
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
+	}
+	.swiper-button-prev,
+	.swiper-button-next{
+		opacity: 1;
+		@include adaptive(height, 50, 30, 1);
+		@include adaptive(width, 50, 30, 1);
+		border-radius: 50%;
+		background-color: $text;
+		color: #fff;
+		font-weight: 600;
+		transition: all .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				opacity: 1;
+			}
+			&:focus{
+				opacity: 1;
+			}
+		}
+		&::after{
+			font-size: 14px;
+		}
 	}
 	&__plug{
 		background-color: #fff;

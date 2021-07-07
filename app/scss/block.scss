@@ -6,6 +6,7 @@
 		background-position: right center;
 		border-radius: 20px;
 		position: relative;
+		animation: fadeUpBig .5s ease-in-out;
 		@media (max-width: $md3 + px){
 			border-radius: 15px;
 		}
@@ -143,6 +144,7 @@
 		@include adaptive(padding-right, 40, 33, 1);
 		display: flex;
 		font-size: 14px;
+		font-weight: 500;
 		align-items: center;
 		justify-content: center;
 		background-color: #fff;
@@ -151,11 +153,11 @@
 		white-space: nowrap;
 		@media (min-width: $md2 + px){
 			&:hover{
-				background-color: $hover;
+				background-color: $text;
 				color: #fff;
 			}
 			&:focus{
-				background-color: $hover;
+				background-color: $text;
 				color: #fff;
 			}
 		}

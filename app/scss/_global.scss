@@ -22,6 +22,24 @@ body{
 	font-weight: 400;
 	color: $text;
 	background-color: $bg;
+	&.open{
+		overflow: hidden;
+		@media (max-width: $md4 + px){
+			overflow: visible;
+		}
+	}
+}
+html, body{
+	scrollbar-color: $text $el;
+   scrollbar-width: thin;
+	&::-webkit-scrollbar {
+		width: 8px;
+		background-color: $el;
+   }
+	&::-webkit-scrollbar-thumb {
+		background-color: $text;
+		border-radius: 10px;
+  }
 }
 h1, h2, h3, h4, h5, h6, p{
 	font-weight: inherit;
