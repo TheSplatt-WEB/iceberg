@@ -157,6 +157,16 @@
 	.swiper-button-prev,
 	.swiper-button-next{
 		display: none;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus-visible{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
 	}
 	&__close{
 		display: none;
@@ -352,25 +362,17 @@
 		transition: all .3s;
 		@media (min-width: $md2 + px){
 			&:hover{
-				background-color: $text;
+				background-color: $hover;
 				color: #fff;
 			}
 			&:focus-visible{
-				background-color: $text;
+				background-color: $hover;
 				color: #fff;
 			}
 		}
 		&:nth-child(even){
 			background-color: $text;
 			color: #fff;
-			@media (min-width: $md2 + px){
-				&:hover{
-					background-color: $hover;
-				}
-				&:focus-visible{
-					background-color: $hover;
-				}
-			}
 		}
 	}
 }
