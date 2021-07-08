@@ -57,7 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 	onScrollHeader();
-	const autoplay = 5000
+
+	//Слайдер Swiper tomography
+
 	new Swiper('.tomography__gallery', {
 		pagination: {
 			el: '.swiper-pagination',
@@ -67,15 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.tomography-button-next',
+			prevEl: '.tomography-button-prev',
 		},
 		loop: true,
 		observeParents: true,
 		observer: true,
 		speed: 300,
 		autoplay: {
-			delay: autoplay,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
 		on: {
@@ -98,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 	});
+
+	//Слайдер Swiper diagnostics
+
 	new Swiper('.diagnostics__slider', {
 		watchOverflow: true,
 		slidesPerView: 1,
@@ -116,13 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		},
 	});
+
+	//Слайдер Swiper visiography
+
 	const visiographySwiper = new Swiper('.visiography__gallery', {
 		scrollbar: {
 			el: '.swiper-scrollbar',
 			draggable: true,
 		},
 		watchOverflow: true,
-		spaceBetween: 27,
 		observeParents: true,
 		observer: true,
 		slidesPerView: 1,
@@ -132,17 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		breakpoints: {
 			480: {
+				spaceBetween: 27,
 				slidesPerView: 2,
 			}
 		},
 	});
+
+	//Слайдер Swiper diagnocam
+
 	const diagnocamSwiper = new Swiper('.diagnocam__gallery', {
 		scrollbar: {
 			el: '.swiper-scrollbar',
 			draggable: true,
 		},
 		watchOverflow: true,
-		spaceBetween: 27,
 		observeParents: true,
 		observer: true,
 		slidesPerView: 1,
@@ -152,11 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		breakpoints: {
 			480: {
+				spaceBetween: 27,
 				slidesPerView: 2,
 			}
 		},
 	});
+
+	//Показываем Popup галерею слайдера tomography
+
 	const tomographyLink = document.querySelectorAll('.tomography__image')
+	const productsClose = document.querySelectorAll('.products__close')
+	const tomographyCloseItem = document.querySelector('.tomography__close')
+	const productsLink = document.querySelectorAll('.products__image')
 	const body = document.querySelector('body')
 	for (let tomographyLinkItem of tomographyLink) {
 		tomographyLinkItem.addEventListener('click', function (el) {
@@ -165,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.add('open');
 		});
 	}
-	const productsLink = document.querySelectorAll('.products__image')
 	for (let productsLinkItem of productsLink) {
 		productsLinkItem.addEventListener('click', function (el) {
 			el.preventDefault();
@@ -182,25 +198,32 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	}
-	const visiographyModal = document.querySelector('.visiography__modal')
-	const diagnocamModal = document.querySelector('.diagnocam__modal')
-	const tomographyModal = document.querySelector('.tomography__modal')
-	window.addEventListener('click', e => {
-		const target = e.target
-		if (!target.closest('.products__gallery') && !target.closest('.tomography__gallery') && !target.closest('.diagnocam__gallery')) {
-			visiographyModal.classList.remove('open')
-			diagnocamModal.classList.remove('open')
-			tomographyModal.classList.remove('open')
-			body.classList.remove('open')
-			visiographySwiper.params.breakpoints[480].slidesPerView = 1;
-			visiographySwiper.params.spaceBetween = 27;
-			visiographySwiper.params.slidesPerView = 2;
-			diagnocamSwiper.params.breakpoints[480].slidesPerView = 1;
-			diagnocamSwiper.params.spaceBetween = 27;
-			diagnocamSwiper.params.slidesPerView = 2;
-		}
+	for (let productsCloseItem of productsClose) {
+		productsCloseItem.addEventListener('click', function () {
+			const ModalOpen = () => this.closest('.products__modal').classList.contains('open')
+			if (ModalOpen) {
+				this.closest('.products__modal').classList.remove('open');
+				body.classList.remove('open');
+				visiographySwiper.params.breakpoints[480].slidesPerView = 1;
+				visiographySwiper.params.spaceBetween = 27;
+				visiographySwiper.params.slidesPerView = 2;
+				diagnocamSwiper.params.breakpoints[480].slidesPerView = 1;
+				diagnocamSwiper.params.spaceBetween = 27;
+				diagnocamSwiper.params.slidesPerView = 2;
+			}
+		});
+	}
+	tomographyCloseItem.addEventListener('click', function () {
+		this.closest('.tomography__modal').classList.remove('open');
+		body.classList.remove('open');
 	});
+
+	//Инициализация WOW
+
 	new WOW().init();
+
+	//Кнопка бургера
+
 	const menuBtn = document.querySelector('.menu__btn')
 	menuBtn.addEventListener('click', function () {
 		this.classList.toggle('open')
@@ -211,23 +234,79 @@ document.addEventListener('DOMContentLoaded', () => {
 			menuBtn.classList.remove('open')
 		}
 	});
-	const btnTop = document.querySelector('.btn__top')
-	const btnTopFooter = document.querySelector('.footer__top-btn')
-	btnTop.addEventListener('click', function () {
-		window.scrollTo(pageYOffset, 0)
-	});
-	btnTopFooter.addEventListener('click', function () {
-		window.scrollTo(pageYOffset, 0)
-	});
+
+	//Скролл к якорям
+
 	const diagnosticsLink = document.querySelectorAll('.diagnostics__link')
+	let speed = .2
 	for (let diagnosticsLinkItem of diagnosticsLink) {
 		diagnosticsLinkItem.addEventListener('click', function (el) {
 			el.preventDefault();
+			let windowTop = window.pageYOffset
 			const id = this.getAttribute('href')
-			const scrollToId = document.querySelector(id)
-			scrollToId.scrollIntoView({ behavior: "smooth" })
-		});
+			const scrollTo = document.querySelector(id)
+			let scrollSize = scrollTo.getBoundingClientRect().top
+			let start = null;
+			requestAnimationFrame(step);
+			function step(time) {
+				if (start === null) start = time;
+				var progress = time - start,
+					r = (scrollSize < 0 ? Math.max(windowTop - progress / speed, windowTop + scrollSize) : Math.min(windowTop + progress / speed, windowTop + scrollSize));
+				window.scrollTo(0, r);
+				if (r != windowTop + scrollSize) {
+					requestAnimationFrame(step)
+				} else {
+					location.scrollTo = scrollTo
+				}
+			}
+		}, false);
 	};
+
+	//Кнопки наверх
+
+	const btnTop = document.querySelector('.btn__top')
+	const btnTopFooter = document.querySelector('.footer__top-btn')
+	btnTop.addEventListener('click', function () {
+		let windowTop = window.pageYOffset
+		const scrollTo = document.querySelector('.top')
+		let scrollSize = scrollTo.getBoundingClientRect().top - 121
+		let start = null;
+		console.log(scrollSize)
+		requestAnimationFrame(step);
+		function step(time) {
+			if (start === null) start = time;
+			var progress = time - start,
+				r = (scrollSize < 0 ? Math.max(windowTop - progress / speed, windowTop + scrollSize) : Math.min(windowTop + progress / speed, windowTop + scrollSize));
+			window.scrollTo(0, r);
+			if (r != windowTop + scrollSize) {
+				requestAnimationFrame(step)
+			} else {
+				location.scrollTo = scrollTo
+			}
+		}
+	}, false);
+	btnTopFooter.addEventListener('click', function () {
+		let windowTop = window.pageYOffset
+		const scrollTo = document.querySelector('.top')
+		let scrollSize = scrollTo.getBoundingClientRect().top - 121
+		let start = null;
+		console.log(scrollSize)
+		requestAnimationFrame(step);
+		function step(time) {
+			if (start === null) start = time;
+			var progress = time - start,
+				r = (scrollSize < 0 ? Math.max(windowTop - progress / speed, windowTop + scrollSize) : Math.min(windowTop + progress / speed, windowTop + scrollSize));
+			window.scrollTo(0, r);
+			if (r != windowTop + scrollSize) {
+				requestAnimationFrame(step)
+			} else {
+				location.scrollTo = scrollTo
+			}
+		}
+	}, false);
+
+	//Аккордион
+
 	const questionsLink = document.querySelectorAll('.questions__link')
 	for (let questionsLinkItem of questionsLink) {
 		questionsLinkItem.addEventListener('click', function (el) {

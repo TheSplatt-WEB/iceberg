@@ -41,7 +41,6 @@
 		padding-top: 50px;
 		@include adaptive(padding-bottom, 50, 45, 1);
 		margin-bottom: 20px;
-		animation: fadeRightBig .5s ease-in-out;
 	}
 	&__link{
 		font-weight: 500;

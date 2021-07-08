@@ -48,7 +48,7 @@
 			margin: 0 auto;
 		}
 		&.open{
-			@media (min-width: $md3 + px){
+			@media (min-width: $md4 + px){
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -65,7 +65,7 @@
 					max-width: 1211px;
 					width: 100%;
 					position: relative;
-					@include adaptive(padding-left, 81, 0, 1);
+					@include adaptive(padding-left, 81, 50, 1);
 					@include adaptive(padding-right, 81, 50, 1);
 				}
 				.tomography__gallery{
@@ -74,15 +74,42 @@
 				.progress-bar{
 					display: none;
 				}
-				.swiper-button-prev,
-				.swiper-button-next{
+				.tomography-button-prev,
+				.tomography-button-next{
 					opacity: 1;
+					background-color: #fff;
+					rect{
+						fill: $text;
+					}
+				}
+				.tomography-button-prev{
+					left: 10px;
+				}
+				.tomography-button-next{
+					right: 10px;
 				}
 				.tomography__close{
 					display: block;
 				}
 			}
 			
+		}
+	}
+	&__wrapper{
+		position: relative;
+		@media (min-width: $md2 + px){
+			&:hover{
+				.tomography-button-prev,
+				.tomography-button-next{
+					opacity: 1;
+				}
+			}
+			&:focus-visible{
+				.tomography-button-prev,
+				.tomography-button-next{
+					opacity: 1;
+				}
+			}
 		}
 	}
 	&__close{
@@ -104,7 +131,7 @@
 					background-color: $text;
 				}
 			}
-			&:focus{
+			&:focus-visible{
 				background-color: #fff;
 				&::before,
 				&::after{
@@ -141,20 +168,6 @@
 		@media (max-width: $md3 + px){
 			margin-bottom: 53px;
 		}
-		@media (min-width: $md2 + px){
-			&:hover{
-				.swiper-button-prev,
-				.swiper-button-next{
-					opacity: 1;
-				}
-			}
-			&:focus{
-				.swiper-button-prev,
-				.swiper-button-next{
-					opacity: 1;
-				}
-			}
-		}
 	}
 	&__row{
 		position: relative;
@@ -189,9 +202,12 @@
 		width: 100%;
 		object-fit: cover;
 	}
-	.swiper-button-prev,
-	.swiper-button-next{
-		opacity: 1;
+	.tomography-button-prev,
+	.tomography-button-next{
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
 		@include adaptive(height, 50, 30, 1);
 		@include adaptive(width, 50, 30, 1);
 		border-radius: 50%;
@@ -199,16 +215,47 @@
 		color: #fff;
 		font-weight: 600;
 		transition: all .3s;
+		z-index: 5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		rect{
+			transition: fill .3s;
+		}
 		@media (min-width: $md2 + px){
 			&:hover{
 				opacity: 1;
+				background-color: $hover;
+				rect{
+					fill: $text;
+				}
 			}
-			&:focus{
+			&:focus-visible{
 				opacity: 1;
+				background-color: $hover;
+				rect{
+					fill: $text;
+				}
 			}
 		}
 		&::after{
 			font-size: 14px;
+		}
+	}
+	.tomography-button-prev{
+		left: 20px;
+		svg{
+			transform: rotate(-90deg);
+			width: 14px;
+			height: 14px;
+		}
+	}
+	.tomography-button-next{
+		right: 20px;
+		svg{
+			transform: rotate(90deg);
+			width: 14px;
+			height: 14px;
 		}
 	}
 	&__plug{

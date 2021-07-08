@@ -123,7 +123,7 @@
 					max-width: 1211px;
 					width: 100%;
 					position: relative;
-					@include adaptive(padding-left, 81, 0, 1);
+					@include adaptive(padding-left, 81, 50, 1);
 					@include adaptive(padding-right, 81, 50, 1);
 				}
 				.products__gallery{
@@ -143,8 +143,8 @@
 					top: 50%;
 					transform: translate(0, -50%);
 					border-radius: 50%;
-					background-color: $text;
-					color: #fff;
+					background-color: #fff;
+					color: $text;
 					font-weight: 600;
 					transition: all .3s;
 					&::after{
@@ -177,7 +177,7 @@
 					background-color: $text;
 				}
 			}
-			&:focus{
+			&:focus-visible{
 				background-color: #fff;
 				&::before,
 				&::after{
@@ -251,7 +251,7 @@
 					background-color: $text;
 					color: #fff;
 				}
-				&:focus{
+				&:focus-visible{
 					background-color: $text;
 					color: #fff;
 				}
@@ -264,7 +264,7 @@
 						background-color: #fff;
 						color: $text;
 					}
-					&:focus{
+					&:focus-visible{
 						background-color: #fff;
 						color: $text;
 					}
@@ -286,7 +286,7 @@
 				background-color: $hover;
 				color: #fff;
 			}
-			&:focus{
+			&:focus-visible{
 				background-color: $hover;
 				color: #fff;
 			}
@@ -302,7 +302,7 @@
 					background-color: #fff;
 					color: $text;
 				}
-				&:focus{
+				&:focus-visible{
 					background-color: #fff;
 					color: $text;
 				}
@@ -355,7 +355,7 @@
 				background-color: $text;
 				color: #fff;
 			}
-			&:focus{
+			&:focus-visible{
 				background-color: $text;
 				color: #fff;
 			}
@@ -367,7 +367,7 @@
 				&:hover{
 					background-color: $hover;
 				}
-				&:focus{
+				&:focus-visible{
 					background-color: $hover;
 				}
 			}

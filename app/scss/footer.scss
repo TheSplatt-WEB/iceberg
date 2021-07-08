@@ -51,7 +51,7 @@
 					}
 					background-color: $el;
 				}
-				&:focus{
+				&:focus-visible{
 					&::before,
 					&::after{
 						background-color: $text;
@@ -103,7 +103,7 @@
 			&:hover{
 				color: $hover;
 			}
-			&:focus{
+			&:focus-visible{
 				color: $hover;
 			}
 		}
@@ -117,7 +117,7 @@
 			&:hover{
 				color: $hover;
 			}
-			&:focus{
+			&:focus-visible{
 				color: $hover;
 			}
 		}
@@ -143,7 +143,7 @@
 			&:hover{
 				color: $hover;
 			}
-			&:focus{
+			&:focus-visible{
 				color: $hover;
 			}
 		}
@@ -166,7 +166,7 @@
 				background-color: $hover;
 				color: #fff;
 			}
-			&:focus{
+			&:focus-visible{
 				background-color: $hover;
 				color: #fff;
 			}
@@ -227,7 +227,7 @@
 					opacity: 1;
 				}
 			}
-			&:focus{
+			&:focus-visible{
 				path{
 					fill: $hover;
 				}
@@ -263,7 +263,7 @@
 						fill: #fff;
 					}
 				}
-				&:focus{
+				&:focus-visible{
 					path{
 						fill: #fff;
 					}
@@ -326,7 +326,7 @@
 					width: 100%;
 				}
 			}
-			&:focus{
+			&:focus-visible{
 				color: $hover;
 				opacity: 1;
 				&::before{

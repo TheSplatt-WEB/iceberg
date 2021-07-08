@@ -3,9 +3,9 @@
 @@include('_head.html',{
 "title":"Iceberg - Диагностика",
 "keywords":"keywords",
-"Description":"Description",
-"urlSite":"https://site.ru",
-"imagePreload":"img/top_img.svg"
+"Description":"Проводим обследование на высокоточном оборудовании с расшифровкой результатов ведущим врачом-радиологом в клинике.",
+"urlSite":"https://iceberg.ru",
+"imagePreload":"img/tooth_2.png"
 })
 
 <body>
@@ -138,9 +138,19 @@
 										<div class="progress-bar">
 											<div class="progress-bar__progress"></div>
 										</div>
-										<div class="swiper-button-prev"></div>
-										<div class="swiper-button-next"></div>
 									</div>
+									<button class="tomography-button-prev" type="button">
+										<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0.857422 7.07153)" fill="#fff" />
+											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 14.2925 7.77856)" fill="#fff" />
+										</svg>
+									</button>
+									<button class="tomography-button-next" type="button">
+										<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0.857422 7.07153)" fill="#fff" />
+											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 14.2925 7.77856)" fill="#fff" />
+										</svg>
+									</button>
 									<button class="tomography__close" type="button" title="Закрыть"></button>
 								</div>
 							</div>
@@ -170,7 +180,7 @@
 				</section>
 				@@include('_block.html',{
 				"title":"КТ для детей",
-				"descr":"Время экспозиции составляет около 9 секунд, что <span>позволяет работать с детками о 2-х лет</span> и устраняет риск движения ребенка или подростка, которые могут двигаться во время съемки.",
+				"descr":"Время экспозиции составляет около 9 секунд, что <span>позволяет работать с детками от 2-х лет</span> и устраняет риск движения ребенка или подростка, которые могут двигаться во время съемки.",
 				"btn":"Оставить заявку",
 				"section_class":"block-kt",
 				"inner_class":"block__inner-kt"
@@ -183,7 +193,7 @@
 									и ответы</h2>
 							</div>
 							<ul class="questions__list">
-								<li class="questions__row wow" data-wow-offset="100">
+								<li class="questions__row">
 									<a class="questions__link" href="#" title="Подробнее">В каких случаях нужна КТ?</a>
 									<div class="questions__dropdown dropdown">
 										<h5 class="dropdown__title">При планировании хирургических операций (например, имплантации)</h5>
@@ -196,14 +206,14 @@
 										<p class="dropdown__descr">Врач-ортодонт при исправлении прикуса всегда опирается на качественную диагностику.</p>
 									</div>
 								</li>
-								<li class="questions__row wow" data-wow-offset="100">
+								<li class="questions__row">
 									<a class="questions__link" href="#" title="Подробнее">Возможны ли ошибки в диагнозах при наличии КТ? </a>
 									<div class="questions__dropdown dropdown">
 										<p class="dropdown__descr">Только профессионал высокого уровня с большим практическим багажом способен дать качественную расшифровку данных и поставить диагноз. И именно на этом этапе возможны сбои, когда опыта врача не достаточно.</p>
 										<p class="dropdown__descr">Наши специалисты, лучшие в своей области. Поэтому, мы можем гарантировать качественный анализ проведенной компьютерной томограммы.</p>
 									</div>
 								</li>
-								<li class="questions__row wow" data-wow-offset="100">
+								<li class="questions__row">
 									<a class="questions__link" href="#" title="Подробнее">Вредно ли для здоровья проведение КТ?
 									</a>
 									<div class="questions__dropdown dropdown">
@@ -246,10 +256,10 @@
 														</a>
 													</li>
 												</ul>
-												<div class="swiper-button-prev"></div>
-												<div class="swiper-button-next"></div>
 												<div class="swiper-scrollbar"></div>
 											</div>
+											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next"></div>
 											<button class="products__close" type="button" title="Закрыть"></button>
 										</div>
 									</div>
@@ -277,10 +287,10 @@
 														</a>
 													</li>
 												</ul>
-												<div class="swiper-button-prev"></div>
-												<div class="swiper-button-next"></div>
 												<div class="swiper-scrollbar"></div>
 											</div>
+											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next"></div>
 											<button class="products__close" type="button" title="Закрыть"></button>
 										</div>
 									</div>
@@ -339,7 +349,6 @@
 		</div>
 		@@include('_footer.html',{})
 	</div>
-	<!-- @@include('_popup.html',{}) -->
 	@@include('_js.html',{})
 </body>
 

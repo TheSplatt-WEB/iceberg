@@ -105,7 +105,7 @@
 			&:hover{
 				background-color: $hover;
 			}
-			&:focus{
+			&:focus-visible{
 				background-color: $hover;
 			}
 		}
