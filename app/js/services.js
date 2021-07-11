@@ -143,9 +143,6 @@ function autoHeightSlide() {
 	}
 }
 autoHeightSlide();
-window.addEventListener(`resize`, event => {
-	autoHeightSlide();
-});
 const popup = document.querySelectorAll('.clients__popup')
 const popupLink = document.querySelectorAll('.clients__item')
 const body = document.querySelector('body')
