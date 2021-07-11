@@ -1,0 +1,99 @@
+.trauma{
+	&__body{
+		background-color: #f8f8f8;
+		@include adaptive(border-radius, 30, 15, 1);
+		padding: 80px 80px 75px 84px;
+		max-width: 1303px;
+		width: 100%;
+		margin: 0 auto;
+		@include adaptive(margin-bottom, 183, 70, 1);
+		animation: fadeUpBig 1s ease-in-out;
+		@media (max-width: $md2 + px){
+			padding: 58px 20px 39px 20px;
+		}
+	}
+	&__info{
+		max-width: 562px;
+		width: 100%;
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+		}
+	}
+	&__title{
+		@include adaptive(margin-bottom, 70, 10, 1);
+		@media (max-width: $md2 + px){
+			text-align: center;
+		}
+	}
+	&__wrapper{
+		display: flex;
+		@media (max-width: $md2 + px){
+			flex-direction: column-reverse;
+		}
+	}
+	&__text{
+		@include adaptive(margin-bottom, 52, 35, 1);
+		*:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__descr{
+		@include adaptive(margin-bottom, 40, 20, 1);
+		line-height: 170%;
+		@media (max-width: $md3 + px){
+			line-height: 140%;
+		}
+		span{
+			font-weight: 700;
+		}
+	}
+	&__buttons{
+		display: flex;
+		margin-left: -17px;
+		flex-wrap: wrap;
+	}
+	&__btn{
+		@include adaptive(height, 50, 55, 1);
+		padding: 10px 42px;
+		background-color: $hover;
+		border-radius: 30px;
+		white-space: nowrap;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: 17px;
+		color: #fff;
+		transition: all .3s;
+		margin-bottom: 14px;
+		@media (max-width: $md4 + px){
+			width: 100%;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $el;
+				color: $text;
+			}
+			&:focus-visible{
+				background-color: $el;
+				color: $text;
+			}
+		}
+		&:nth-child(even){
+			background-color: $text;
+		}
+	}
+	&__image{
+		// @include adaptive(max-width, 577, 100, 1);
+		max-width: 577px;
+		width: 100%;
+		position: relative;
+		margin-top: -117px;
+		@media (max-width: $md2 + px){
+			margin: 0 auto;
+			max-width: 400px;
+		}
+	}
+	&__img{
+		width: 100%;
+	}
+}

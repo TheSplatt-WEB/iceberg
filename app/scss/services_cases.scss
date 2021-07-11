@@ -1,0 +1,150 @@
+.cases{
+	&__gallary{
+		width: calc((100vw - ((100vw - 1432px) / 2)) + 47px);
+		margin-right: -47px;
+
+	}
+	&__card{
+		padding: 60px;
+		padding-bottom: 44px;
+		background-color: $el;
+		@include adaptive(border-radius, 20, 15, 1);
+		display: flex;
+		flex-direction: column;
+		height: calc(100% - 104px);
+		position: relative;
+		transition: all .3s;
+		@media (max-width: $md1 + px){
+			padding: 44px 15px 40px 15px;
+			height: calc(100% - 84px);
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $text;
+				color: #fff;
+				&::before{
+					opacity: 1;
+				}
+				path{
+					stroke: #fff;
+				}
+			}
+		}
+		*:last-child{
+			margin-bottom: 0;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 70%;
+			bottom: 0;
+			right: 0;
+			background-image: url(../img/cases_bg.svg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: bottom center;
+			opacity: 0;
+			transition: opacity .3s;
+		}
+		path{
+			transition: stroke .3s;
+		}
+	}
+	&__images{
+		margin-bottom: 20px;
+		*:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__image{
+		@include adaptive(border-radius, 20, 15, 1);
+		overflow: hidden;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		padding-bottom: 37.84%;
+		@include adaptive(margin-bottom, 17, 10, 1);
+	}
+	&__img--before,
+	&__img--after{
+		&::before{
+			content: '';
+			position: absolute;
+			@include adaptive(left, 23, 17, 1);
+			@include adaptive(bottom, 21, 15, 1);
+			padding: 0 20px;
+			@include adaptive(height, 26, 20, 1);
+			font-size: 12px;
+			border-radius: 15px;
+			background-color: #fff;
+			color: $text;
+			z-index: 1;
+		}
+	}
+	&__img--before{
+		&::before{
+			content: 'До';
+		}
+	}
+	&__img--after{
+		&::before{
+			content: 'После';
+		}
+	}
+	&__img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&__text{
+		margin-bottom: 34px;
+		flex: 1 0 auto;
+		position: relative;
+		z-index: 1;
+		*:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__name{
+		margin-bottom: 15px;
+		font-size: 22px;
+		font-weight: 500;
+	}
+	&__descr{
+		@include adaptive(margin-bottom, 6, 0, 1);
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 180%;
+	}
+	&__btn{
+		height: 50px;
+		border-radius: 30px;
+		background-color: $hover;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 500;
+		display: inline-flex;
+		line-height: 120%;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+		padding: 0 40px;
+		margin: 0 auto;
+		flex: 0 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+	&__decor{
+		position: absolute;
+		bottom: 0;
+		@include adaptive(right, 0, -40, 1);
+		@include adaptive(width, 143, 110, 1);
+		svg{
+			width: 100%;
+		}
+	}
+}

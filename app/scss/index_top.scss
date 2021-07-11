@@ -16,6 +16,7 @@
 		background-position: top center;
 		position: relative;
 		opacity: 0;
+		z-index: 2;
 		animation: fadeIn 1s ease-in-out .5s forwards;
 		@media (max-width: $md1 + px){
 			min-width: 500px;
@@ -126,8 +127,6 @@
 			background-size: contain;
 			@include adaptive(width, 320, 240, 1);
 			@include adaptive(height, 155, 75, 1);
-			width: 320px;
-			height: 155px;
 			z-index: -1;
 		}
 		@media (max-width: $md3 + px){
@@ -136,9 +135,11 @@
 			display: inline-block;
 		}
 	}
+	&__text{
+		@include adaptive(margin-bottom, 40, 35, 1);
+	}
 	&__descr{
 		line-height: 150%;
-		@include adaptive(margin-bottom, 40, 35, 1);
 		max-width: 560px;
 		width: 100%;
 	}

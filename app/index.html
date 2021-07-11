@@ -19,7 +19,9 @@
 							<div class="top__image wow"></div>
 							<div class="top__info wow">
 								<h1 class="top__title">Диагностика</h1>
-								<p class="top__descr">Проводим обследование на высокоточном оборудовании с расшифровкой результатов ведущим врачом-радиологом в клинике. </p>
+								<div class="top__text">
+									<p class="top__descr">Проводим обследование на высокоточном оборудовании с расшифровкой результатов ведущим врачом-радиологом в клинике. </p>
+								</div>
 								<a class="top__btn" href="#" title="Оставить заявку">Записаться на прием</a>
 							</div>
 						</div>
@@ -107,56 +109,59 @@
 							</div>
 						</div>
 					</div>
-					<div class="diagnostics__plug plug"></div>
+
 				</section>
 				<section class="tomography">
+					<div class="tomography__plug plug plug-top"></div>
 					<div class="tomography__container container">
-						<div class="tomography__body wow" id="tomography" data-wow-offset="500">
-							<div class="tomography__text">
-								<h2 class="tomography__title title">Компьютерная томография </h2>
-								<p class="tomography__descr">В нашей клинике используется конусно-лучевой томограф Planmeca Viso™. При его использовании можно планировать челюстно-лицевые операции, обнаруживать дополнительные микроканалы при сложном эндодонтическом лечении. На выходе получаются качественные 3Д снимки при <span>минимальной лучевой нагрузке</span>.</p>
-								<p class="tomography__descr">К нам на диагностику направляют пациентов доктора других клиник, так как мы одни из немногих обеспечиваем расчет проводимых исследований на высочайшем уровне.
-								</p>
-							</div>
-							<div class="tomography__modal">
-								<div class="tomography__wrapper">
-									<div class="tomography__gallery swiper-container">
-										<ul class="tomography__list swiper-wrapper">
-											<li class="tomography__row swiper-slide">
-												<a class="tomography__image" href="#">
-													<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
-												</a>
-												<div class="swiper-pagination"></div>
-											</li>
-											<li class="tomography__row swiper-slide">
-												<a class="tomography__image" href="#">
-													<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
-												</a>
-												<div class="swiper-pagination"></div>
-											</li>
-										</ul>
-										<div class="progress-bar">
-											<div class="progress-bar__progress"></div>
+						<div class="tomography__inner">
+							<div class="tomography__body wow" id="tomography" data-wow-offset="500">
+								<div class="tomography__text">
+									<h2 class="tomography__title title">Компьютерная томография </h2>
+									<p class="tomography__descr">В нашей клинике используется конусно-лучевой томограф Planmeca Viso™. При его использовании можно планировать челюстно-лицевые операции, обнаруживать дополнительные микроканалы при сложном эндодонтическом лечении. На выходе получаются качественные 3Д снимки при <span>минимальной лучевой нагрузке</span>.</p>
+									<p class="tomography__descr">К нам на диагностику направляют пациентов доктора других клиник, так как мы одни из немногих обеспечиваем расчет проводимых исследований на высочайшем уровне.
+									</p>
+								</div>
+								<div class="tomography__modal">
+									<div class="tomography__wrapper">
+										<div class="tomography__gallery swiper-container">
+											<ul class="tomography__list swiper-wrapper">
+												<li class="tomography__row swiper-slide">
+													<a class="tomography__image" href="#">
+														<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
+													</a>
+													<div class="swiper-pagination"></div>
+												</li>
+												<li class="tomography__row swiper-slide">
+													<a class="tomography__image" href="#">
+														<img class="tomography__img" src="img/tomography.jpg" alt="tomography image">
+													</a>
+													<div class="swiper-pagination"></div>
+												</li>
+											</ul>
+											<div class="progress-bar">
+												<div class="progress-bar__progress"></div>
+											</div>
 										</div>
+										<button class="tomography-button-prev" type="button">
+											<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0.857422 7.07153)" fill="#fff" />
+												<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 14.2925 7.77856)" fill="#fff" />
+											</svg>
+										</button>
+										<button class="tomography-button-next" type="button">
+											<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0.857422 7.07153)" fill="#fff" />
+												<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 14.2925 7.77856)" fill="#fff" />
+											</svg>
+										</button>
+										<button class="tomography__close" type="button" title="Закрыть"></button>
 									</div>
-									<button class="tomography-button-prev" type="button">
-										<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0.857422 7.07153)" fill="#fff" />
-											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 14.2925 7.77856)" fill="#fff" />
-										</svg>
-									</button>
-									<button class="tomography-button-next" type="button">
-										<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0.857422 7.07153)" fill="#fff" />
-											<rect width="1" height="10" rx="0.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 14.2925 7.77856)" fill="#fff" />
-										</svg>
-									</button>
-									<button class="tomography__close" type="button" title="Закрыть"></button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="tomography__plug plug"></div>
+					<div class="tomography__plug plug plug-bottom"></div>
 				</section>
 				<section class="about">
 					<div class="about__container container">
@@ -164,7 +169,9 @@
 						<div class="about__body wow" data-wow-offset="500">
 							<div class="about__profile">
 								<div class="about__img">
-									<img src="img/photo.jpg" alt="photo of a doctor">
+									<div class="about__img-wrapper">
+										<img src="img/photo.jpg" alt="photo of a doctor">
+									</div>
 								</div>
 								<span class="about__name">Локтионов Алексей Александрович</span>
 								<span class="about__profession">Врач рентгенолог</span>
@@ -182,7 +189,7 @@
 				"title":"КТ для детей",
 				"descr":"Время экспозиции составляет около 9 секунд, что <span>позволяет работать с детками от 2-х лет</span> и устраняет риск движения ребенка или подростка, которые могут двигаться во время съемки.",
 				"btn":"Оставить заявку",
-				"section_class":"block-kt",
+				"section_class":"block_margin--small",
 				"inner_class":"block__inner-kt"
 				})
 				<section class="questions">
@@ -335,7 +342,7 @@
 				"title":"Онлайн-консультация с врачом!",
 				"descr":"Запишитесь на бесплатную онлайн-консультацию с доктором, где вас проконсультируют по вашим вопросам!",
 				"btn":"Записаться на консультацию",
-				"section_class":"block-consultation",
+				"section_class":"block_margin--big",
 				"inner_class":"block__inner-consultation"
 				})
 				<button class="btn__top btn-hidden" type="button" title="Наверх">

@@ -1,0 +1,45 @@
+.top-services{
+	.top{
+		&__info{
+			order: -1;
+			@media (max-width: $md3 + px){
+				order: 0;
+			}
+		}
+		&__image{
+			background-image: url(../img/top-page_img.svg);
+			&::after,
+			&::before{
+				display: none;
+			}
+		}
+		&__title{
+			display: inline-block;
+			&::before{
+				background-image: url(../img/hatch-services.png);
+				left: auto;
+				@include adaptive(top, -100, -47, 1);
+				right: -55px;
+				width: 368px;
+				height: 265px;
+				@include adaptive(width, 368, 183, 1);
+				@include adaptive(height, 265, 132, 1);
+				@media (max-width: $md3 + px){
+					
+				@include adaptive(right, 0, -40, 1);
+				}
+			}
+		}
+		&__descr{
+			@media (max-width: $md4 + px){
+				display: inline;
+			}
+		}
+		&__link{
+			font-weight: 700;
+			@media (max-width: $md4 + px){
+				display: inline;
+			}
+		}
+	}
+}

@@ -17,6 +17,7 @@ const webphtml = require('gulp-webp-html');
 const webpcss = require('gulp-webpcss');
 const fonter = require('gulp-fonter');
 const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
 let fs = require('fs');
 
 //Подключаем автообновление браузера ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,7 +42,7 @@ function html() {
 
 //Следим за нашим файлом style.scss, конвертируем из него 2 файла css, один обычный, другой минифицированный и закидываем их в папку dist/css///////////////////////////////////////////////////////////////////////////////////////////////////////
 function styles() {
-	return src('app/scss/style.scss')
+	return src(['app/scss/*.scss', '!app/scss/_*.scss', '!app/scss/*_*.scss'])
 		.pipe(scss({
 			outputStyle: 'expanded'
 		}))
@@ -52,6 +53,7 @@ function styles() {
 			grid: true
 		}))
 		.pipe(webpcss())//Этот плагин устанавливают если нужно использование webp в свойстве background-image в scss, для него так же нужно в файл js добавить скрипт, определяющий поддержку браузером формата wepb.
+		.pipe(concat('style.css'))
 		.pipe(dest('dist/css/'))
 		.pipe(scss({
 			outputStyle: 'compressed'
@@ -63,11 +65,12 @@ function styles() {
 
 //Следим за нашим файлом script.js, конвертируем из него 2 файла js, один обычный, другой минифицированный и закидываем их в папку dist/js///////////////////////////////////////////////////////////////////////////////////////////////////////
 function scripts() {
-	return src('app/js/script.js')
+	return src(['app/js/*.js', '!app/js/_*.js'])
 		.pipe(fileInclude())
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
+		.pipe(concat('script.js'))
 		.pipe(dest('dist/js/'))
 		.pipe(uglify())
 		.pipe(concat('script.min.js'))

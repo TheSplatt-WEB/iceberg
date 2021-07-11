@@ -130,12 +130,6 @@
 			max-width: 100%;
 		}
 	}
-	&__plug{
-		background-color: $el;
-		&::before{
-			content: url(../img/section_wave-white.svg);
-		}
-	}
 }
 .pregnant{
 	&__img{

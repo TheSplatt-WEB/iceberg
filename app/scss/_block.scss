@@ -13,8 +13,8 @@
 		&::before{
 			content:'';
 			position: absolute;
-			top: 0;
-			left: 0;
+			top: -1px;
+			left: -1px;
 			width: 0;
 			height: 0;
 			border-style: solid;
@@ -27,8 +27,8 @@
 		&::after{
 			content: url(../img/triangle.svg);
 			position: absolute;
-			top: 0;
-			left: 1px;
+			top: -1px;
+			left: -1px;
 			@media (max-width: $md3 + px){
 				display: none;
 			}
@@ -85,6 +85,19 @@
 				background-size: cover;
 				width: 100%;
 				background-position: center top;
+			}
+		}
+	}
+	&__inner-services{
+		&::before{
+			right: 0;
+			bottom: 0;
+			height: 100%;
+			background-image: url(../img/cup.png);
+			background-size: contain;
+			background-position: right bottom;
+			@media (max-width: $md2 + px){
+				height: 220px;
 			}
 		}
 	}
@@ -162,18 +175,19 @@
 			}
 		}
 		@media (max-width: $md3 + px){
-			margin-right: auto;
 			margin-left: auto;
-			white-space: pre-wrap;
+			margin-right: auto;
 		}
 		@media (max-width: $md4 + px){
+			padding-right: 5px;
+			padding-left: 5px;
 			width: 100%;
 		}
 	}
 }
-.block-kt{
+.block_margin--small{
 	@include adaptive(margin-bottom, 161, 87, 1);
 }
-.block-consultation{
+.block_margin--big{
 	@include adaptive(margin-bottom, 193, 67, 1);
 }

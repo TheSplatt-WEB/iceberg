@@ -1,0 +1,17 @@
+.tomography-services{
+	.tomography{
+		&__body{
+			@media (max-width: $md2 + px){
+				flex-direction: column-reverse;
+			}
+		}
+		&__title{
+			animation: fadeUpBig 1s ease-in-out;
+		}
+		&__gallery{
+			@media (max-width: $md3 + px){
+				margin-bottom: 39px;
+			}
+		}
+	}
+}

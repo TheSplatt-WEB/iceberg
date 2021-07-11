@@ -1,13 +1,14 @@
 .about{
-	@include adaptive(padding-top, 155, 0, 1);
 	@include adaptive(padding-bottom, 160, 77, 1);
 	&__title{
 		min-width: 50%;
 		max-width: 50%;
 		margin-left: auto;
+		padding-top: 60px;
 		margin-bottom: -120px;
 		animation: fadeDownBig 1s ease-in-out;
 		@media (max-width: $md3 + px){
+			padding-top: 0;
 			margin-bottom: 40px;
 			max-width: 100%;
 			text-align: center;
@@ -33,10 +34,30 @@
 	}
 	&__img{
 		@include adaptive(margin-bottom, 16, 23, 1);
-		background-color: #f8f8f8;
-		border-radius: 15px;
-		overflow: hidden;
 		position: relative;
+		&.about-badge{
+			&::before{
+				content: '';
+				position: absolute;
+				@include adaptive(bottom, -15, -12, 1);
+				@include adaptive(right, -45, -7, 1);
+				z-index: 1;
+				@include adaptive(width, 203, 166, 1);
+				@include adaptive(height, 203, 166, 1);
+				background-image: url(../img/badge.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		}
+	}
+	&__img-wrapper{
+		border-radius: 20px;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		position: relative;
+		background-color: #f8f8f8;
 		padding-bottom: 121%;
 		@media (max-width: $md4 + px){
 			padding-bottom: 117%;
@@ -86,6 +107,9 @@
 		}
 		@media (max-width: $md3 + px){
 			max-width: 100%;
+		}
+		span{
+			font-weight: 700;
 		}
 	}
 	&__btn{

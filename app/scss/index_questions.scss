@@ -3,6 +3,9 @@
 	@media (max-width: $md2 + px){
 		margin-bottom: 411px;
 	}
+	&.questions-services{
+		@include adaptive(margin-bottom, 199, 70, 1);
+	}
 	&__body{
 		display: flex;
 		justify-content: space-between;
@@ -92,5 +95,17 @@
 	&__descr{
 		margin-bottom: 26px;
 		line-height: 140%;
+		a{
+			font-weight: 700;
+			transition: color .3s;
+			@media (min-width: $md2 + px){
+				&:hover{
+					color: $hover;
+				}
+				&:focus-visible{
+					color: $hover;
+				}
+			}
+		}
 	}
 }

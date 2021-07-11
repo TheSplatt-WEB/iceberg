@@ -1,15 +1,19 @@
 .tomography {
 	background-color: $el;
+	@include adaptive(margin-bottom, 95, 0, 1);
 	@media (max-width: $md3 + px){
 		border-radius: 15px;
+	}
+	&__inner{
+		@include adaptive(padding-top, 14, 43, 1);
 	}
 	&__body{
 		display: flex;
 		margin-bottom: 100px;
 		@include adaptive(margin-bottom, 100, 40, 1);
-		@include adaptive(padding-top, 14, 43, 1);
 		justify-content: space-between;
 		animation: fadeUpBig 1s ease-in-out;
+		align-items: start;
 		@media (max-width: $md2 + px){
 			flex-direction: column;
 		}
@@ -20,7 +24,11 @@
 		margin-right: 10px;
 		@media (max-width: $md2 + px){
 			max-width: 100%;
+			margin-right: 0;
 			margin-bottom: 43px;
+		}
+		*:last-child{
+			margin-bottom: 0;
 		}
 	}
 	&__title{
@@ -33,11 +41,56 @@
 	}
 	&__descr{
 		line-height: 140%;
-		& + &{
-			@include adaptive(margin-top, 30, 20, 1);
-		}
+		@include adaptive(margin-bottom, 30, 20, 1);
 		span{
 			font-weight: 600;
+		}
+		a{
+			transition: color .3s;
+			@media (min-width: $md2 + px){
+				&:hover{
+					color: $hover;
+				}
+				&:focus-visible{
+					color: $hover;
+				}
+			}
+		}
+	}
+	&__buttons{
+		display: flex;
+		margin-left: -17px;
+		@include adaptive(padding-top, 19, 15, 1);
+		flex-wrap: wrap
+	}
+	&__btn{
+		@include adaptive(height, 50, 55, 1);
+		border-radius: 30px;
+		padding: 10px 45px;
+		margin-left: 17px;
+		background-color: #fff;
+		transition: all .3s;
+		white-space: nowrap;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 14px;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus-visible{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+		@media (max-width: $md4 + px){
+			width: 100%;
+		}
+		&:nth-child(even){
+			background-color: $text;
+			color: #fff;
 		}
 	}
 	&__modal{
@@ -165,6 +218,9 @@
 		margin-top: 30px;
 		margin-bottom: 30px;
 		position: relative;
+		@media (max-width: $md2 + px){
+			margin-top: 0;
+		}
 		@media (max-width: $md3 + px){
 			margin-bottom: 53px;
 		}
@@ -259,9 +315,17 @@
 		}
 	}
 	&__plug{
-		background-color: #fff;
-		&::before{
-			content: url(../img/section_wave.svg);
+		&.plug-bottom{
+			background-color: #fff;
+			&::before{
+				content: url(../img/section_wave.svg);
+			}
+		}
+		&.plug-top{
+			background-color: $el;
+			&::before{
+				content: url(../img/section_wave-white.svg);
+			}
 		}
 	}
 }
