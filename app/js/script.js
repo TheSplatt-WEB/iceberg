@@ -224,16 +224,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//Кнопка бургера
 
-	const menuBtn = document.querySelector('.menu__btn')
-	menuBtn.addEventListener('click', function () {
-		this.classList.toggle('open')
-	});
-	window.addEventListener('click', e => {
-		const target = e.target
-		if (!target.closest('.menu__btn')) {
-			menuBtn.classList.remove('open')
-		}
-	});
+	const menuBtn = document.querySelectorAll('.menu__btn')
+	for (const menuBtnItem of menuBtn) {
+		menuBtnItem.addEventListener('click', function () {
+			this.classList.toggle('open')
+		})
+	}
 
 	//Скролл к якорям
 
