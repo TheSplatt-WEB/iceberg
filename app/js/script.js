@@ -15,7 +15,13 @@ testWebP(function (support) {
 });
 //Инициализация WOW
 
-new WOW().init();
+let wow = new WOW(
+	{
+		boxClass: 'wow',
+		animateClass: 'animation',
+	}
+);
+wow.init();
 
 document.addEventListener('DOMContentLoaded', () => {
 	const onScrollHeader = () => {
