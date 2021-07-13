@@ -70,11 +70,6 @@
 		svg{
 			transform: rotate(-90deg);
 		}
-		&.swiper-button-disabled{
-			opacity: .6;
-			cursor: auto;
-			pointer-events: none;
-		}
 	}
 	&__next{
 		height: 48px;
@@ -124,32 +119,19 @@
 		@media (max-width: $md3 + px){
 			margin-left: 70px;
 		}
-		&.swiper-button-disabled{
-			opacity: .35;
-			cursor: auto;
-			pointer-events: none;
-		}
-	}
-	&__scrollbar{
-		width: 100%;
-		height: 4px;
-		background-color: rgba(#000, .1);
-		border-radius: 2px;
-		@media (max-width: $md3 + px){
-			display: none;
-		}
 	}
 	&__pagination{
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 120%;
-		bottom: 25px;
-		transform: translate(0, 50%);
-		position: absolute;
+		position: relative;
+		height: 4px;
 		text-align: center;
-		z-index: 0;
-		@media (min-width: $md3 + px){
-			display: none;
+		.swiper-pagination-progressbar-fill{
+			background-color: $text;
+		}
+		@media (max-width: $md3 + px){
+			bottom: 27px;
 		}
 	}
 }

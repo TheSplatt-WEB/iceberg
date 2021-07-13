@@ -104,6 +104,7 @@
 	}
 	&__info{
 		@include adaptive(padding-top, 160, 20, 1);
+		opacity: 0;
 		animation: fadeUp .5s ease-in-out forwards;
 		@media (max-width: $md3 + px){
 			margin-right: auto;

@@ -1,5 +1,6 @@
 .tomography {
 	background-color: $el;
+	animation: fadeUpBig 1s ease-in-out;
 	@include adaptive(margin-bottom, 95, 0, 1);
 	@media (max-width: $md3 + px){
 		border-radius: 15px;
@@ -12,8 +13,7 @@
 		margin-bottom: 100px;
 		@include adaptive(margin-bottom, 100, 40, 1);
 		justify-content: space-between;
-		animation: fadeUpBig 1s ease-in-out;
-		align-items: start;
+		align-items: flex-start;
 		@media (max-width: $md2 + px){
 			flex-direction: column;
 		}
@@ -143,6 +143,9 @@
 				}
 				.tomography__close{
 					display: block;
+				}
+				.swiper-pagination{
+					display: none;
 				}
 			}
 			
@@ -301,7 +304,7 @@
 	.tomography-button-prev{
 		left: 20px;
 		svg{
-			transform: rotate(-90deg);
+			transform: rotate(90deg);
 			width: 14px;
 			height: 14px;
 		}
@@ -309,7 +312,7 @@
 	.tomography-button-next{
 		right: 20px;
 		svg{
-			transform: rotate(90deg);
+			transform: rotate(-90deg);
 			width: 14px;
 			height: 14px;
 		}

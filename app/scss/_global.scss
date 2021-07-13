@@ -13,6 +13,9 @@ html{
 *, *::before, *::after{
 	box-sizing: inherit;
 }
+#detach-button-host{
+	display: none !important;
+}
 body{
 	height: 100%;
 	min-width: $minWidth;

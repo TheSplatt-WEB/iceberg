@@ -1,12 +1,11 @@
 .block{
+	animation: fadeUpBig 1s ease-in-out;
 	&__body{
-		background-color: #86c8d8;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: right center;
+		background-color: #ABDDE9;
+		background-image: url(../img/noize.png);
+		filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
 		border-radius: 20px;
 		position: relative;
-		animation: fadeUpBig 1s ease-in-out;
 		@media (max-width: $md3 + px){
 			border-radius: 15px;
 		}
@@ -103,35 +102,40 @@
 	}
 	&__inner-consultation{
 		&::before{
-			background-image: url(../img/hands_2-dark.svg);
+			background-image: url(../img/hand_left-dark.svg);
 			background-position: right top;
-			background-size: 90%;
-			right: 90px;
-			bottom: -115px;
+			background-size: contain;
+			right: 100px;
+			bottom: -105px;
 			height: 287px;
-			transform: rotate(50deg);
 			@media (max-width: $md2 + px){
-				transform: rotate(-10deg);
-				right: -100px;
-				bottom: -50px;
+				transform: rotate(-61deg);
+				right: -90px;
+				bottom: -122px;
 				height: 220px;
+			}
+			@media (max-width: $md3 + px){
+				right: -80px;
+				bottom: -97px;
 			}
 		}
 		&::after{
-			background-image: url(../img/hands_2-light.svg);
-			background-position: right bottom;
-			background-size: 90%;
-			right: -45px;
-			top: -150px;
+			background-image: url(../img/hand_right-dark.svg);
+			background-position: right top;
+			background-size: contain;
+			right: 30px;
+			top: -105px;
 			height: 287px;
-			transform: rotate(70deg);
 			@media (max-width: $md2 + px){
-				transform: rotate(10deg);
+				transform: rotate(-65deg);
 				right: auto;
-				left: -180px;
+				left: -176px;
 				top: auto;
-				bottom: 30px;
+				bottom: -70px;
 				height: 220px;
+			}
+			@media (max-width: $md3 + px){
+				left: -127px;
 			}
 		}
 	}

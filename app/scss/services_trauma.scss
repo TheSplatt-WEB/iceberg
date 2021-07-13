@@ -1,4 +1,5 @@
 .trauma{
+	animation: fadeUpBig 1s ease-in-out;
 	&__body{
 		background-color: #f8f8f8;
 		@include adaptive(border-radius, 30, 15, 1);
@@ -7,7 +8,6 @@
 		width: 100%;
 		margin: 0 auto;
 		@include adaptive(margin-bottom, 183, 70, 1);
-		animation: fadeUpBig 1s ease-in-out;
 		@media (max-width: $md2 + px){
 			padding: 58px 20px 39px 20px;
 		}
@@ -70,11 +70,11 @@
 		}
 		@media (min-width: $md2 + px){
 			&:hover{
-				background-color: $el;
+				background-color: #6CB2C3;
 				color: $text;
 			}
 			&:focus-visible{
-				background-color: $el;
+				background-color: #6CB2C3;
 				color: $text;
 			}
 		}

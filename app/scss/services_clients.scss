@@ -9,30 +9,17 @@
 		@media (min-width: $md2 + px){
 			&:hover{
 				.clients__wrapper{
-					&::before{
-						animation: overflowBefore 4.8s step-end 0.01s forwards;
-					}
-					span{
-						animation: overflowSpan 2.4s step-end 0.01s forwards;
-						&::before{
-							animation: leftSpin 4.8s linear 0.01s forwards;
-						}
-						&::after{
-							animation: rightSpin 2.4s linear 0.01s forwards;
-						}
+					& > span{
+						opacity: 1;
+						animation: clientsRotate 3.7s linear forwards;
 					}
 				}
 			}
 			&:focus-visible{
 				.clients__wrapper{
-					span{
-						animation: overflowSpan 2.4s step-end 0.01s forwards;
-						&::before{
-							animation: leftSpin 4.8s linear 0.01s forwards;
-						}
-						&::after{
-							animation: rightSpin 2.4s linear 0.01s forwards;
-						}
+					& > span{
+						opacity: 1;
+						animation: clientsRotate 3.7s linear forwards;
 					}
 				}
 			}
@@ -41,18 +28,7 @@
 	&__wrapper{
 		position: relative;
 		padding: 20px;
-		&::before{
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			border-radius: 50%;
-			border: 13px solid $hover;
-			opacity: 0;
-		}
-		span{
+		& > span{
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -60,38 +36,41 @@
 			bottom: 0;
 			border-radius: 50%;
 			z-index: -1;
-			clip: rect(0px, 270px, 540px, 0px);
-			@media (max-width: $md1 + px){
-				clip: rect(0px, 230px, 540px, 0px);
-			}
-			@media (max-width: 1300px){
-				clip: rect(0px, 200px, 540px, 0px);
-			}
-			@media (max-width: 1200px){
-				clip: rect(0px, 170px, 540px, 0px);
-			}
+			transform: rotate(16.2deg);
+			border: 13px solid $hover;
+			opacity: 0;
+			transition: opacity .3s;
 			&::before,
 			&::after{
 				content: '';
 				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
+				height: 13px;
+				width: 13px;
+				background-color: $hover;
+				z-index: 2;
 				border-radius: 50%;
-				border: 13px solid $hover;
-				clip: rect(0px, 548px, 548px, 270px);
-				@media (max-width: $md1 + px){
-					clip: rect(0px, 548px, 548px, 230px);
-				}
-				@media (max-width: 1300px){
-					clip: rect(0px, 540px, 540px, 200px);
-				}
-				@media (max-width: 1200px){
-					clip: rect(0px, 540px, 540px, 170px);
-				}
+			}
+			&::before{
+				bottom: 50%;
+				transform: translate(100%, 50%);
+				right: 0;
+			}
+			&::after{
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, 100%);
 			}
 		}
+	}
+	&__hide-circle{
+		position: absolute;
+		right: -50%;
+		bottom: -50%;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		background-color: #fff;
+
 	}
 	&__image{
 		position: relative;
@@ -167,9 +146,8 @@
 	pointer-events: none;
 	transition: all .5s;
 	&__body{
-		max-width: 1211px;
+		max-width: 1200px;
 		width: 100%;
-		height: 500px;
 		position: relative;
 		@include adaptive(padding-right, 71, 50, 1);
 		@include adaptive(padding-left, 71, 50, 1);
@@ -179,14 +157,17 @@
 		}
 	}
 	&__video{
-		background-color: #fff;
-		width: 100%;
-		height: 100%;
+		position: relative;
+		padding-bottom: 56.3%;
 		border-radius: 15px;
 		overflow: hidden;
-		iframe{
+		video{
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
 		}
 	}
 	&__btn{

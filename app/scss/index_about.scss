@@ -1,4 +1,5 @@
 .about{
+	animation: fadeUpBig 1s ease-in-out;
 	@include adaptive(padding-bottom, 160, 77, 1);
 	&__title{
 		min-width: 50%;
@@ -6,7 +7,6 @@
 		margin-left: auto;
 		padding-top: 60px;
 		margin-bottom: -120px;
-		animation: fadeDownBig 1s ease-in-out;
 		@media (max-width: $md3 + px){
 			padding-top: 0;
 			margin-bottom: 40px;
@@ -17,7 +17,6 @@
 	&__body{
 		display: flex;
 		justify-content: space-between;
-		animation: fadeUpBig .5s ease-in-out;
 		@media (max-width: $md3 + px){
 			flex-direction: column;
 		}

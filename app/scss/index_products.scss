@@ -147,8 +147,14 @@
 					color: $text;
 					font-weight: 600;
 					transition: all .3s;
+					text-align: center;
 					&::after{
 						font-size: 14px;
+					}
+					&.swiper-button-disabled{
+						opacity: 1;
+						pointer-events: visible;
+						cursor: pointer;
 					}
 				}
 			}

@@ -1,0 +1,14 @@
+<svg width="115" height="115" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M34.3658 52.049L33.7586 24.4229C33.7586 24.4229 50.3218 29.0191 61.0705 31.3938C72.624 33.9462 91.865 37.394 91.865 37.394L82.8651 58.3938L79.8651 59.3938L79.8651 72.8938L22.8651 91.894L34.3658 52.049Z" fill="#FF9090"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="21" y="23" width="73" height="69">
+<path d="M34.3624 52.048L33.7552 24.422C33.7552 24.422 50.3184 29.0181 61.0671 31.3928C72.6206 33.9453 91.8616 37.3931 91.8616 37.3931L82.8617 58.3928L79.8617 59.3928L79.8617 72.8928L22.8617 91.8931L34.3624 52.048Z" fill="#FF9090"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="197.365" y="-259.606" width="633" height="282" transform="rotate(90 197.365 -259.606)" fill="url(#pattern0)" fill-opacity="0.05"/>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="translate(0 -0.341755) scale(0.003125 0.00701463)"/>
+</pattern>
+</defs>
+</svg>

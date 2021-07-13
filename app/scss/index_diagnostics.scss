@@ -1,6 +1,6 @@
 .diagnostics{
+	animation: fadeUpBig 1s ease-in-out;
 	&__body{
-		animation: fadeUpBig 1s ease-in-out;
 		@media (max-width: $md4 + px){
 			text-align: center;
 		}

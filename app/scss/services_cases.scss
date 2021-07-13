@@ -13,6 +13,7 @@
 		height: calc(100% - 104px);
 		position: relative;
 		transition: all .3s;
+		overflow: hidden;
 		@media (max-width: $md1 + px){
 			padding: 44px 15px 40px 15px;
 			height: calc(100% - 84px);

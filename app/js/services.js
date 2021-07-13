@@ -1,4 +1,4 @@
-new Swiper('.cases__gallery', {
+const casesSwiper = new Swiper('.cases__gallery', {
 	watchOverflow: true,
 	slidesPerView: 1,
 	observeParents: true,
@@ -18,56 +18,47 @@ new Swiper('.cases__gallery', {
 	},
 	on: {
 		init: function () {
-			const nextBtn = document.querySelector('.cases__next span')
+			const nextBtn = document.querySelector('.cases__next span');
 			nextBtn.classList.remove('animate');
 			nextBtn.classList.add('animate');
 		},
 		slideChangeTransitionStart: function () {
-			const nextBtn = document.querySelector('.cases__next span')
+			const nextBtn = document.querySelector('.cases__next span');
 			nextBtn.classList.remove('animate');
 		},
 		slideChangeTransitionEnd: function () {
-			const nextBtn = document.querySelector('.cases__next span')
+			const nextBtn = document.querySelector('.cases__next span');
 			nextBtn.classList.add('animate');
-		}
+		},
 	},
 	breakpoints: {
 		768: {
 			slidesPerView: 2,
-			pagination: false,
 			spaceBetween: 15,
-			scrollbar: {
-				el: '.cases__scrollbar',
-				draggable: true,
+			pagination: {
+				el: '.cases__pagination',
+				type: 'progressbar',
 			},
-			loop: false,
-			autoplay: false,
 		},
 		1024: {
 			spaceBetween: 15,
-			pagination: false,
-			scrollbar: {
-				el: '.cases__scrollbar',
-				draggable: true,
-			},
 			slidesPerView: 3,
-			loop: false,
-			autoplay: false,
+			pagination: {
+				el: '.cases__pagination',
+				type: 'progressbar',
+			},
 		},
 		1460: {
 			spaceBetween: 56,
-			pagination: false,
-			scrollbar: {
-				el: '.cases__scrollbar',
-				draggable: true,
-			},
 			slidesPerView: 3,
-			loop: false,
-			autoplay: false,
-		}
+			pagination: {
+				el: '.cases__pagination',
+				type: 'progressbar',
+			},
+		},
 	},
 });
-new Swiper('.clients__gallery', {
+const clientsSwiper = new Swiper('.clients__gallery', {
 	watchOverflow: true,
 	slidesPerView: 1,
 	observeParents: true,
@@ -87,103 +78,107 @@ new Swiper('.clients__gallery', {
 	},
 	on: {
 		init: function () {
-			const nextBtn = document.querySelector('.clients__next span')
+			const nextBtn = document.querySelector('.clients__next span');
 			nextBtn.classList.remove('animate');
 			nextBtn.classList.add('animate');
 		},
 		slideChangeTransitionStart: function () {
-			const nextBtn = document.querySelector('.clients__next span')
+			const nextBtn = document.querySelector('.clients__next span');
 			nextBtn.classList.remove('animate');
 		},
 		slideChangeTransitionEnd: function () {
-			const nextBtn = document.querySelector('.clients__next span')
+			const nextBtn = document.querySelector('.clients__next span');
 			nextBtn.classList.add('animate');
-		}
+		},
 	},
 	breakpoints: {
 		768: {
 			slidesPerView: 2,
-			pagination: false,
 			spaceBetween: 15,
-			scrollbar: {
-				el: '.clients__scrollbar',
-				draggable: true,
+			pagination: {
+				el: '.clients__pagination',
+				type: 'progressbar',
 			},
-			loop: false,
-			autoplay: false,
 		},
 		1024: {
 			spaceBetween: 15,
-			pagination: false,
-			scrollbar: {
-				el: '.clients__scrollbar',
-				draggable: true,
-			},
 			slidesPerView: 3,
-			loop: false,
-			autoplay: false,
+			pagination: {
+				el: '.clients__pagination',
+				type: 'progressbar',
+			},
 		},
 		1460: {
-			spaceBetween: 60,
-			pagination: false,
-			scrollbar: {
-				el: '.clients__scrollbar',
-				draggable: true,
-			},
+			spaceBetween: 56,
 			slidesPerView: 3,
-			loop: false,
-			autoplay: false,
-		}
+			pagination: {
+				el: '.clients__pagination',
+				type: 'progressbar',
+			},
+		},
 	},
 });
 function autoHeightSlide() {
-	const slide = document.querySelectorAll('.services-slider__row')
+	const slide = document.querySelectorAll('.cases__row');
 	for (let slideItem of slide) {
-		slideItem.style.height = slideItem.closest('.services-slider__list').scrollHeight + 'px';
+		slideItem.style.height = slideItem.closest('.cases__list').scrollHeight + 'px';
 	}
-}
+};
 autoHeightSlide();
-const popup = document.querySelectorAll('.clients__popup')
-const popupLink = document.querySelectorAll('.clients__item')
-const body = document.querySelector('body')
+window.addEventListener(`resize`, event => {
+	autoHeightSlide();
+	casesSwiper.update();
+	clientsSwiper.update();
+
+});
+const popup = document.querySelectorAll('.clients__popup');
+const popupLink = document.querySelectorAll('.clients__item');
+const body = document.querySelector('body');
 let i = 0;
 for (const popupItem of popup) {
 	i++;
 	popupItem.setAttribute('id', 'item-' + i)
-}
-let ii = 0;
+};
 let timer = null;
 for (const popupLinkItem of popupLink) {
-	ii++;
-	popupLinkItem.setAttribute('data-id', 'item-' + ii)
 	popupLinkItem.addEventListener('mouseenter', function () {
 		if (timer) {
 			clearTimeout(timer);
 		}
 		timer = setTimeout(() => {
-			this.classList.add('open')
-			const dataId = this.getAttribute('data-id')
-			const id = document.getElementById(dataId)
-			id.classList.add('open')
-			body.classList.add('open')
-		}, 5000);
+			this.classList.add('open');
+			const dataId = this.getAttribute('data-id');
+			const id = document.getElementById(dataId);
+			id.classList.add('open');
+			id.querySelector('video').play();
+			body.classList.add('open');
+		}, 4000);
 	});
 	popupLinkItem.addEventListener('mouseleave', function () {
 		clearTimeout(timer);
 	});
 	popupLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
-		this.classList.add('open')
-		const dataId = this.getAttribute('data-id')
-		const id = document.getElementById(dataId)
-		id.classList.add('open')
-		body.classList.add('open')
+		this.classList.add('open');
+		const dataId = this.getAttribute('data-id');
+		const id = document.getElementById(dataId);
+		id.classList.add('open');
+		id.querySelector('video').play();
+		body.classList.add('open');
 	});
-}
-const clientsBtn = document.querySelectorAll('.popup-clients__btn')
-for (const clientsBtnItem of clientsBtn) {
-	clientsBtnItem.addEventListener('click', function () {
-		this.closest('.clients__popup').classList.remove('open')
-		body.classList.remove('open')
-	})
-}
+	document.addEventListener('click', e => {
+		const target = e.target;
+		const swiperOpen = () => popupLinkItem.classList.contains('open');
+		if (swiperOpen()) {
+			if (!target.closest('.clients__item') && !target.closest('.popup-clients__video')) {
+				body.classList.remove('open');
+				popupLinkItem.classList.remove('open');
+				const dataId = popupLinkItem.getAttribute('data-id');
+				const id = document.getElementById(dataId);
+				id.classList.remove('open');
+				id.querySelector('video').pause();
+				id.querySelector('video').currentTime = 0;
+			}
+		}
+	});
+};

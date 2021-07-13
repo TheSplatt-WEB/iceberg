@@ -123,20 +123,25 @@ function scriptsLibs() {
 function images() {
 	return src('app/img/**/*.{jpg,png,svg,gif,ico,webp}')
 		.pipe(webp({
-			quality: 70
+			quality: 100
 		}))
 		.pipe(dest('dist/img/'))
 		.pipe(src('app/img/**/*.{jpg,png,svg,gif,ico,webp}'))
-		.pipe(
-			imagemin({
-				progressive: true,
-				svgoPlugins: [{ removeViewBox: false }],
-				interlaced: true,
-				optimizationLevel: 3 // 0 to 7
-			})
-		)
+		// .pipe(
+		// 	imagemin({
+		// 		progressive: true,
+		// 		svgoPlugins: [{ removeViewBox: false }],
+		// 		interlaced: true,
+		// 		optimizationLevel: 7 // 0 to 7
+		// 	})
+		// )
 		.pipe(dest('dist/img/'))
 		.pipe(browsersync.stream())
+}
+
+function video() {
+	return src('app/video/*')
+		.pipe(dest('dist/video'))
 }
 
 //Функция слежки за файлами. В данном случае следит за всеми файлами scss, html, js и изображениями в папке app в соответствующих подпапках.///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -202,6 +207,7 @@ exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.otf2ttf = otf2ttf;
 exports.images = images;
+exports.video = video;
 exports.html = html;
 exports.styles = styles;
 exports.stylesLibs = stylesLibs;
@@ -212,4 +218,4 @@ exports.browserSync = browserSync;
 exports.clear = clear;
 
 
-exports.default = series(clear, stylesLibs, scriptsLibs, styles, html, scripts, images, fonts, parallel(watching, browserSync));
+exports.default = series(clear, stylesLibs, scriptsLibs, styles, html, scripts, images, video, fonts, parallel(watching, browserSync));

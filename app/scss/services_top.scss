@@ -1,16 +1,101 @@
 .top-services{
 	.top{
+		&__body{
+			@media (max-width: $md2 + px){
+				flex-direction: column;
+			}
+		}
 		&__info{
 			order: -1;
-			@media (max-width: $md3 + px){
+			@media (max-width: $md2 + px){
 				order: 0;
+				margin-right: auto;
+				margin-left: auto;
+				text-align: center;
 			}
 		}
 		&__image{
 			background-image: url(../img/top-page_img.svg);
+			min-width: 564.78px;
+			min-height: 415.45px;
+			@media (max-width: $md3 + px){
+				min-width: 280px;
+				max-width: 280px;
+				min-height: 260px;
+				height: 260px;
+			}
 			&::after,
 			&::before{
 				display: none;
+			}
+			.anim_1{
+				position: absolute;
+				top: 75px;
+				left: 176px;
+				width: 132px;
+				animation: anim1 2s ease-in-out 1s forwards;
+				z-index: 2;
+				@media (max-width: $md3 + px){
+					top: 37px;
+    				left: 88px;
+    				width: 65px;
+					 animation: animAdaprive1 2s ease-in-out 1s forwards;
+				}
+				g{
+					filter: none;
+					animation: shadow 2s ease-in-out 1s forwards;
+				}
+			}
+			.anim_2{
+				position: absolute;
+				top: 59px;
+				left: 200.2px;
+				z-index: 2;
+				animation: anim2 2s ease-in-out 1s forwards;
+				@media (max-width: $md3 + px){
+					top: 1px;
+    				left: 97.2px;
+    				width: 62px;
+					animation: animAdaprive2 2s ease-in-out 1s forwards;
+				}
+			}
+			.anim_3{
+				position: absolute;
+				left: 184.268px;
+    			top: 70.8px;
+				 z-index: 2;
+				 animation: anim3 2s ease-in-out 1s forwards;
+				@media (max-width: $md3 + px){
+					left: 92px;
+					top: 15px;
+					width: 8px;
+					animation: animAdaprive3 2s ease-in-out 1s forwards;
+				}
+			}
+			.anim_4{
+				position: absolute;
+				left: 279.26px;
+				top: 170px;
+				animation: anim4 2s ease-in-out 1s forwards;
+				@media (max-width: $md3 + px){
+					left: 137.26px;
+    				top: 72px;
+    				width: 22px;
+					 animation: animAdaprive4 2s ease-in-out 1s forwards;
+				}
+			}
+			.anim_shadow{
+				position: absolute;
+				top: 72px;
+				left: 220px;
+				z-index: 1;
+				animation: animShadow 2s ease-in-out 1s forwards;
+				@media (max-width: $md3 + px){
+					top: 16px;
+					left: 109px;
+					width: 38px;
+					 animation: animShadoAdaprivew 2s ease-in-out 1s forwards;
+				}
 			}
 		}
 		&__title{
@@ -33,6 +118,12 @@
 		&__descr{
 			@media (max-width: $md4 + px){
 				display: inline;
+			}
+		}
+		&__btn{
+			@media (max-width: $md2 + px){
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 		&__link{

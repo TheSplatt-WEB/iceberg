@@ -7,55 +7,60 @@ function testWebP(callback) {
 	webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
 testWebP(function (support) {
-
 	if (support == true) {
 		document.querySelector('body').classList.add('webp');
 	} else {
 		document.querySelector('body').classList.add('no-webp');
 	}
 });
-const onScrollHeader = () => {
-	const header = document.querySelector('.header')
-	const footer = document.querySelector('.footer')
-	const btnTop = document.querySelector('.btn__top')
-	let footerHeight = footer.offsetHeight + window.innerHeight
-	let footerVisible = footer.offsetTop
-	let prevScroll = window.pageYOffset
-	let currentScroll
-	window.addEventListener('scroll', () => {
-		currentScroll = window.pageYOffset
-		let hidden = footerVisible - footerHeight > prevScroll
-		const headerHidden = () => header.classList.contains('header-hidden')
-		if (currentScroll > prevScroll && !headerHidden()) {
-			header.classList.add('header-hidden')
-		}
-		if (currentScroll < prevScroll) {
-			if (hidden === false && !headerHidden()) {
-				header.classList.add('header-hidden')
+//Инициализация WOW
+
+new WOW().init();
+
+document.addEventListener('DOMContentLoaded', () => {
+	const onScrollHeader = () => {
+		const header = document.querySelector('.header');
+		const footer = document.querySelector('.footer');
+		const btnTop = document.querySelector('.btn__top');
+		let footerHeight = footer.offsetHeight + window.innerHeight;
+		let footerVisible = footer.offsetTop;
+		let prevScroll = window.pageYOffset;
+		let currentScroll;
+		window.addEventListener('scroll', () => {
+			currentScroll = window.pageYOffset;
+			let hidden = footerVisible - footerHeight > prevScroll;
+			const headerHidden = () => header.classList.contains('header-hidden');
+			if (currentScroll > prevScroll && !headerHidden()) {
+				header.classList.add('header-hidden');
 			}
-			if (hidden === true && headerHidden()) {
-				header.classList.remove('header-hidden')
+			if (currentScroll < prevScroll) {
+				if (hidden === false && !headerHidden()) {
+					header.classList.add('header-hidden');
+				}
+				if (hidden === true && headerHidden()) {
+					header.classList.remove('header-hidden');
+				}
 			}
-		}
-		const btnHidden = () => btnTop.classList.contains('btn-hidden')
-		if (currentScroll > prevScroll && !btnHidden()) {
-			btnTop.classList.add('btn-hidden')
-		}
-		if (currentScroll < prevScroll) {
-			if (hidden === false && !btnHidden) {
-				btnTop.classList.add('btn-hidden')
+			const btnHidden = () => btnTop.classList.contains('btn-hidden');
+			if (currentScroll > prevScroll && !btnHidden()) {
+				btnTop.classList.add('btn-hidden');
 			}
-			if (hidden === true && btnHidden) {
-				btnTop.classList.remove('btn-hidden')
+			if (currentScroll < prevScroll) {
+				if (hidden === false && !btnHidden) {
+					btnTop.classList.add('btn-hidden');
+				}
+				if (hidden === true && btnHidden) {
+					btnTop.classList.remove('btn-hidden');
+				}
 			}
-		}
-		if (currentScroll <= 300 && !btnHidden()) {
-			btnTop.classList.add('btn-hidden')
-		}
-		prevScroll = currentScroll
-	})
-}
-onScrollHeader();
+			if (currentScroll <= 300 && !btnHidden()) {
+				btnTop.classList.add('btn-hidden');
+			}
+			prevScroll = currentScroll;
+		})
+	}
+	onScrollHeader();
+});
 
 //Слайдер Swiper tomography
 
@@ -81,23 +86,23 @@ new Swiper('.tomography__gallery', {
 	},
 	on: {
 		init: function () {
-			const progressBar = document.querySelector('.progress-bar')
+			const progressBar = document.querySelector('.progress-bar');
 			progressBar.classList.remove('animate');
 			progressBar.classList.remove('active');
 			progressBar.classList.add('animate');
 			progressBar.classList.add('active');
 		},
 		slideChangeTransitionStart: function () {
-			const progressBar = document.querySelector('.progress-bar')
+			const progressBar = document.querySelector('.progress-bar');
 			progressBar.classList.remove('animate');
 			progressBar.classList.remove('active');
 			progressBar.classList.add('active');
 		},
 		slideChangeTransitionEnd: function () {
-			const progressBar = document.querySelector('.progress-bar')
+			const progressBar = document.querySelector('.progress-bar');
 			progressBar.classList.add('animate');
-		}
-	}
+		},
+	},
 });
 
 //Слайдер Swiper diagnostics
@@ -117,7 +122,7 @@ new Swiper('.diagnostics__slider', {
 		768: {
 			slidesPerView: 3,
 			pagination: false,
-		}
+		},
 	},
 });
 
@@ -132,6 +137,7 @@ const visiographySwiper = new Swiper('.visiography__gallery', {
 	observeParents: true,
 	observer: true,
 	slidesPerView: 1,
+	loop: false,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
@@ -140,7 +146,7 @@ const visiographySwiper = new Swiper('.visiography__gallery', {
 		480: {
 			spaceBetween: 27,
 			slidesPerView: 2,
-		}
+		},
 	},
 });
 
@@ -155,6 +161,7 @@ const diagnocamSwiper = new Swiper('.diagnocam__gallery', {
 	observeParents: true,
 	observer: true,
 	slidesPerView: 1,
+	loop: false,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
@@ -163,28 +170,35 @@ const diagnocamSwiper = new Swiper('.diagnocam__gallery', {
 		480: {
 			spaceBetween: 27,
 			slidesPerView: 2,
-		}
+		},
 	},
 });
 
 //Показываем Popup галерею слайдера tomography
-
-const tomographyLink = document.querySelectorAll('.tomography__image')
-const productsClose = document.querySelectorAll('.products__close')
-const tomographyCloseItem = document.querySelector('.tomography__close')
-const productsLink = document.querySelectorAll('.products__image')
-const body = document.querySelector('body')
+const tomographyLink = document.querySelectorAll('.tomography__image');
+const productsLink = document.querySelectorAll('.products__image');
+const body = document.querySelector('body');
 for (let tomographyLinkItem of tomographyLink) {
 	tomographyLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
 		this.closest('.tomography__modal').classList.add('open');
 		body.classList.add('open');
 	});
-}
+	document.addEventListener('click', e => {
+		const swiperOpen = () => tomographyLinkItem.closest('.tomography__modal').classList.contains('open');
+		if (swiperOpen()) {
+			const target = e.target
+			if (!target.closest('.tomography__image') && !target.closest('.tomography-button-next') && !target.closest('.tomography-button-prev')) {
+				body.classList.remove('open');
+				tomographyLinkItem.closest('.tomography__modal').classList.remove('open');
+			}
+		}
+	});
+};
 for (let productsLinkItem of productsLink) {
 	productsLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
-		const swiperOpen = () => this.closest('.products__modal').classList.contains('open')
+		const swiperOpen = () => this.closest('.products__modal').classList.contains('open');
 		if (!swiperOpen()) {
 			this.closest('.products__modal').classList.add('open');
 			body.classList.add('open');
@@ -195,52 +209,45 @@ for (let productsLinkItem of productsLink) {
 			diagnocamSwiper.params.spaceBetween = 0;
 			diagnocamSwiper.params.slidesPerView = 1;
 		}
-	})
-}
-for (let productsCloseItem of productsClose) {
-	productsCloseItem.addEventListener('click', function () {
-		const ModalOpen = () => this.closest('.products__modal').classList.contains('open')
-		if (ModalOpen) {
-			this.closest('.products__modal').classList.remove('open');
-			body.classList.remove('open');
-			visiographySwiper.params.breakpoints[480].slidesPerView = 1;
-			visiographySwiper.params.spaceBetween = 27;
-			visiographySwiper.params.slidesPerView = 2;
-			diagnocamSwiper.params.breakpoints[480].slidesPerView = 1;
-			diagnocamSwiper.params.spaceBetween = 27;
-			diagnocamSwiper.params.slidesPerView = 2;
+	});
+	document.addEventListener('click', e => {
+		const target = e.target;
+		const swiperOpen = () => productsLinkItem.closest('.products__modal').classList.contains('open');
+		if (swiperOpen()) {
+			if (!target.closest('.products__image') && !target.closest('.swiper-button-next') && !target.closest('.swiper-button-prev')) {
+				body.classList.remove('open');
+				productsLinkItem.closest('.products__modal').classList.remove('open');
+				visiographySwiper.params.breakpoints[480].slidesPerView = 2;
+				visiographySwiper.params.spaceBetween = 27;
+				visiographySwiper.params.slidesPerView = 2;
+				diagnocamSwiper.params.breakpoints[480].slidesPerView = 2;
+				diagnocamSwiper.params.spaceBetween = 27;
+				diagnocamSwiper.params.slidesPerView = 2;
+			}
 		}
 	});
-}
-tomographyCloseItem.addEventListener('click', function () {
-	this.closest('.tomography__modal').classList.remove('open');
-	body.classList.remove('open');
-});
-
-//Инициализация WOW
-
-new WOW().init();
+};
 
 //Кнопка бургера
 
-const menuBtn = document.querySelectorAll('.menu__btn')
+const menuBtn = document.querySelectorAll('.menu__btn');
 for (const menuBtnItem of menuBtn) {
 	menuBtnItem.addEventListener('click', function () {
-		this.classList.toggle('open')
-	})
-}
+		this.classList.toggle('open');
+	});
+};
 
 //Скролл к якорям
 
-const diagnosticsLink = document.querySelectorAll('.diagnostics__link')
-let speed = .2
+const diagnosticsLink = document.querySelectorAll('.diagnostics__link');
+let speed = .2;
 for (let diagnosticsLinkItem of diagnosticsLink) {
 	diagnosticsLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
-		let windowTop = window.pageYOffset
-		const id = this.getAttribute('href')
-		const scrollTo = document.querySelector(id)
-		let scrollSize = scrollTo.getBoundingClientRect().top
+		let windowTop = window.pageYOffset;
+		const id = this.getAttribute('href');
+		const scrollTo = document.querySelector(id);
+		let scrollSize = scrollTo.getBoundingClientRect().top;
 		let start = null;
 		requestAnimationFrame(step);
 		function step(time) {
@@ -259,14 +266,13 @@ for (let diagnosticsLinkItem of diagnosticsLink) {
 
 //Кнопки наверх
 
-const btnTop = document.querySelector('.btn__top')
-const btnTopFooter = document.querySelector('.footer__top-btn')
+const btnTop = document.querySelector('.btn__top');
+const btnTopFooter = document.querySelector('.footer__top-btn');
 btnTop.addEventListener('click', function () {
 	let windowTop = window.pageYOffset
-	const scrollTo = document.querySelector('.top')
-	let scrollSize = scrollTo.getBoundingClientRect().top - 121
+	const scrollTo = document.querySelector('.top');
+	let scrollSize = scrollTo.getBoundingClientRect().top - 121;
 	let start = null;
-	console.log(scrollSize)
 	requestAnimationFrame(step);
 	function step(time) {
 		if (start === null) start = time;
@@ -281,11 +287,10 @@ btnTop.addEventListener('click', function () {
 	}
 }, false);
 btnTopFooter.addEventListener('click', function () {
-	let windowTop = window.pageYOffset
-	const scrollTo = document.querySelector('.top')
-	let scrollSize = scrollTo.getBoundingClientRect().top - 121
+	let windowTop = window.pageYOffset;
+	const scrollTo = document.querySelector('.top');
+	let scrollSize = scrollTo.getBoundingClientRect().top - 121;
 	let start = null;
-	console.log(scrollSize)
 	requestAnimationFrame(step);
 	function step(time) {
 		if (start === null) start = time;
@@ -302,12 +307,12 @@ btnTopFooter.addEventListener('click', function () {
 
 //Аккордион
 
-const questionsLink = document.querySelectorAll('.questions__link')
+const questionsLink = document.querySelectorAll('.questions__link');
 for (let questionsLinkItem of questionsLink) {
 	questionsLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
-		this.classList.toggle('open')
-		const dropHidden = () => this.classList.contains('open')
+		this.classList.toggle('open');
+		const dropHidden = () => this.classList.contains('open');
 		if (dropHidden()) {
 			this.nextElementSibling.style.height = this.nextElementSibling.scrollHeight + 'px';
 			this.nextElementSibling.classList.add('open');

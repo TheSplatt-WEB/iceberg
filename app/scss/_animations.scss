@@ -70,55 +70,117 @@
 		transform: translate(0, 0);
 	}
 }
-@keyframes fadeDownBig{
-	from{
-		opacity: 0;
-		transform: translate(0, -30%);
-	}
+@keyframes clientsRotate{
 	to{
-		opacity: 1;
-		transform: translate(0, 0);
+		transform: rotate(73.8deg);
 	}
 }
-@keyframes fadeRightBig{
-	from{
-		opacity: 0;
-		transform: translate(50%, 0);
-	}
+// @keyframes rightSpin {
+// 	from {
+// 	  transform: rotate(0deg);
+// 	}
+// 	to {
+// 	  transform: rotate(180deg);
+// 	}
+//  }
+//  @keyframes leftSpin {
+// 	from {
+// 	  transform: rotate(0deg);
+// 	}
+// 	to {
+// 	  transform: rotate(360deg);
+// 	}
+//  }
+//  @keyframes overflowSpan {
+// 	97% {
+// 	  clip: rect(auto, auto, auto, auto);
+// 	}
+// 	to {
+// 	  clip: rect(auto, auto, auto, auto);
+// 	}
+//  }
+//  @keyframes overflowBefore {
+// 	96% {
+// 	  opacity: 1;
+// 	}
+// 	to{
+// 		opacity: 1;
+// 	}
+//  }
+ @keyframes anim1 {
 	to{
-		opacity: 1;
-		transform: translate(0, 0);
-	}
-}
-@keyframes rightSpin {
-	from {
-	  transform: rotate(0deg);
-	}
-	to {
-	  transform: rotate(180deg);
+		top: 344px;
+    	left: 356px;
+    	transform: rotate(-95deg);
 	}
  }
- @keyframes leftSpin {
-	from {
-	  transform: rotate(0deg);
-	}
-	to {
-	  transform: rotate(360deg);
-	}
- }
- @keyframes overflowSpan {
-	97% {
-	  clip: rect(auto, auto, auto, auto);
-	}
-	to {
-	  clip: rect(auto, auto, auto, auto);
-	}
- }
- @keyframes overflowBefore {
-	96% {
-	  opacity: 1;
-	}
+ @keyframes anim2 {
 	to{
-		opacity: 1;
+		top: 436px;
+		left: 246.2px;
+		transform: rotate(-72deg);
+	}
+ }
+ @keyframes anim3 {
+	to{
+		left: 394.268px;
+		top: 401.8px;
+		transform: rotate(91deg);
+	}
+ }
+ @keyframes anim4 {
+	to{
+		left: 437.26px;
+    	top: 239px;
+    	transform: rotate(75deg);
+	}
+ }
+ @keyframes animShadow {
+	to{
+		top: 461px;
+		left: 250px;
+		z-index: 1;
+		transform: rotate(-72deg);
+	}
+ }
+ @keyframes animAdaprive1 {
+	to{
+		top: 160px;
+    	left: 178px;
+    	transform: rotate(-95deg);
+	}
+ }
+ @keyframes animAdaprive2 {
+	to{
+		top: 176px;
+    	left: 117.2px;
+		transform: rotate(-72deg);
+	}
+ }
+ @keyframes animAdaprive3 {
+	to{
+		left: 198px;
+		top: 167px;  
+		transform: rotate(91deg);
+	}
+ }
+ @keyframes animAdaprive4 {
+	to{
+		left: 213.26px;
+    	top: 99px;
+    	transform: rotate(75deg);
+	}
+ }
+ @keyframes animShadoAdaprivew {
+	to{
+		top: 201px;
+		left: 121px;
+		z-index: 1;
+		transform: rotate(-72deg);
+	}
+ }
+ @keyframes shadow {
+	to{
+		filter: url(#filter0_d);
 	}
  }
