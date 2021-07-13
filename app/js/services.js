@@ -131,7 +131,7 @@ window.addEventListener(`resize`, event => {
 	clientsSwiper.update();
 
 });
-const popup = document.querySelectorAll('.clients__popup');
+const popup = document.querySelectorAll('.popup-clients');
 const popupLink = document.querySelectorAll('.clients__item');
 const body = document.querySelector('body');
 let i = 0;

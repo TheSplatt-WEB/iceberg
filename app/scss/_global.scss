@@ -27,9 +27,6 @@ body{
 	background-color: $bg;
 	&.open{
 		overflow: hidden;
-		@media (max-width: $md4 + px){
-			overflow: visible;
-		}
 	}
 }
 html, body{
