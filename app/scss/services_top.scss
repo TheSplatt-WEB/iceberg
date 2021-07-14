@@ -18,6 +18,9 @@
 			background-image: url(../img/top-page_img.svg);
 			min-width: 564.78px;
 			min-height: 415.45px;
+			@media (max-width: $md2 + px){
+				min-height: 540px;
+			}
 			@media (max-width: $md3 + px){
 				min-width: 280px;
 				max-width: 280px;
@@ -32,25 +35,20 @@
 				position: absolute;
 				top: 75px;
 				left: 176px;
-				width: 132px;
 				animation: anim1 2s ease-in-out 1s forwards;
 				z-index: 2;
 				@media (max-width: $md3 + px){
-					top: 37px;
-    				left: 88px;
-    				width: 65px;
-					 animation: animAdaprive1 2s ease-in-out 1s forwards;
-				}
-				g{
-					filter: none;
-					animation: shadow 2s ease-in-out 1s forwards;
+					top: -13px;
+    				left: 87px;
+    				width: 66px;
+					animation: animAdaprive1 2s ease-in-out 1s forwards;
 				}
 			}
 			.anim_2{
 				position: absolute;
 				top: 59px;
 				left: 200.2px;
-				z-index: 2;
+				z-index: 3;
 				animation: anim2 2s ease-in-out 1s forwards;
 				@media (max-width: $md3 + px){
 					top: 1px;
@@ -84,6 +82,21 @@
 					 animation: animAdaprive4 2s ease-in-out 1s forwards;
 				}
 			}
+			.anim_5{
+				position: absolute;
+				top: 155px;
+				left: 251px;
+				opacity: 0;
+				animation: anim5 2s ease-in-out 1s forwards;
+				transform: rotateY(-88deg) translate(-50%, 0);
+    			transform-origin: 100% 100%;
+				@media (max-width: $md3 + px){
+					top: 58px;
+    				left: 124px;
+    				width: 35px;
+					animation: animAdaptive5 2s ease-in-out 1s forwards;
+				}
+			}
 			.anim_shadow{
 				position: absolute;
 				top: 72px;
@@ -94,7 +107,7 @@
 					top: 16px;
 					left: 109px;
 					width: 38px;
-					 animation: animShadoAdaprivew 2s ease-in-out 1s forwards;
+					animation: animShadowAdaprive 2s ease-in-out 1s forwards;
 				}
 			}
 		}
