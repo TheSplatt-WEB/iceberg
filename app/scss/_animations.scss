@@ -70,9 +70,22 @@
 		transform: translate(0, 0);
 	}
 }
-@keyframes clientsRotate{
+@keyframes circle{
+	47%{
+		clip-path: inset(0 0 0 0);
+	}
 	to{
-		transform: rotate(73.8deg);
+		clip-path: inset(0 0 0 0);
+	}
+}
+@keyframes circleBefore{
+	to{
+		transform: rotate(135deg);
+	}
+}
+@keyframes circleAfter{
+	to{
+		transform: rotate(315deg);
 	}
 }
  @keyframes anim1 {
@@ -101,6 +114,7 @@
 		left: 437.26px;
     	top: 239px;
     	transform: rotate(75deg);
+		opacity: 0;
 	}
  }
  @keyframes animShadow {
@@ -145,6 +159,7 @@
 		left: 121px;
 		z-index: 1;
 		transform: rotate(-72deg);
+		opacity: 0;
 	}
  }
  @keyframes shadow {

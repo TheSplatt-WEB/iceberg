@@ -48,7 +48,7 @@ const casesSwiper = new Swiper('.cases__gallery', {
 				type: 'progressbar',
 			},
 		},
-		1460: {
+		1461: {
 			spaceBetween: 56,
 			slidesPerView: 3,
 			pagination: {
@@ -71,11 +71,11 @@ const clientsSwiper = new Swiper('.clients__gallery', {
 		el: '.clients__pagination',
 		type: 'fraction',
 	},
-	loop: true,
-	autoplay: {
-		delay: 5000,
-		disableOnInteraction: false,
-	},
+	// loop: true,
+	// autoplay: {
+	// 	delay: 5000,
+	// 	disableOnInteraction: false,
+	// },
 	on: {
 		init: function () {
 			const nextBtn = document.querySelector('.clients__next span');
@@ -108,7 +108,7 @@ const clientsSwiper = new Swiper('.clients__gallery', {
 				type: 'progressbar',
 			},
 		},
-		1460: {
+		1461: {
 			spaceBetween: 56,
 			slidesPerView: 3,
 			pagination: {

@@ -8,19 +8,25 @@
 		display: block;
 		@media (min-width: $md2 + px){
 			&:hover{
-				.clients__wrapper{
-					& > span{
-						opacity: 1;
-						animation: clientsRotate 3.7s linear forwards;
-					}
+				.clients__circle{
+					animation: circle 3.8s step-end forwards;
+				}
+				.clients__circle-before{
+					animation: circleBefore 1.9s linear forwards;
+				}
+				.clients__circle-after{
+					animation: circleAfter 3.8s linear forwards;
 				}
 			}
 			&:focus-visible{
-				.clients__wrapper{
-					& > span{
-						opacity: 1;
-						animation: clientsRotate 3.7s linear forwards;
-					}
+				.clients__circle{
+					animation: circle 3.8s step-end forwards;
+				}
+				.clients__circle-before{
+					animation: circleBefore 1.9s linear forwards;
+				}
+				.clients__circle-after{
+					animation: circleAfter 3.8s linear forwards;
 				}
 			}
 		}
@@ -28,49 +34,45 @@
 	&__wrapper{
 		position: relative;
 		padding: 20px;
-		& > span{
+	}
+	&__circle{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		clip-path: inset(0 52% 0 0);
+	}
+	&__circle-before,
+	&__circle-after{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: 50%;
+		transform: rotate(-45deg);
+		border: 13px solid $hover;
+		border-left-color: transparent;
+		border-top-color: transparent;
+		transition: opacity .3s;
+		&::after{
+			content: '';
 			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
+			height: 13px;
+			width: 13px;
+			background-color: $hover;
+			z-index: 2;
 			border-radius: 50%;
-			z-index: -1;
-			transform: rotate(16.2deg);
-			border: 13px solid $hover;
-			opacity: 0;
-			transition: opacity .3s;
-			&::before,
-			&::after{
-				content: '';
-				position: absolute;
-				height: 13px;
-				width: 13px;
-				background-color: $hover;
-				z-index: 2;
-				border-radius: 50%;
-			}
-			&::before{
-				bottom: 50%;
-				transform: translate(100%, 50%);
-				right: 0;
-			}
-			&::after{
-				bottom: 0;
-				left: 50%;
-				transform: translate(-50%, 100%);
+		}
+		&::after{
+			@include adaptive(bottom, 67.7, 28, 1);
+			@include adaptive(left, 66.7, 28, 1);
+			@media (max-width: $md1 + px){
+				@include adaptive(bottom, 75.7, 0, 1);
+				@include adaptive(left, 73.7, -3, 1);
 			}
 		}
-	}
-	&__hide-circle{
-		position: absolute;
-		right: -50%;
-		bottom: -50%;
-		height: 100%;
-		width: 100%;
-		z-index: 1;
-		background-color: #fff;
-
 	}
 	&__image{
 		position: relative;
@@ -146,8 +148,8 @@
 		max-width: 1200px;
 		width: 100%;
 		position: relative;
-		@include adaptive(padding-right, 71, 50, 1);
-		@include adaptive(padding-left, 71, 50, 1);
+		padding-right: 71px;
+		padding-left: 71px;
 		@media (max-width: $md3 + px){
 			padding-left: 10px;
 			padding-right: 10px;
@@ -164,20 +166,21 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
+			border-radius: 15px;
 			object-fit: cover;
 		}
 	}
 	&__btn{
 		position: absolute;
-		top: 10px;
+		top: 0;
 		right: 10px;
-		@include adaptive(height, 50, 30, 1);
-		@include adaptive(width, 50, 30, 1);
+		width: 50px;
+		height: 50px;
 		border-radius: 50%;
 		background-color: $el;
 		transition: background-color .3s;
 		@media (max-width: $md3 + px){
-			right: 20px;
+			top: -60px;
 			background-color: $text;
 		}
 		@media (min-width: $md2 + px){
@@ -222,4 +225,14 @@
 	&.open{
 		display: flex;
 	}
+}
+
+.test{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	border: 13px solid #000;
+	border-left-color: rgba(0,0,0,0);
+	border-top-color: rgba(0,0,0,0);
+	
 }
