@@ -50,29 +50,11 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		border-radius: 50%;
-		transform: rotate(-45deg);
-		border: 13px solid $hover;
-		border-left-color: transparent;
-		border-top-color: transparent;
-		transition: opacity .3s;
-		&::after{
-			content: '';
-			position: absolute;
-			height: 13px;
-			width: 13px;
-			background-color: $hover;
-			z-index: 2;
-			border-radius: 50%;
-		}
-		&::after{
-			@include adaptive(bottom, 67.7, 28, 1);
-			@include adaptive(left, 66.7, 28, 1);
-			@media (max-width: $md1 + px){
-				@include adaptive(bottom, 75.7, 0, 1);
-				@include adaptive(left, 73.7, -3, 1);
-			}
-		}
+		background-image: url(../img/circle.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: top right;
+		transform: rotate(90deg);
 	}
 	&__image{
 		position: relative;

@@ -146,6 +146,7 @@
 	}
 	&__btn{
 		@include adaptive(height, 50, 55, 1);
+		font-weight: 500;
 		max-width: 253px;
 		width: 100%;
 		display: flex;

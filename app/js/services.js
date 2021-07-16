@@ -118,22 +118,8 @@ const clientsSwiper = new Swiper('.clients__gallery', {
 		},
 	},
 });
-function autoHeightSlide() {
-	const slide = document.querySelectorAll('.cases__row');
-	for (let slideItem of slide) {
-		slideItem.style.height = slideItem.closest('.cases__list').scrollHeight + 'px';
-	}
-};
-autoHeightSlide();
-window.addEventListener(`resize`, event => {
-	autoHeightSlide();
-	casesSwiper.update();
-	clientsSwiper.update();
-
-});
 const popup = document.querySelectorAll('.popup-clients');
 const popupLink = document.querySelectorAll('.clients__item');
-const body = document.querySelector('body');
 let i = 0;
 for (const popupItem of popup) {
 	i++;

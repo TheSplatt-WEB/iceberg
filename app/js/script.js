@@ -135,15 +135,15 @@ new Swiper('.diagnostics__slider', {
 //Слайдер Swiper visiography
 
 const visiographySwiper = new Swiper('.visiography__gallery', {
-	scrollbar: {
-		el: '.swiper-scrollbar',
-		draggable: true,
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'progressbar',
 	},
 	watchOverflow: true,
 	observeParents: true,
 	observer: true,
 	slidesPerView: 1,
-	loop: false,
+	loop: true,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
@@ -159,15 +159,15 @@ const visiographySwiper = new Swiper('.visiography__gallery', {
 //Слайдер Swiper diagnocam
 
 const diagnocamSwiper = new Swiper('.diagnocam__gallery', {
-	scrollbar: {
-		el: '.swiper-scrollbar',
-		draggable: true,
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'progressbar',
 	},
 	watchOverflow: true,
 	observeParents: true,
 	observer: true,
 	slidesPerView: 1,
-	loop: false,
+	loop: true,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
@@ -236,12 +236,20 @@ for (let productsLinkItem of productsLink) {
 
 //Кнопка бургера
 
-const menuBtn = document.querySelectorAll('.menu__btn');
-for (const menuBtnItem of menuBtn) {
+const menuBtn = document.querySelectorAll('.header__burger');
+const menu = document.querySelector('.menu');
+for (let i = 0; i < menuBtn.length; i++) {
+	const menuBtnItem = menuBtn[i];
 	menuBtnItem.addEventListener('click', function () {
-		this.classList.toggle('open');
-	});
-};
+		for (let i = 0; i < menuBtn.length; i++) {
+			const menuBtnItem = menuBtn[i];
+			menuBtnItem.classList.toggle('open');
+			body.classList.toggle('open');
+			menu.classList.toggle('open');
+		}
+	})
+
+}
 
 //Скролл к якорям
 

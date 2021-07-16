@@ -133,6 +133,7 @@
 		max-width: 270px;
 		width: 100%;
 		transition: color .3s;
+		display: block;
 		&::after{
 			content: url(../img/icon_link.svg);
 			display: inline-block;
@@ -146,6 +147,10 @@
 			&:focus-visible{
 				color: $hover;
 			}
+		}
+		@media (max-width: $md3 + px){
+			margin-right: auto;
+			margin-left: auto;
 		}
 	}
 	&__btn{

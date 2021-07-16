@@ -1,0 +1,347 @@
+.menu{
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 99;
+	background-color: #fff;
+	@include adaptive(padding-right, 168, 68, 1);
+	padding-bottom: 31px;
+	padding-top: 30px;
+	overflow-y: auto;
+	overflow: auto;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .5s;
+	scrollbar-color: $text $el;
+   scrollbar-width: thin;
+	&::-webkit-scrollbar {
+		width: 8px;
+		background-color: $el;
+   }
+	&::-webkit-scrollbar-thumb {
+		background-color: $text;
+		border-radius: 10px;
+  }
+	&.open{
+		opacity: 1;
+		pointer-events: visible;
+	}
+	@media (max-width: $md3 + px){
+		padding-right: 0;
+	}
+	&__left{
+		max-width: 484px;
+		width: 100%;
+		@include adaptive(margin-bottom, 65, 45, 1);
+		@media (max-width: $md1 + px){
+			max-width: 400px;
+		}
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+		}
+	}
+	&__header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptive(margin-bottom, 70, 15, 1);
+		@include adaptive(padding-right, 181, 20, 1);
+		@include adaptive(padding-left, 40, 20, 1);
+		@media (max-width: $md2 + px){
+			padding-right: 0;
+		}
+		@media (max-width: $md3 + px){
+			@include adaptive(padding-right, 40, 20, 1);
+		}
+	}
+	.header__visually-impaired{
+		@media (max-width: $md3 + px){
+			display: flex;
+		}
+	}
+	&__burger{
+		position: fixed;
+		z-index: 100;
+		top: 33px;
+		@include adaptive(right, 60, 20, 1);
+		@media (max-width: $md3 + px){
+			position: relative;
+			top: auto;
+			right: auto;
+			margin-left: 10px;
+		}
+	}
+	&__right{
+		@include adaptive(max-width, 1315, 0, 1);
+		width: 100%;
+		height: 100vh;
+		overflow-y: auto;
+		position: fixed;
+		@include adaptive(padding-right, 168, 68, 1);
+		right: 0;
+		top: 30px;
+		scrollbar-color: $text $el;
+		scrollbar-width: thin;
+		&::-webkit-scrollbar {
+			width: 8px;
+			background-color: $el;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $text;
+			border-radius: 10px;
+	  }
+		@media (max-width: $md2 + px){
+			position: static;
+			max-width: 100%;
+			height: auto;
+			padding-right: 0;
+			@include adaptive(padding-left, 60, 20, 1);
+			margin-bottom: 32px;
+		}
+		@media (max-width: $md3 + px){
+			@include adaptive(padding-right, 60, 20, 1);
+		}
+	}
+	&__bottom{
+		max-width: 484px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		@include adaptive(padding-right, 181, 20, 1);
+		@include adaptive(padding-left, 60, 20, 1);
+		@media (max-width: $md1 + px){
+			max-width: 400px;
+		}
+		@media (max-width: $md2 + px){
+			text-align: center;
+			max-width: 100%;
+		}
+		@media (max-width: $md3 + px){
+			@include adaptive(padding-right, 60, 20, 1);
+		}
+	}
+	&__contacts{
+		margin-bottom: 32px;
+	}
+	.footer__adress{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&__buttons{
+		@media (max-width: $md2 + px){
+			order: -1;
+			margin-bottom: 53px;
+		}
+	}
+	&__button{
+		display: block;
+		max-width: 248px;
+		width: 100%;
+		height: 50px;
+		border-radius: 30px;
+		background-color: $text;
+		color: #fff;
+		font-weight: 500;
+		@include adaptive(font-size, 14, 16, 1);
+		@include adaptive(margin-bottom, 14, 10, 1);
+		transition: all .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+				color: #fff;
+			}
+			&:focus-visible{
+				background-color: $hover;
+				color: #fff;
+			}
+		}
+		@media (max-width: $md2 + px){
+			margin-right: auto;
+			margin-left: auto;
+		}
+		&:last-child{
+			background-color: $el;
+			color: $text;
+			margin-bottom: 0;
+		}
+	}
+	&__social{
+		position: fixed;
+		@include adaptive(right, 60, 0, 1);
+		bottom: 30px;
+		z-index: 100;
+		@media (max-width: $md3 + px){
+			position: static;
+			flex-direction: row;
+			justify-content: center;
+		}
+	}
+	.social__row{
+		@media (max-width: $md3 + px){
+			& + .social__row{
+				margin-top: 0;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+.menu-navigation{
+	height: 320px;
+	overflow-y: auto;
+	scrollbar-color: $text rgba(#000, .1);
+   scrollbar-width: thin;
+	&::-webkit-scrollbar {
+		width: 4px;
+		background-color: rgba(#000, .1);
+		appearance: none;
+   }
+	&::-webkit-scrollbar-thumb {
+		background-color: $text;
+		border-radius: 10px;
+  }
+	@media (max-width: $md2 + px){
+		height: auto;
+		overflow: auto;
+	}
+	&__row{
+		@media (max-width: $md2 + px){
+			& + &{
+				border-top: 1px solid #E8E8E8;
+			}
+		}
+	}
+	&__link{
+		padding-top: 15px;
+		padding-right: 20px;
+		padding-bottom: 15px;
+		@include adaptive(padding-left, 60, 20, 1);
+		font-weight: 500;
+		font-size: 24px;
+		transition: color .3s;
+		@media (min-width: $md2 + px){
+			&:hover{
+				color: $hover;
+			}
+			&:focus-visible{
+				color: $hover;
+			}
+		}
+	}
+}
+.menu-services{
+	width: 100%;
+	&__list {
+		display: flex;
+		margin-left: -22px;
+		flex-wrap: wrap;
+		@media (max-width: $md3 + px){
+			margin-left: 0;
+		}
+	}
+	&__row{
+		margin-left: 22px;
+		margin-bottom: 22px;
+		width: calc(33.333% - 22px);
+		@media (max-width: $md1 + px){
+			width: calc(50% - 22px);
+		}
+		@media (max-width: $md2 + px){
+			width: calc(33.333% - 22px);
+		}
+		@media (max-width: $md3 + px){
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+	&__link{
+		background-color: #f8f8f8;
+		display: flex;
+		align-items: center;
+		position: relative;
+		@include adaptive(border-radius, 20, 10, 1);
+		overflow: hidden;
+		width: 100%;
+		padding-bottom: 112.6%;
+		position: relative;
+		transition: all .5s;
+		@media (max-width: $md3 + px){
+			padding-bottom: 0;
+			height: 90px;
+			padding-right: 10px;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $text;
+				color: #fff;
+				.menu-services__img{
+					transform: translate(5%, -5%);
+				}
+			}
+			&:focus-visible{
+				background-color: $text;
+				color: #fff;
+				.menu-services__img{
+					transform: translate(-5%, -5%);
+				}
+			}
+		}
+	}
+	&__image{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		@media (max-width: $md3 + px){
+			position: static;
+			width: 110px;
+		}
+	}
+	&__img{
+		width: 100%;
+		transition: transform .5s;
+		@media (max-width: $md3 + px){
+			width: auto;
+			height: 115%;
+		}
+	}
+	&__img--rose{
+		@media (max-width: $md3 + px){
+			transform:rotate(75deg);
+		}
+	}
+	&__img--prosthetics{
+		@media (max-width: $md3 + px){
+			transform: scale(1.4) translate(5px, 22px);
+		}
+	}
+	&__name{
+		position: absolute;
+		bottom: 23px;
+		left: 0;
+		right: 0;
+		padding-right: 5px;
+		padding-left: 5px;
+		max-width: 286px;
+		margin: 0 auto;
+		width: 100%;
+		text-align: center;
+		@include adaptive(font-size, 24, 18, 1);
+		font-weight: 500;
+		letter-spacing: 0.075px;
+		@media (max-width: $md3 + px){
+			padding-left: 0;
+			position: static;
+			margin-left: 35px;
+			text-align: left;
+		}
+		@media (max-width: $md4 + px){
+			margin-left: 15px;
+		}
+	}
+}

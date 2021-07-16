@@ -1,6 +1,6 @@
-.header {
+.header{
 	background-color: $header;
-	z-index: 100;
+	z-index: 90;
 	font-size: 14px;
 	font-weight: 500;
 	position: sticky;
@@ -17,7 +17,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		@include adaptive(height, 130, 110, 1);
+		padding-top: 30px;
+		padding-bottom: 30px;
 	}
 	&__logo{
 		transition: transform .3s;
@@ -103,11 +104,10 @@
 			display: none;
 		}
 	}
-}
-.menu{
-	&__btn{
+	&__burger{
 		height: 50px;
 		min-width: 50px;
+		width: 50px;
 		border-radius: 50%;
 		background-color: $hover;
 		transition: all .3s;
@@ -121,22 +121,25 @@
 			width: 16px;
 			height: 1px;
 			background-color: #fff;
-			transition: all .3s;
 		}
 		&::before{
 			top: 20px;
+			transition: top .2s .4s, transform .3s 0s;
 		}
 		&::after{
 			bottom: 20px;
+			transition: bottom .2s .4s, transform .3s 0s;
 		}
 		&.open{
 			&::before{
-				transform: rotate(45deg);
 				top: 25px;
+				transform: rotate(45deg);
+				transition: top .2s, transform .3s .3s;
 			}
 			&::after{
-				transform: rotate(-45deg);
 				bottom: 24px;
+				transform: rotate(-45deg);
+				transition: bottom .2s, transform .3s .3s;
 			}
 		}
 		@media (min-width: $md2 + px){

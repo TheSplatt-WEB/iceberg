@@ -3,6 +3,11 @@
 		width: calc((100vw - ((100vw - 1432px) / 2)) + 47px);
 		margin-right: -47px;
 	}
+	&__row{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
 	&__card{
 		padding: 60px;
 		padding-bottom: 44px;
