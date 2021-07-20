@@ -36,6 +36,7 @@
 		"jquery": "^3.6.0",
 		"jquery.maskedinput": "^1.4.1",
 		"normalize.css": "^8.0.1",
+		"scrollmagic": "^2.0.8",
 		"simplebar": "^5.3.4",
 		"slick-carousel": "^1.8.1",
 		"stickyfilljs": "^2.1.0",

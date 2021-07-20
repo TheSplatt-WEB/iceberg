@@ -1,4 +1,5 @@
 .cases{
+	@include adaptive(padding-bottom, 160, 70, 1);
 	&__gallery{
 		width: calc((100vw - ((100vw - 1432px) / 2)) + 47px);
 		margin-right: -47px;

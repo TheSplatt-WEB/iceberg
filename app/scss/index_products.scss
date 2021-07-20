@@ -88,6 +88,9 @@
 			background-color: $hover;
 			color: $text;
 		}
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 	&__title{
 		@include adaptive(font-size, 42, 22, 1);

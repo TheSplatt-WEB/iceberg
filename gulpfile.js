@@ -111,6 +111,7 @@ function scriptsLibs() {
 		// 'node_modules/stickyfilljs/dist/stickyfill.js',
 		// 'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
 		'node_modules/wow.js/dist/wow.js',
+		// 'node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
 		// 'node_modules/aos/dist/aos.js',
 	])
 		.pipe(uglify())

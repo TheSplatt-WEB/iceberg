@@ -6,6 +6,22 @@
 	position: sticky;
 	top: 0;
 	transition: transform .5s;
+	&._page{
+		background-color: $el;
+		.header__visually-impaired,
+		.header__phone,
+		.header__btn{
+			background-color: #fff;
+			@media (min-width: $md2 + px){
+				&:hover{
+					background-color: $hover;
+				}
+				&:focus-visible{
+					background-color: $hover;
+				}
+			}
+		}
+	}
 	&.header-hidden{
 		transform: translate(0, -100%);
 	}

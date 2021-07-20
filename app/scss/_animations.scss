@@ -70,6 +70,38 @@
 		transform: translate(0, 0);
 	}
 }
+@keyframes rightSpin {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(180deg);
+	}
+}
+ @keyframes leftSpin {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(360deg);
+	}
+}
+ @keyframes overflowSpan {
+	97% {
+	  clip: rect(auto, auto, auto, auto);
+	}
+	to {
+	  clip: rect(auto, auto, auto, auto);
+	}
+}
+ @keyframes overflowBefore {
+	96% {
+	  opacity: 1;
+	}
+	to{
+		opacity: 1;
+	}
+} 
 @keyframes circle{
 	47%{
 		clip-path: inset(0 0 0 0);
@@ -88,28 +120,49 @@
 		transform: rotate(450deg);
 	}
 }
- @keyframes anim1 {
+ @keyframes animOne {
+	 from{
+		top: 75px;
+		left: 176px;
+		transform: rotate(0deg);
+	 }
 	to{
 		top: 344px;
     	left: 356px;
     	transform: rotate(-95deg);
 	}
  }
- @keyframes anim2 {
+ @keyframes animTwo {
+	 from{
+		top: 59px;
+		left: 200.2px;
+		transform: rotate(0deg);
+	 }
 	to{
 		top: 436px;
 		left: 246.2px;
 		transform: rotate(-72deg);
 	}
  }
- @keyframes anim3 {
+ @keyframes animThree {
+	 from{
+		left: 184.268px;
+		top: 70.8px;
+		transform: rotate(0deg);
+	 }
 	to{
 		left: 394.268px;
 		top: 401.8px;
 		transform: rotate(91deg);
 	}
  }
- @keyframes anim4 {
+ @keyframes animFour {
+	 from{
+		left: 279.26px;
+		top: 170px;
+		transform: rotate(0deg);
+		opacity: 1;
+	 }
 	to{
 		left: 437.26px;
     	top: 239px;
@@ -117,41 +170,50 @@
 		opacity: 0;
 	}
  }
- @keyframes anim5 {
+ @keyframes animFive {
+	 from{
+		opacity: 0;
+		transform: rotateY(0deg) translate(-50%, 0);
+	 }
 	to{
 		opacity: 1;
-		transform: rotateY(0deg);
+		transform: rotateY(0deg) translate(0, 0);
 	}
  }
  @keyframes animShadow {
+	 from{
+		top: 72px;
+		left: 220px;
+		transform: rotate(0deg);
+	 }
 	to{
 		top: 461px;
 		left: 250px;
 		transform: rotate(-72deg);
 	}
  }
- @keyframes animAdaprive1 {
+ @keyframes animOneAdaptive {
 	to{
 		top: 112px;
 		left: 176px;
     	transform: rotate(-95deg);
 	}
  }
- @keyframes animAdaprive2 {
+ @keyframes animTwoAdaptive {
 	to{
 		top: 176px;
     	left: 117.2px;
 		transform: rotate(-72deg);
 	}
  }
- @keyframes animAdaprive3 {
+ @keyframes animThreeAdaptive {
 	to{
 		left: 198px;
 		top: 167px;  
 		transform: rotate(91deg);
 	}
  }
- @keyframes animAdaprive4 {
+ @keyframes animFourAdaptive {
 	to{
 		left: 213.26px;
     	top: 99px;
@@ -159,13 +221,13 @@
 		 opacity: 0;
 	}
  }
- @keyframes animAdaptive5 {
+ @keyframes animFiveAdaptive {
 	to{
 		opacity: 1;
 		transform: rotateY(0deg) translate(0, 0);
 	}
  }
- @keyframes animShadowAdaprive {
+ @keyframes animShadowAdaptive {
 	to{
 		top: 201px;
 		left: 121px;

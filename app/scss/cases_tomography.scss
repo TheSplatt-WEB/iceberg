@@ -1,0 +1,30 @@
+.tomography-cases{
+	background-color: transparent;
+	.tomography__body{
+		align-items: center;
+		overflow: hidden;
+		@media (max-width: $md2 + px){
+			flex-direction: column-reverse;
+		}
+	}
+	&:nth-child(2){
+		background-color: $el;
+	}
+	&:nth-child(even){
+		.tomography__body{
+			flex-direction: row-reverse;
+			@media (max-width: $md2 + px){
+				flex-direction: column-reverse;
+			}
+		}
+		.tomography__text{
+			margin-left: 10px;
+		}
+	}
+	.tomography__plug{
+		transform: scale(-1, 1);
+	}
+	.swiper-pagination{
+		color: #fff;
+	}
+}

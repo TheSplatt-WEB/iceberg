@@ -137,24 +137,14 @@
 	  }
 	}
  }
- div[data-anim~=base] {
-	-webkit-animation-iteration-count: 1;  /* Only run once */
-	-webkit-animation-fill-mode: forwards; /* Hold the last keyframe */
-	-webkit-animation-timing-function:linear; /* Linear animation */
- }
- 
- .wrapper[data-anim~=wrapper] {
-	-webkit-animation-duration: 0.01s; /* Complete keyframes asap */
-	-webkit-animation-delay: 3s; /* Wait half of the animation */
-	-webkit-animation-name: close-wrapper; /* Keyframes name */
- }
- 
- .circle[data-anim~=left] {
-	-webkit-animation-duration: 6s; /* Full animation time */
-	-webkit-animation-name: left-spin;
- }
- 
- .circle[data-anim~=right] {
-	-webkit-animation-duration: 3s; /* Half animation time */
-	-webkit-animation-name: right-spin;
+ .cases__content{
+	 position: relative;
+	 z-index: 2;
+	 border-radius: 43px 43px 0 0;
+	 box-shadow: 10px -4px 20px rgba(0, 0, 0, 0.25);
+	 background-color: #fff;
+	 @include adaptive(padding-top, 183, 53, 1);
+	 @media (max-width: $md3 + px){
+		 border-radius: 20px 20px 0 0;
+	 }
  }

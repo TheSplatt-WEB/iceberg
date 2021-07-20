@@ -18,7 +18,7 @@
 		&__image{
 			background-image: url(../img/top-page_img.svg);
 			min-width: 564.78px;
-			min-height: 415.45px;
+			min-height: 548px;
 			@media (max-width: $md2 + px){
 				min-height: 540px;
 			}
@@ -32,73 +32,91 @@
 			&::before{
 				display: none;
 			}
-			.anim_1{
+			.piece_1{
+				svg{
+					width: 100%;
+				}
 				position: absolute;
 				top: 75px;
 				left: 176px;
-				animation: anim1 2s ease-in-out 1s forwards;
+				animation: animOne 2s ease-in-out 1s forwards;
 				z-index: 2;
 				@media (max-width: $md3 + px){
 					top: -13px;
     				left: 87px;
     				width: 66px;
-					animation: animAdaprive1 2s ease-in-out 1s forwards;
+					animation: animOneAdaptive 2s ease-in-out 1s forwards;
 				}
 			}
-			.anim_2{
+			.piece_2{
+				svg{
+					width: 100%;
+				}
 				position: absolute;
 				top: 59px;
 				left: 200.2px;
 				z-index: 3;
-				animation: anim2 2s ease-in-out 1s forwards;
+				animation: animTwo 2s ease-in-out 1s forwards;
 				@media (max-width: $md3 + px){
 					top: 1px;
     				left: 97.2px;
     				width: 62px;
-					animation: animAdaprive2 2s ease-in-out 1s forwards;
+					animation: animTwoAdaptive 2s ease-in-out 1s forwards;
 				}
 			}
-			.anim_3{
+			.piece_3{
+				svg{
+					width: 100%;
+				}
 				position: absolute;
 				left: 184.268px;
     			top: 70.8px;
 				 z-index: 2;
-				 animation: anim3 2s ease-in-out 1s forwards;
+				 animation: animThree 2s ease-in-out 1s forwards;
 				@media (max-width: $md3 + px){
 					left: 92px;
 					top: 15px;
 					width: 8px;
-					animation: animAdaprive3 2s ease-in-out 1s forwards;
+					animation: animThreeAdaptive 2s ease-in-out 1s forwards;
 				}
 			}
-			.anim_4{
+			.piece_4{
+				svg{
+					width: 100%;
+				}
 				position: absolute;
 				left: 279.26px;
 				top: 170px;
-				animation: anim4 2s ease-in-out 1s forwards;
+				animation: animFour 2s ease-in-out 1s forwards;
 				@media (max-width: $md3 + px){
 					left: 137.26px;
     				top: 72px;
     				width: 22px;
-					 animation: animAdaprive4 2s ease-in-out 1s forwards;
+					 animation: animFourAdaptive 2s ease-in-out 1s forwards;
 				}
 			}
-			.anim_5{
+			.piece_5{
+				svg{
+					width: 100%;
+				}
 				position: absolute;
 				top: 155px;
 				left: 251px;
 				opacity: 0;
-				animation: anim5 2s ease-in-out 1s forwards;
+				animation: animFive 2s ease-in-out 1s forwards;
 				transform: rotateY(-88deg) translate(-50%, 0);
     			transform-origin: 100% 100%;
 				@media (max-width: $md3 + px){
 					top: 58px;
     				left: 124px;
     				width: 35px;
-					animation: animAdaptive5 2s ease-in-out 1s forwards;
+					animation: animFiveAdaptive 2s ease-in-out 1s forwards;
 				}
 			}
-			.anim_shadow{
+			.piece_shadow{
+				svg{
+					width: 100%;
+				}
 				position: absolute;
 				top: 72px;
 				left: 220px;
@@ -108,7 +126,7 @@
 					top: 16px;
 					left: 109px;
 					width: 38px;
-					animation: animShadowAdaprive 2s ease-in-out 1s forwards;
+					animation: animShadowAdaptive 2s ease-in-out 1s forwards;
 				}
 			}
 		}

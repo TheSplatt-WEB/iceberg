@@ -28,6 +28,9 @@ body{
 	&.open{
 		overflow: hidden;
 	}
+	&._page{
+		background-color: $el;
+	}
 }
 html, body{
 	scrollbar-color: $text $el;

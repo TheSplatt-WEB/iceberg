@@ -1,5 +1,4 @@
 .services-slider{
-	@include adaptive(margin-bottom, 160, 70, 1);
 	overflow: hidden;
 	position: relative;
 	animation: fadeUpBig 1s ease-in-out;

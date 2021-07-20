@@ -21,6 +21,7 @@ let wow = new WOW(
 		animateClass: 'animation',
 	}
 );
+
 wow.init();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const header = document.querySelector('.header');
 		const footer = document.querySelector('.footer');
 		const btnTop = document.querySelector('.btn__top');
+		const defaultOffset = 300;
 		let footerHeight = footer.offsetHeight + window.innerHeight;
 		let footerVisible = footer.offsetTop;
 		let prevScroll = window.pageYOffset;
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			currentScroll = window.pageYOffset;
 			let hidden = footerVisible - footerHeight > prevScroll;
 			const headerHidden = () => header.classList.contains('header-hidden');
-			if (currentScroll > prevScroll && !headerHidden()) {
+			if (currentScroll > prevScroll && !headerHidden() && currentScroll > defaultOffset) {
 				header.classList.add('header-hidden');
 			}
 			if (currentScroll < prevScroll) {
@@ -69,68 +71,72 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Слайдер Swiper tomography
-
-new Swiper('.tomography__gallery', {
-	pagination: {
-		el: '.swiper-pagination',
-		type: 'fraction',
-		renderFraction: function (currentClass) {
-			return '0<span class="' + currentClass + '"></span>';
+const tomographySlider = document.querySelector('.tomography__gallery');
+if (tomographySlider) {
+	new Swiper('.tomography__gallery', {
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
+			renderFraction: function (currentClass) {
+				return '0<span class="' + currentClass + '"></span>';
+			},
 		},
-	},
-	navigation: {
-		nextEl: '.tomography-button-next',
-		prevEl: '.tomography-button-prev',
-	},
-	loop: true,
-	observeParents: true,
-	observer: true,
-	speed: 300,
-	autoplay: {
-		delay: 5000,
-		disableOnInteraction: false,
-	},
-	on: {
-		init: function () {
-			const progressBar = document.querySelector('.progress-bar');
-			progressBar.classList.remove('animate');
-			progressBar.classList.remove('active');
-			progressBar.classList.add('animate');
-			progressBar.classList.add('active');
+		navigation: {
+			nextEl: '.tomography-button-next',
+			prevEl: '.tomography-button-prev',
 		},
-		slideChangeTransitionStart: function () {
-			const progressBar = document.querySelector('.progress-bar');
-			progressBar.classList.remove('animate');
-			progressBar.classList.remove('active');
-			progressBar.classList.add('active');
+		loop: true,
+		observeParents: true,
+		observer: true,
+		speed: 300,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
 		},
-		slideChangeTransitionEnd: function () {
-			const progressBar = document.querySelector('.progress-bar');
-			progressBar.classList.add('animate');
+		on: {
+			init: function () {
+				const progressBar = document.querySelector('.progress-bar');
+				progressBar.classList.remove('animate');
+				progressBar.classList.remove('active');
+				progressBar.classList.add('animate');
+				progressBar.classList.add('active');
+			},
+			slideChangeTransitionStart: function () {
+				const progressBar = document.querySelector('.progress-bar');
+				progressBar.classList.remove('animate');
+				progressBar.classList.remove('active');
+				progressBar.classList.add('active');
+			},
+			slideChangeTransitionEnd: function () {
+				const progressBar = document.querySelector('.progress-bar');
+				progressBar.classList.add('animate');
+			},
 		},
-	},
-});
+	});
+}
 
 //Слайдер Swiper diagnostics
-
-new Swiper('.diagnostics__slider', {
-	watchOverflow: true,
-	slidesPerView: 1,
-	spaceBetween: 10,
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-	},
-	breakpoints: {
-		480: {
-			slidesPerView: 2,
+const diagnosticsSlider = document.querySelector('.diagnostics__slider');
+if (diagnosticsSlider) {
+	new Swiper('.diagnostics__slider', {
+		watchOverflow: true,
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
 		},
-		768: {
-			slidesPerView: 3,
-			pagination: false,
+		breakpoints: {
+			480: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+				pagination: false,
+			},
 		},
-	},
-});
+	});
+}
 
 //Слайдер Swiper visiography
 

@@ -1,0 +1,38 @@
+.products-cases{
+	.products__bg-img{
+		display: none;
+	}
+	.products__image{
+		padding-bottom: 110%;
+	}
+	&__info{
+		border-radius: 20px;
+		background-color: #3B417F;
+		padding: 36px;
+		@media (max-width: $md3 + px){
+			padding: 23px 18px 34px 18px;
+		}
+	}
+	&__text{
+		@include adaptive(margin-bottom, 27, 24, 1);
+		@include adaptive(font-size, 28, 22, 1);
+		font-weight: 500;
+		color: #fff;
+	}
+	&__name{
+		@include adaptive(font-size, 22, 16, 1);
+		font-weight: 500;
+		color: #fff;
+		text-decoration: underline;
+		display: flex;
+		align-items: center;
+		&::before{
+			content: '';
+			@include adaptive(height, 40, 23, 1);
+			@include adaptive(width, 40, 23, 1);
+			@include adaptive(margin-right, 19, 10, 1);
+			border-radius: 50%;
+			background-color: #fff;
+		}
+	}
+}

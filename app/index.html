@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 @@include('_head.html',{
 "title":"Iceberg - Диагностика",
 "keywords":"keywords",
@@ -11,13 +11,15 @@
 <body>
 	<div class="wrapper">
 		<div class="content">
-			@@include('_header.html',{})
+			@@include('_header.html',{
+			"page":"1"
+			})
 			<main class="main">
 				<section class="top">
 					<div class="top__container container">
 						<div class="top__body">
 							<div class="top__image wow"></div>
-							<div class="top__info wow">
+							<div class="top__info">
 								<h1 class="top__title">Диагностика</h1>
 								<div class="top__text">
 									<p class="top__descr">Проводим обследование на высокоточном оборудовании с расшифровкой результатов ведущим врачом-радиологом в клинике. </p>
@@ -61,7 +63,7 @@
 													</svg>
 												</a>
 											</div>
-											<span class="diagnostics__name">Компьютерная томография</span>
+											<h4 class="diagnostics__name">Компьютерная томография</h4>
 											<p class="diagnostics__descr">При решении сложных и масштабных задач – самым точным и надежным методом является исследование КТ.</p>
 										</article>
 									</div>
@@ -77,7 +79,7 @@
 													</svg>
 												</a>
 											</div>
-											<span class="diagnostics__name">Визиография</span>
+											<h4 class="diagnostics__name">Визиография</h4>
 											<p class="diagnostics__descr">(или цифровая рентгенограмма зуба) является самым распространенным методом вспомогательной диагностики.</p>
 										</article>
 									</div>
@@ -100,7 +102,7 @@
 														для беременных</div>
 												</div>
 											</div>
-											<span class="diagnostics__name">Diagnocam</span>
+											<h4 class="diagnostics__name">Diagnocam</h4>
 											<p class="diagnostics__descr">Diagnocam – прибор, который может диагностировать кариес и трещины зуба на ранних этапах.</p>
 										</article>
 									</div>
