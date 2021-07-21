@@ -148,3 +148,74 @@
 		 border-radius: 20px 20px 0 0;
 	 }
  }
+.anchors {
+	position: absolute;
+	z-index: 10;
+	top: 130px;
+	left: -130px;
+	&__row {
+		& + &{
+			margin-top: 8px;
+		}
+	}
+	&.active{
+		position: fixed;
+	}
+	&__link {
+		width: 217px;
+		height: 85px;
+		border-radius: 0 45px 45px 0;
+		display: flex;
+		align-items: center;
+		padding-left: 29px;
+		font-weight: 500;
+		font-size: 18px;
+		color: #fff;
+		position: relative;
+		transition: transform .3s;
+		&.active{
+			transform: translate(130px, 0);
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				transform: translate(130px, 0);
+			}
+			&:focus-visible{
+				transform: translate(130px, 0);
+			}
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			width: 44px;
+			height: 57px;
+			right: 27px;
+			top: 50%;
+			transform: translate(0, -50%);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+		}
+	}
+	&__link--situation{
+	background-color: $hover;
+		&::before{
+			background-image: url(../img/anchors_situation.svg);
+			width: 68px;
+			height: 74px;
+			right: 14px;
+		}
+	}
+	&__link--result{
+	background-color: #6CB2C3;
+	&::before{
+		background-image: url(../img/anchors_result.svg);
+	}
+	}
+	&__link--doctors{
+		background-color: $text;
+		&::before{
+			background-image: url(../img/anchors_doctors.svg);
+		}
+	}
+}

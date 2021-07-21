@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('_head.html',{
-"title":"Iceberg - Диагностика",
+"title":"Iceberg - Лечение зубов и эстетика",
 "keywords":"keywords",
 "Description":"Проводим обследование на высокоточном оборудовании с расшифровкой результатов ведущим врачом-радиологом в клинике.",
 "urlSite":"https://iceberg.dental",
@@ -15,13 +15,16 @@
 			"page":"2"
 			})
 			<main class="main">
-				<section class="top-cases">
+				<div class="top-cases__top-decor"></div>
+				<section class="top top-cases">
 					<div class="top-cases__wrapper">
+						<a class="top-cases__link" href="#" title="Перейти">Портфолио</a>
 						<div class="top-cases__container container">
 							<div class="top-cases__body">
-								<h1 class="top-cases__title title">Выбитый зуб</h1>
+								<h1 class="top-cases__title title">Лечение зубов и эстетика</h1>
 								<div class="top-cases__image">
-									<img class="top-cases__img" src="img/cases_1.jpg" alt="customer photo">
+									<img class="top-cases__img" src="img/clients_photo-3.jpg" alt="customer photo">
+									<div class="top-cases__image-decor top-cases__image-decor--rose"></div>
 								</div>
 							</div>
 						</div>
@@ -41,10 +44,27 @@
 								</a>
 							</li>
 						</ul>
+						<div class="top-cases__decor-left top-cases__decor-left--roses"></div>
+						<div class="top-cases__decor-right top-cases__decor-right--treatment">
+						</div>
+						<span></span>
 					</div>
 				</section>
 				<div class="cases__content">
-					<section class="tomography tomography-cases wow">
+					<div class="cases__anchors anchors">
+						<ul class="anchors__list">
+							<li class="anchors__row">
+								<a class="anchors__link anchors__link--situation" href="#situation" title="Перейти">Ситуация</a>
+							</li>
+							<li class="anchors__row">
+								<a class="anchors__link anchors__link--result" href="#result" title="Перейти">Результат</a>
+							</li>
+							<li class="anchors__row">
+								<a class="anchors__link anchors__link--doctors" href="#doctors" title="Перейти">Врачи</a>
+							</li>
+						</ul>
+					</div>
+					<section class="tomography tomography-cases wow" id="situation">
 						<div class="tomography__container container">
 							<div class="tomography__inner">
 								<div class="tomography__body" id="tomography">
@@ -55,7 +75,7 @@
 									</div>
 									<div class="tomography__modal">
 										<div class="tomography__wrapper">
-											<div class="tomography__gallery swiper-container">
+											<div class="tomography__gallery tomography__situation swiper-container">
 												<ul class="tomography__list swiper-wrapper">
 													<li class="tomography__row swiper-slide">
 														<a class="tomography__image" href="#">
@@ -105,7 +125,7 @@
 									</div>
 									<div class="tomography__modal">
 										<div class="tomography__wrapper">
-											<div class="tomography__gallery swiper-container">
+											<div class="tomography__gallery tomography__stages swiper-container">
 												<ul class="tomography__list swiper-wrapper">
 													<li class="tomography__row swiper-slide">
 														<a class="tomography__image" href="#">
@@ -120,7 +140,7 @@
 														<div class="swiper-pagination"></div>
 													</li>
 												</ul>
-												<div class="progress-bar">
+												<div class="progress-bar progress-stages">
 													<div class="progress-bar__progress"></div>
 												</div>
 											</div>
@@ -155,7 +175,7 @@
 									</div>
 									<div class="tomography__modal">
 										<div class="tomography__wrapper">
-											<div class="tomography__gallery swiper-container">
+											<div class="tomography__gallery tomography__weeks swiper-container">
 												<ul class="tomography__list swiper-wrapper">
 													<li class="tomography__row swiper-slide">
 														<a class="tomography__image" href="#">
@@ -170,7 +190,7 @@
 														<div class="swiper-pagination"></div>
 													</li>
 												</ul>
-												<div class="progress-bar">
+												<div class="progress-bar progress-week">
 													<div class="progress-bar__progress"></div>
 												</div>
 											</div>
@@ -193,41 +213,41 @@
 							</div>
 						</div>
 					</section>
-					<section class="products products-cases">
+					<section class="products products-cases" id="result">
 						<div class="products__container container">
 							<div class="products__body">
-								<div class="products__bg-img">
-									<img src="img/tooth_2.png" alt="tooth image">
-								</div>
 								<div class="products__inner">
 									<div class="products__item" id="visiography">
-										<h2 class="products__title title">Результат</h2>
+										<h2 class="products__title products-cases__title title">Результат</h2>
 										<p class="products__descr">У нашей принцессы на фото теперь новый зуб — свой. И это не съемная конструкция. Это зуб, который ощущается как свой собственный. Хотя… он свой и есть!) Ребенок может смеяться, пережевывать пищу, кусать и делать крутые фото для инстаграм и снимать влоги)</p>
 										<div class="products__modal visiography__modal">
 											<div class="products__wrapper">
-												<div class="products__gallery visiography__gallery swiper-container">
+												<div class="products__gallery result__gallery swiper-container">
 													<ul class="products__list swiper-wrapper">
 														<li class="products__row swiper-slide">
-															<a class="products__image" href="#">
+															<a class="products__image products__image--before" href="#">
 																<img class="products__img" src="img/result_1.jpg" alt="result image">
 															</a>
 														</li>
 														<li class="products__row swiper-slide">
-															<a class="products__image" href="#">
+															<a class="products__image products__image--after" href="#">
 																<img class="products__img" src="img/result_2.jpg" alt="result image">
 															</a>
 														</li>
 													</ul>
-													<div class="swiper-pagination"></div>
 												</div>
 												<div class="swiper-button-prev"></div>
 												<div class="swiper-button-next"></div>
 												<button class="products__close" type="button" title="Закрыть"></button>
 											</div>
 										</div>
-										<div class="products-cases__info">
+										<div class="products-cases__info" id="doctors">
 											<p class="products-cases__text">Врачи, выполнявшие работу:</p>
-											<a class="products-cases__name" href="#" title="Посмотреть">Руслан Новомирский</a>
+											<ul class="products-cases__list">
+												<li class="products-cases__row">
+													<a class="products-cases__name" href="#" title="Посмотреть">Руслан Новомирский</a>
+												</li>
+											</ul>
 										</div>
 										<div class="products__buttons">
 											<button class="products__btn" type="button" title="Оставить заявку">Онлайн-консультация</button>
@@ -235,11 +255,18 @@
 										</div>
 									</div>
 								</div>
-								<div class="products__sibebox sidebox">
-									<p class="sidebox__text">Запишитесь на прием или получите бесплатную онлайн консультацию!</p>
-									<div class="sidebox__buttons">
-										<button class="sidebox__btn" type="button" title="Оставить заявку">Онлайн-консультация</button>
-										<button class="sidebox__btn" type="button" title="Оставить заявку">На прием</button>
+								<div class="products__right-column">
+									<div class="products__right-sticky">
+										<div class="products__sibebox sidebox">
+											<p class="sidebox__text">Запишитесь на прием или получите бесплатную онлайн консультацию!</p>
+											<div class="sidebox__buttons">
+												<button class="sidebox__btn" type="button" title="Оставить заявку">Онлайн-консультация</button>
+												<button class="sidebox__btn" type="button" title="Оставить заявку">На прием</button>
+											</div>
+										</div>
+									</div>
+									<div class="products__bg products__bg--treatment">
+										<img class="products__bg-image products__bg-image--treatment" src="img/cases_products-rose.svg" alt="rose image">
 									</div>
 								</div>
 							</div>
@@ -248,7 +275,16 @@
 					<section class="reviews">
 						<div class="reviews__container container">
 							<div class="reviews__body">
-
+								<h2 class="reviews__title title">Отзыв о нашей работе</h2>
+								<div class="reviews__image">
+									<img class="reviews__img" src="img/cases_1.jpg" alt="revievs author photo">
+								</div>
+								<article class="reviews__info">
+									<h4 class="reviews__author">Екатерина</h4>
+									<div class="reviews__cause">Выбитый зуб</div>
+									<p class="reviews__descr">Очень довольна походом к врачу! Приятный персонал, обстановка тоже хорошая. Отдельное спасибо мужчине который занимался моими зубами. К сожалению, не помню имени. Удалял два зуба сделал все на высшечайшем уровне. Советую всем кто думает куда пойти, сам лично буду ходить только в эту клинику.</p>
+									<button class="reviews__btn" type="button" title="Подробнее">Раскрыть отзыв</button>
+								</article>
 							</div>
 						</div>
 					</section>

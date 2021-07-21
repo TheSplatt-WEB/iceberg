@@ -8,7 +8,6 @@
 	z-index: 99;
 	background-color: #fff;
 	@include adaptive(padding-right, 168, 68, 1);
-	padding-bottom: 31px;
 	padding-top: 30px;
 	overflow-y: auto;
 	overflow: auto;
@@ -31,6 +30,15 @@
 	}
 	@media (max-width: $md3 + px){
 		padding-right: 0;
+	}
+	&__body{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		@media (max-width: $md2 + px){
+			height: auto;
+		}
 	}
 	&__left{
 		max-width: 484px;
@@ -112,6 +120,7 @@
 		flex-direction: column;
 		@include adaptive(padding-right, 181, 20, 1);
 		@include adaptive(padding-left, 60, 20, 1);
+		padding-bottom: 30px;
 		@media (max-width: $md1 + px){
 			max-width: 400px;
 		}
@@ -277,14 +286,14 @@
 				background-color: $text;
 				color: #fff;
 				.menu-services__img{
-					transform: translate(5%, -5%);
+					transform: translate(3%, -3%);
 				}
 			}
 			&:focus-visible{
 				background-color: $text;
 				color: #fff;
 				.menu-services__img{
-					transform: translate(-5%, -5%);
+					transform: translate(-3%, -3%);
 				}
 			}
 		}
@@ -312,7 +321,7 @@
 	}
 	&__img--rose{
 		@media (max-width: $md3 + px){
-			transform:rotate(75deg);
+			transform: scale(-1, 1) translate(-13px, 0);
 		}
 	}
 	&__img--prosthetics{

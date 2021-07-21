@@ -4,6 +4,9 @@
 		display: flex;
 		width: 100%;
 		position: relative;
+		@media (max-width: $md2 + px){
+			flex-direction: column;
+		}
 	}
 	&__bg-img{
 		position: absolute;
@@ -265,7 +268,7 @@
 			display: block;
 		}
 	}
-	&__buttons-visiography{
+	&__buttons-diagnocam{
 		.products__btn{
 			@media (min-width: $md2 + px){
 				&:hover{
@@ -335,7 +338,7 @@
 		padding: 40px 30px 50px 30px;
 		@include adaptive(border-radius, 20, 15, 1);
 		max-width: 414px;
-		width: 100%;
+		width: calc(100% - 23px);
 		max-height: 268px;
 		margin-left: 23px;
 		position: sticky;

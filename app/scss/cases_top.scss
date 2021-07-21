@@ -9,62 +9,261 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		&::before{
-			content:'';
+		span{
 			position: absolute;
-			top: 0;
-			@include adaptive(left, 410, 0, 1);
-			width: 61px;
-			height: 61px;
-			border-radius: 50%;
-			background-color: #6CB2C3;
-			@media (max-width: $md3 + px){
-				display: none;
-			}
-		}
-		&::after{
-			content:'';
-			position: absolute;
-			@include adaptive(left, 311, -100, 1);
-			top: 155px;
-			width: 112px;
-			height: 141px;
-			background-image: url(../img/tooth_cases.svg);
+			top: 217px;
+			height: 171px;
+			width: 144px;
+			background-image: url(../img/cases_top-leaf-top.svg);
 			background-repeat: no-repeat;
 			background-size: contain;
-			background-position: top center;
+			right: 70px;
+			z-index: -1;
+			transform: scale(0);
+			animation: leaf .3s ease-in-out 1s forwards;
+			transform-origin: 100% 50%;
 			@media (max-width: $md3 + px){
 				display: none;
 			}
+			&::before{
+				content: url(../img/cases_top-leaf-right.svg);
+				position: absolute;
+				top: -64px;
+				left: 138px;
+				z-index: -3;
+				transform: scale(0);
+				animation: leaf .3s ease-in-out 1.3s forwards;
+				transform-origin: 100% 50%;
+			}
+			&::after{
+				content: url(../img/cases_top-leaf-bottom.svg);
+				position: absolute;
+				bottom: -95px;
+				left: 40px;
+				z-index: -2;
+				transform: scale(0);
+				animation: leaf .3s ease-in-out 1.6s forwards;
+				transform-origin: 100% 50%;
+			}
+		}
+	}
+	&__link{
+		position: absolute;
+		top: 70px;
+		@include adaptive(left, 60, 20, 1);
+		z-index: 3;
+		font-size: 14px;
+		opacity: .6;
+		transition: opacity .3s;
+		&::before{
+			content: url(../img/arrow_left.svg);
+			padding-right: 7px;
+			opacity: .6;
+			transition: opacity .3s;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				opacity: 1;
+				&::before{
+					opacity: 1;
+				}
+			}
+			&:focus-visible{
+				opacity: 1;
+				&::before{
+					opacity: 1;
+				}
+			}
+		}
+		@media (max-width: $md4 + px){
+			display: none;
+		}
+	}
+	&__decor-left{
+		position: absolute;
+		left: 0;
+		transform: rotate(53deg);
+		animation: brushCases 1s ease-in-out forwards;
+		transform-origin: 0 0;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	&__decor-left--brush{
+		content: url(../img/cases_top-brush.svg);
+	}
+	&__decor-left--roses{
+		content: url(../img/cases_top-roses.svg);
+		left: -50px;
+	}
+	&__decor-left--cup{
+		content: url(../img/cases_top-cup.png);
+	}
+	&__decor-left--house{
+		content: url(../img/cases_top-house.svg);
+	}
+	&__decor-left--hands{
+		content: url(../img/cases_top-hands.svg);
+	}
+	&__decor-left--correction{
+		content: url(../img/cases_top-correction.svg);
+	}
+	&__decor-right{
+		position: absolute;
+		top: 237px;
+		right: 0;
+		transform: translateX(100%);
+		animation: decorCases 1s ease-in-out forwards;
+		@media (max-width: $md2 + px){
+			display: none;
+		}
+	}
+	&__decor-right--children{
+		content: url(../img/cases_top-decor.svg);
+	}
+	&__decor-right--treatment{
+		height: 169px;
+		width: 144px;
+		background-image: url(../img/cases_top-branch.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&__decor-right--correction{
+		content: url(../img/cases_top-decor1.svg);
+	}
+	&__top-decor{
+		content: url(../img/cases_top-decor-top.svg);
+		position: absolute;
+		top: 0;
+		left: 290px;
+		z-index: 91;
+	}
+	.top-cases__decor--heart-1{
+		position: absolute;
+		top: 455px;
+		@include adaptive(left, 230, 0, 1);
+		content: url(../img/heart_1.png);
+		opacity: 0;
+		animation: fadeIn .5s ease-in-out 1.3s forwards;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	.top-cases__decor--heart-2{
+		position: absolute;
+		top: 222px;
+		@include adaptive(left, 302, 0, 1);
+		content: url(../img/heart_2.png);
+		opacity: 0;
+		animation: fadeIn 1s ease-in-out 1s forwards;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	.top-cases__decor--heart-3{
+		position: absolute;
+		top: 316px;
+		@include adaptive(left, 130, 0, 1);
+		content: url(../img/heart_3.png);
+		transform: rotate(0) scale(0);
+		animation: toothCases .8s ease-in-out 1.6s forwards;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	&__decor-correction{
+		position: absolute;
+		background-image: url(../img/cases_top-decor-branch-1.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 527px;
+		height: 413px;
+		top: 0;
+		z-index: 91;
+		opacity: 0;
+		left: 0;
+		animation: fadeIn 1s ease-in-out forwards;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+		&::before{
+			position: absolute;
+			content: url(../img/cases_top-decor-leaf-correction.svg);
+			top: 288px;
+    		z-index: -1;
+    		transform: scale(0) rotate(-20deg);
+    		left: 0;
+			animation: leaf1 .3s ease-in-out 1s forwards;
+		}
+		&::after{
+			position: absolute;
+			content: url(../img/cases_top-decor-apple.svg);
+			top: 123px;
+    		left: 165px;
+			 transform: scale(0);
+			animation: leaf .3s ease-in-out 1.3s forwards;
 		}
 	}
 	&__container{
 		display: flex;
 		flex-direction: column;
 	}
+	&__circle-big{
+		position: absolute;
+		top: 0;
+		@include adaptive(left, 410, 0, 1);
+		transform: translate(-200%, 0);
+		opacity: 0;
+		width: 61px;
+		height: 61px;
+		border-radius: 50%;
+		background-color: #6CB2C3;
+		animation: circleCases2 1.5s ease-in-out .5s forwards;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
+	&__tooth{
+		position: absolute;
+		@include adaptive(left, 311, -100, 1);
+		top: 155px;
+		width: 112px;
+		height: 141px;
+		background-image: url(../img/tooth_cases.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: top center;
+		transform: rotate(0) scale(0);
+		animation: toothCases 1s ease-in-out .5s forwards;
+		@media (max-width: $md3 + px){
+			display: none;
+		}
+	}
 	&__body{
 		position: relative;
-		&::before,
-		&::after{
-			content:'';
-			position: absolute;
-			width: 31px;
-			height: 31px;
-			border-radius: 50%;
-			bottom: 164px;
-			@media (max-width: $md3 + px){
-				display: none;
-			}
+	}
+	&__circle-left,
+	&__circle-right{
+		position: absolute;
+		width: 31px;
+		height: 31px;
+		border-radius: 50%;
+		bottom: 250px;
+		opacity: 0;
+		@media (max-width: $md3 + px){
+			display: none;
 		}
-		&::before{
-			background-color: $text;
-			left: 0;
-			transform: translate(0, 100%);
-		}
-		&::after{
-			background-color: $hover;
-			right: 0;
-		}
+	}
+	&__circle-left{
+		background-color: $text;
+		left: -200px;
+		transform: translate(0, 100%);
+		animation: circleCases1 1s ease-in-out .5s forwards;
+	}
+	&__circle-right{
+		background-color: $hover;
+		right: -200px;
+		animation: circleCases3 1s ease-in-out .5s forwards;
 	}
 	&__title{
 		@include adaptive(font-size, 55, 28, 1);
@@ -78,35 +277,62 @@
 		@include adaptive(width, 411, 280, 1);
 		@include adaptive(height, 496, 339, 1);
 		position: relative;
+		animation: fadeIn 1s ease-in-out forwards;
 		&::before{
 			content:'';
 			position: absolute;
 			bottom: 0;
-			left: -50px;
+			left: 0;
 			width: 100%;
 			height: 100%;
-			transform: rotate(-8.53deg);
 			background-color: #fff;
 			border-radius: 30px;
+			animation: casesPhoto 1s ease-in-out .5s forwards;
 			@media (max-width: $md3 + px){
 				display: none;
 			}
 		}
-		&::after{
-			content:'';
-			position: absolute;
-			bottom: -145px;
-			right: -200px;
-			width: 250px;
-			height: 430px;
-			background-image: url(../img/hand_cases.svg);
-			background-repeat: no-repeat;
-			background-size: contain;
-			background-position: top center;
-			@media (max-width: $md3 + px){
-				display: none;
-			}
+	}
+	&__image-decor{
+		position: absolute;
+		bottom: -145px;
+		right: -200px;
+		width: 250px;
+		height: 430px;
+		opacity: 0;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: top center;
+		animation: handCases 1.5s ease-in-out .7s forwards;
+		@media (max-width: $md3 + px){
+			display: none;
 		}
+	}
+	&__image-decor--hand{
+		background-image: url(../img/hand_cases.svg);
+	}
+	&__image-decor--rose{
+		background-image: url(../img/cases_products-rose.svg);
+		height: 320px;
+	}
+	&__image-decor--cup{
+		background-image: url(../img/cup1.png);
+		width: 350px;
+		right: -250px;
+		height: 320px;
+	}
+	&__image-decor--prosthetics{
+		background-image: url(../img/prosthetics.png);
+	}
+	&__image-decor--diagnostics{
+		background-image: url(../img/tooth.png);
+		width: 350px;
+		right: -250px;
+		height: 320px;
+	}
+	&__image-decor--apple{
+		background-image: url(../img/apple.png);
+		height: 320px;
 	}
 	&__img{
 		position: absolute;

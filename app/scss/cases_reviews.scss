@@ -1,0 +1,80 @@
+.reviews {
+	@include adaptive(margin-bottom, 144, 55, 1);
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;	
+	}
+	&__title {
+		width: 100%;
+		@include adaptive(margin-bottom, 86, 54, 1);
+	}
+	&__image {
+		@include adaptive(width, 670, 280, 1);
+		@include adaptive(height, 670, 280, 1);
+		border-radius: 50%;
+		overflow: hidden;
+		position: relative;
+		margin-right: 87px;
+		@media (max-width: $md2 + px){
+			margin-bottom: 50px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
+	}
+	&__info {
+		max-width: 430px;
+		@media (max-width: $md2 + px){
+			max-width: 100%;
+		}
+	}
+	&__author {
+		@include adaptive(font-size, 32, 16, 1);
+		font-weight: 700;
+		letter-spacing: 0.075px;
+		@include adaptive(margin-bottom, 10, 5, 1);
+	}
+	&__cause {
+		@include adaptive(font-size, 14, 16, 1);
+		font-style: italic;
+		letter-spacing: 0.075px;
+		font-weight: 300;
+		@include adaptive(margin-bottom, 30, 26, 1);
+	}
+	&__descr {
+		line-height: 150%;
+		@include adaptive(margin-bottom, 33, 38, 1);
+	}
+	&__btn {
+		background-color: $text;
+		font-weight: 500;
+		@include adaptive(font-size, 14, 16, 1);
+		border-radius: 30px;
+		min-height: 50px;
+		padding: 10px 43px;
+		color: #fff;
+		transition: background-color .3s;
+		@media (max-width: $md3 + px){
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+		@media (min-width: $md2 + px){
+			&:hover{
+				background-color: $hover;
+			}
+			&:focus-visible{
+				background-color: $hover;
+			}
+		}
+	}
+}

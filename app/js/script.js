@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Слайдер Swiper tomography
-const tomographySlider = document.querySelector('.tomography__gallery');
-if (tomographySlider) {
-	new Swiper('.tomography__gallery', {
+const tomographyDiagnostics = document.querySelector('.tomography__diagnostics');
+if (tomographyDiagnostics) {
+	new Swiper('.tomography__diagnostics', {
 		pagination: {
 			el: '.swiper-pagination',
 			type: 'fraction',
@@ -193,26 +193,30 @@ const body = document.querySelector('body');
 for (let tomographyLinkItem of tomographyLink) {
 	tomographyLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
-		this.closest('.tomography__modal').classList.add('open');
-		body.classList.add('open');
+		const tomographyOpen = () => tomographyLinkItem.closest('.tomography__modal').classList.contains('open');
+		if (window.innerWidth > 480 && !tomographyOpen()) {
+			this.closest('.tomography__modal').classList.add('open');
+			body.classList.add('open');
+		};
 	});
 	document.addEventListener('click', e => {
-		const swiperOpen = () => tomographyLinkItem.closest('.tomography__modal').classList.contains('open');
-		if (swiperOpen()) {
+		const tomographyOpen = () => tomographyLinkItem.closest('.tomography__modal').classList.contains('open');
+		if (window.innerWidth > 480 && tomographyOpen()) {
 			const target = e.target
 			if (!target.closest('.tomography__image') && !target.closest('.tomography-button-next') && !target.closest('.tomography-button-prev')) {
 				body.classList.remove('open');
 				tomographyLinkItem.closest('.tomography__modal').classList.remove('open');
-			}
-		}
+			};
+		};
 	});
 };
 for (let productsLinkItem of productsLink) {
 	productsLinkItem.addEventListener('click', function (el) {
 		el.preventDefault();
-		const swiperOpen = () => this.closest('.products__modal').classList.contains('open');
-		if (!swiperOpen()) {
+		const productsOpen = () => productsLinkItem.closest('.products__modal').classList.contains('open');
+		if (window.innerWidth > 480 && !productsOpen()) {
 			this.closest('.products__modal').classList.add('open');
+			this.closest('.products__gallery').classList.add('open');
 			body.classList.add('open');
 			visiographySwiper.params.breakpoints[480].slidesPerView = 1;
 			visiographySwiper.params.spaceBetween = 0;
@@ -220,23 +224,26 @@ for (let productsLinkItem of productsLink) {
 			diagnocamSwiper.params.breakpoints[480].slidesPerView = 1;
 			diagnocamSwiper.params.spaceBetween = 0;
 			diagnocamSwiper.params.slidesPerView = 1;
-		}
+			resultSwiper.init();
+		};
 	});
 	document.addEventListener('click', e => {
 		const target = e.target;
-		const swiperOpen = () => productsLinkItem.closest('.products__modal').classList.contains('open');
-		if (swiperOpen()) {
+		const productsOpen = () => productsLinkItem.closest('.products__modal').classList.contains('open');
+		if (window.innerWidth > 480 && productsOpen()) {
 			if (!target.closest('.products__image') && !target.closest('.swiper-button-next') && !target.closest('.swiper-button-prev')) {
 				body.classList.remove('open');
 				productsLinkItem.closest('.products__modal').classList.remove('open');
+				productsLinkItem.closest('.products__gallery').classList.remove('open');
 				visiographySwiper.params.breakpoints[480].slidesPerView = 2;
 				visiographySwiper.params.spaceBetween = 27;
 				visiographySwiper.params.slidesPerView = 2;
 				diagnocamSwiper.params.breakpoints[480].slidesPerView = 2;
 				diagnocamSwiper.params.spaceBetween = 27;
 				diagnocamSwiper.params.slidesPerView = 2;
-			}
-		}
+				resultSwiper.destroy(false);
+			};
+		};
 	});
 };
 

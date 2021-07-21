@@ -7,10 +7,14 @@
 			flex-direction: column-reverse;
 		}
 	}
+	&:first-child,
 	&:nth-child(2){
+		animation: none;
+	}
+	&:nth-child(3){
 		background-color: $el;
 	}
-	&:nth-child(even){
+	&:nth-child(odd){
 		.tomography__body{
 			flex-direction: row-reverse;
 			@media (max-width: $md2 + px){
